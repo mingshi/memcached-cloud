@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="well" style="padding:50px 10px;">
+
+    {% for sid in servers %}
+    <div class="breadcrumb">
+        <a href="/server-{{  sid }}">{{ servers[sid] }}</a>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

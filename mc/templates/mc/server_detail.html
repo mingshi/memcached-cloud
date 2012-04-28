@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="well" style="padding:10px;">
+    <div class="btn btn-large">{{  addr }}</div>
+    <h2 style="margin:10px;">Slabs Stats</h2>
+    <div id="slabs_stats" style="width:100%;height:300px;"></div>
+</div>
+
+<script src="{{ url_for('static', filename='amcharts/amcharts.js') }}"></script>
+<script src="{{ url_for('static', filename='amcharts/raphael.js') }}"></script>
+
+<script type="text/javascript">
+    var chart;
+    var slabs_data = {{ slabs_stats_str|safe }};
+
+    var chartData = [{
+        country: "USA",
+        visits: 4025
+    }, {
+        country: "China",
+        visits: 1882
+    }];
+
+
+    AmCharts.ready(function () {
+        // SERIAL CHART
+        chart = new AmCharts.AmSerialChart();
+        chart.dataProvider = slabs_data;
+        chart.categoryField = "slab_id";
+        chart.startDuration = 1;
+
+        // AXES
+        // category
+        var categoryAxis = chart.categoryAxis;
+        categoryAxis.labelRotation = 0;
+        categoryAxis.gridPosition = "start";
+
+        // value
+        // in case you don't want to change default settings of value axis,
+        // you don't need to create it, as one value axis is created automatically.
+
+        // GRAPH
+        var graph = new AmCharts.AmGraph();
+        graph.valueField = "chunks";
+        graph.balloonText = "slab [[slab_id]]: [[chunks]] chunks ";
+        graph.type = "column";
+        graph.lineAlpha = 0;
+        graph.fillAlphas = 0.8;
+        chart.addGraph(graph);
+
+        chart.write("slabs_stats");
+    });
+</script>
+
+{% endblock %}
+
