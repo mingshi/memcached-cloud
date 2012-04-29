@@ -31,13 +31,17 @@ def server_detail(sid) :
 
     #print slabs_stats
     slabs_stats.sort(key = lambda x: x['slab_id'])
-    
-
     slabs_stats_str = json.dumps(slabs_stats)
-    
-    print slabs_stats_str
+
+    stats = client.get_stats()[0][1]
+    stats_str = json.dumps(stats)
+
+    hits_stats = [{'type':'hits', 'color':'#00ff00', 'value' : stats['get_hits']}, { 'type':'misses', 'color':'#ff0000', 'value' : stats['get_misses']}]
+    hits_stats_str = json.dumps(hits_stats)
 
     return render_template("mc/server_detail.html", 
             addr = addr, 
             slabs = slabs, 
-            slabs_stats_str = slabs_stats_str)
+            slabs_stats_str = slabs_stats_str,
+            stats_str = stats_str,
+            hits_stats_str = hits_stats_str)

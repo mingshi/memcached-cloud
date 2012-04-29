@@ -1,26 +1,37 @@
 {% extends "layout.html" %}
 
+{% block title %}Server {{ addr  }}{% endblock %}
+
 {% block main %}
-<div class="well" style="padding:10px;">
+<ul class="breadcrumb">
+  <li>
+    <a href="/">Home</a> <span class="divider">/</span>
+  </li>
+  <li>
+    <a href="/servers">Servers</a> <span class="divider">/</span>
+  </li>
+  <li class="active">{{ addr }}</li>
+</ul>
+
+<div class="well">
+
     <div class="btn btn-large">{{  addr }}</div>
     <h2 style="margin:10px;">Slabs Stats</h2>
     <div id="slabs_stats" style="width:100%;height:300px;"></div>
+    <h2 style="margin:10px;">Hits Stats</h2>
+    <div id="hits_stats" style="width:450px;height:300px;"></div>
 </div>
+{% endblock %}
 
-<script src="{{ url_for('static', filename='amcharts/amcharts.js') }}"></script>
-<script src="{{ url_for('static', filename='amcharts/raphael.js') }}"></script>
+{% block footer_script %}
+<script type="text/javascript" src="{{ url_for('static', filename='amcharts/amcharts.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='amcharts/raphael.js') }}"></script>
 
 <script type="text/javascript">
     var chart;
     var slabs_data = {{ slabs_stats_str|safe }};
-
-    var chartData = [{
-        country: "USA",
-        visits: 4025
-    }, {
-        country: "China",
-        visits: 1882
-    }];
+    var stats_data = {{ stats_str|safe }};
+    var hits_data = {{ hits_stats_str|safe }};
 
 
     AmCharts.ready(function () {
@@ -50,6 +61,22 @@
         chart.addGraph(graph);
 
         chart.write("slabs_stats");
+
+        chart = new AmCharts.AmPieChart();
+        chart.dataProvider = hits_data;
+        chart.titleField = "type";
+        chart.valueField = "value";
+        chart.outlineColor = "#FFFFFF";
+        chart.outlineAlpha = 0.8;
+        chart.colorField = "color";
+        chart.outlineThickness = 1.2;
+        chart.labelRadius = 15;
+        //chart.startEffect = '>';
+        chart.startDuration = 0;
+        //chart.startRadius = '200%'
+        chart.labelText = "[[title]]\n [[percents]]% ([[value]])";
+        // WRITE
+        chart.write("hits_stats");
     });
 </script>
 

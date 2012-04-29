@@ -3,20 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Memcache Cloud{% endblock%}</title>
+    <title>{% block title %}{% endblock%} | Memcache Cloud</title>
     <link rel="shortcut icon" href="{{ url_for('favicon') }}">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" media="all" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='c/mc.css') }}" media="all" />
+    {% block head_css %}{% endblock %}
     {#
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap-responsive.min.css') }}" media="all" />
     #}
     <script src="{{ url_for('static', filename='jquery-1.7.1.min.js') }}"></script> 
     <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
-
-    <style>
-        body { padding-top: 60px; }
-        img { border-radius: 3px; }
-   </style>
+    {% block head_script %}{% endblock %}
 </head>
 
 <body>
@@ -51,5 +49,6 @@
 
 </div>
 
+{% block footer_script %}{% endblock %}
 </body>
 </html>

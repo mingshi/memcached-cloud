@@ -4,8 +4,6 @@ import os
 app = Flask(__name__)
 app.config.from_object("websiteconfig")
 
-from mc.test import haha
-
 from mc.views import index, server
 
 app.register_blueprint(index.mod)

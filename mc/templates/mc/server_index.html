@@ -1,13 +1,26 @@
 {% extends "layout.html" %}
 
-{% block main %}
-<div class="well" style="padding:50px 10px;">
+{% block title %}Servers{% endblock %}
 
-    {% for sid in servers %}
-    <div class="breadcrumb">
-        <a href="/server-{{  sid }}">{{ servers[sid] }}</a>
-    </div>
-    {% endfor %}
+{% block main %}
+<ul class="breadcrumb">
+  <li>
+    <a href="/">Home</a> <span class="divider">/</span>
+  </li>
+  <li class="active">Servers</li>
+</ul>
+
+<div class="well">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th></th><th>Server</th></tr>
+        </thead>
+        <tbody>
+        {% for sid in servers %}
+            <tr><td>{{ sid }}</td><td><a href="/server-{{  sid }}">{{ servers[sid] }}</a></td></tr>
+        {% endfor %}
+    </tbody>
+    </table>
 
 </div>
 {% endblock %}
