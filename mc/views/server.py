@@ -27,7 +27,11 @@ def server_detail(sid) :
             int(slab_id)
         except Exception, e :
             continue
-        slabs_stats.append({'slab_id' : int(slab_id), 'chunks' : slabs[slab_id]['used_chunks'] })
+        slabs_stats.append({
+            'slab_id' : int(slab_id), 
+            'used_chunks' : slabs[slab_id]['used_chunks'],
+            'free_chunks' : int(slabs[slab_id]['free_chunks']) + int(slabs[slab_id]['free_chunks_end'])
+            })
 
     #print slabs_stats
     slabs_stats.sort(key = lambda x: x['slab_id'])
@@ -41,7 +45,7 @@ def server_detail(sid) :
 
     return render_template("mc/server_detail.html", 
             addr = addr, 
-            slabs = slabs, 
             slabs_stats_str = slabs_stats_str,
+            stats = stats,
             stats_str = stats_str,
             hits_stats_str = hits_stats_str)

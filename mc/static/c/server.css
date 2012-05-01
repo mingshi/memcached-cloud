@@ -1,0 +1,7 @@
+/*
+#hits_stats { width:50%; height:300px; float:left; }
+*/
+#hits_stats, #usage_stats { height:300px; }
+#slabs_stats {width:100%; height:300px;}
+
+.well h2 {margin:10px; }
