@@ -2,6 +2,11 @@ from flask import Blueprint, render_template
 from memcacheserver import memcache_servers
 
 from cache.cache_server import Client
+#from mc.utils.str import human_readable_size
+
+#environment = jinja2.Environment(whatever)
+#environment['human_readable_size'] = human_readable_size
+
 import json
 
 mod = Blueprint("server", __name__)
