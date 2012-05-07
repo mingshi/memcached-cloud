@@ -20,14 +20,22 @@
 <div class="well">
 
     <div class="btn btn-large">{{  addr }}</div>
-    <h2>Basic Stats</h2>
+    <h3>Basic Stats</h3>
     <div class="row-fluid">
         <div id="hits_stats" class="span6"></div>
         <div id="usage_stats" class="span6"></div>
     </div>
 
-    <h2>Slabs Stats</h2>
+    <h3>Slabs Stats</h3>
     <div id="slabs_stats"></div>
+    
+    <h3>Slabs Key</h3>
+    <div class="btn-group">
+        {% for slab in slabs_stats  %}
+        <button class="btn">{{slab.slab_id}}</button>
+        {% endfor %}
+    </div>
+
 </div>
 {% endblock %}
 

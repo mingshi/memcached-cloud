@@ -45,6 +45,7 @@ def server_detail(sid) :
 
     return render_template("mc/server_detail.html", 
             addr = addr, 
+            slabs_stats = slabs_stats,
             slabs_stats_str = slabs_stats_str,
             stats = stats,
             stats_str = stats_str,
