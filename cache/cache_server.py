@@ -1,6 +1,6 @@
 
 import memcache
-from pprint import pprint
+#from pprint import pprint
 
 class Client(memcache.Client):
     def get_stats(self, args = None):
@@ -87,23 +87,20 @@ class Client(memcache.Client):
             if _len != 0:
                 tmp_prefix = last_k[:_len]
                     
-
-
-            print k
             last_k = k
 
-        print common_keys
+        return common_keys
 
 
 
 
 
-if __name__ == '__main__' :
-    mc = Client(['localhost:11211'])
+#if __name__ == '__main__' :
+    #mc = Client(['localhost:11211'])
     #mc = Client(['10.10.3.24:11211'])
     #mc.get_key_prefix(4)
 
-    pprint(mc.get_stats('slabs'))
+    #pprint(mc.get_stats('slabs'))
 
 
     #pprint(mc.get_stats('cachedump 1 10'))

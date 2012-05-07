@@ -51,12 +51,14 @@
     var usage_data = [{
         'type':'used', 
         'color' : '#00ff00',
-        'value' : {{ stats['bytes'] }}
+        'value' : {{ stats['bytes'] }},
+        'h_value' : '{{ stats['bytes']|human_readable_size }}'
     },
     {
         'type' : 'free',
         'color': '#666666',
-        'value' : {{ stats['limit_maxbytes']|int- stats['bytes']|int }}
+        'value' : {{ stats['limit_maxbytes']|int- stats['bytes']|int }},
+        'h_value' : '{{ (stats['limit_maxbytes']|int- stats['bytes']|int)|human_readable_size }}'
     }];
 
 
@@ -122,6 +124,7 @@
         chart.dataProvider = usage_data;
         chart.titleField = "type";
         chart.valueField = "value";
+        chart.descriptionField = 'h_value';
         chart.outlineColor = "#FFFFFF";
         chart.outlineAlpha = 0.8;
         chart.colorField = "color";
@@ -130,7 +133,8 @@
         //chart.startEffect = '>';
         chart.startDuration = 0;
         //chart.startRadius = '200%'
-        chart.labelText = "[[title]]\n [[percents]]% ";
+        chart.balloonText = "[[title]] [[percents]]%  [[description]]";
+        chart.labelText = "[[title]] [[percents]]%  [[description]]";
         // WRITE
         chart.write("usage_stats");
 

@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template
+import jinja2
+
 from memcacheserver import memcache_servers
-
 from cache.cache_server import Client
-#from mc.utils.str import human_readable_size
+from mc.utils.str import human_readable_size
 
-#environment = jinja2.Environment(whatever)
-#environment['human_readable_size'] = human_readable_size
+jinja2.filters.FILTERS['human_readable_size'] = human_readable_size
 
 import json
 
@@ -47,6 +47,8 @@ def server_detail(sid) :
 
     hits_stats = [{'type':'hits', 'color':'#00ff00', 'value' : stats['get_hits']}, { 'type':'misses', 'color':'#ff0000', 'value' : stats['get_misses']}]
     hits_stats_str = json.dumps(hits_stats)
+
+    from pprint import pprint
 
     return render_template("mc/server_detail.html", 
             addr = addr, 
