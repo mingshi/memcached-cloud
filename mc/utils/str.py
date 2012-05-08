@@ -1,10 +1,10 @@
 
 
 def human_readable_size(size) :
-    size_unit = ['', 'K', 'M', 'G', 'T']
+    size_unit = ['B', 'K', 'M', 'G', 'T']
     i = 0
     try :
-        size = int(size)
+        size = float(size)
     except :
         return None
 
@@ -12,4 +12,4 @@ def human_readable_size(size) :
         size = size / 1024
         i += 1
 
-    return str(size) + size_unit[i]
+    return str(round(size, 2)) + size_unit[i]

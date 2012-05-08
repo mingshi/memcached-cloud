@@ -89,7 +89,8 @@ def server_detail(sid) :
             'slab_id' : int(slab_id), 
             'used_chunks' : slabs[slab_id]['used_chunks'],
             'free_chunks' : int(slabs[slab_id]['free_chunks']) + int(slabs[slab_id]['free_chunks_end']),
-            'evicted' :  _slabs[slab_id]['evicted'] if _slabs[slab_id].has_key('evicted') else  0
+            'evicted' :  _slabs[slab_id]['evicted'] if _slabs[slab_id].has_key('evicted') else  0,
+            'size' : human_readable_size(slabs[slab_id]['chunk_size'])
             })
 
     #print slabs_stats

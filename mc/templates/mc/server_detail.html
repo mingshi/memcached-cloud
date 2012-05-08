@@ -28,6 +28,7 @@
                 <th>set</th><th>get</th><th>evictions</th>
                 <th>evictions/get</th>
                 <th>curr conn</th><th>total conn</th>
+                <th>threads</th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +39,7 @@
                 <td>{{ ((stats['evictions']|int) * 100 / (stats['cmd_get']|int)) | round(2, 'floor')  }} %</td>
                 <td>{{ stats['curr_connections']  }}</td>
                 <td>{{ stats['total_connections']  }}</td>
+                <td>{{ stats['threads']  }}</td>
             </tr>
         </tbody>
     </table>
@@ -58,7 +60,7 @@
 
     <table class="table table-bordered table-striped" id="slab_key_prefix"></table>
 
-    <h3>Data Manipulation</h3>
+    <h3>Data Query</h3>
     <div>
         <form class="form-horizontal">
             <div class="alert" style="display:none;" id="search_data_notice">
@@ -128,7 +130,7 @@
         // GRAPH
         var graph = new AmCharts.AmGraph();
         graph.valueField = "used_chunks";
-        graph.balloonText = "slab [[slab_id]]: [[used_chunks]] used chunks";
+        graph.balloonText = "slab [[slab_id]]: size:[[size]] [[used_chunks]] used chunks";
         graph.type = "column";
         graph.lineAlpha = 0;
         graph.fillAlphas = 0.8;
@@ -137,7 +139,7 @@
 
         var graph = new AmCharts.AmGraph();
         graph.valueField = "free_chunks";
-        graph.balloonText = "slab [[slab_id]]: [[free_chunks]] free chunks";
+        graph.balloonText = "slab [[slab_id]]: size:[[size]] [[free_chunks]] free chunks";
         graph.type = "column";
         graph.lineAlpha = 0;
         graph.fillAlphas = 0.8;
