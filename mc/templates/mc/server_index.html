@@ -13,11 +13,11 @@
 <div class="well">
     <table class="table table-bordered table-striped">
         <thead>
-            <tr><th></th><th>Server</th></tr>
+            <tr><th>#</th><th>Group</th><th>Server</th></tr>
         </thead>
         <tbody>
         {% for sid in servers %}
-            <tr><td>{{ sid }}</td><td><a href="/server-{{  sid }}">{{ servers[sid] }}</a></td></tr>
+        <tr><td>{{ sid }}</td><td>{{ servers[sid]['group'] }}</td><td><a href="/server-{{  sid }}">{{ servers[sid]['addr'] }}</a></td></tr>
         {% endfor %}
     </tbody>
     </table>

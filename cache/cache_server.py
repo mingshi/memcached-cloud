@@ -33,6 +33,41 @@ class Client(memcache.Client):
             s.send_cmd('stats reset')
             s.expect('RESET')
 
+    def _recv_value(self, server, flags, rlen):
+        rlen += 2 # include \r\n
+        buf = server.recv(rlen)
+        if len(buf) != rlen:
+            raise _Error("received %d bytes when expecting %d"
+                    % (len(buf), rlen))
+
+        if len(buf) == rlen:
+            buf = buf[:-2]  # strip \r\n
+
+        if flags & Client._FLAG_COMPRESSED:
+            buf = decompress(buf)
+
+        if  flags == 0 or flags == Client._FLAG_COMPRESSED:
+            # Either a bare string or a compressed string now decompressed...
+            val = buf
+        elif flags & Client._FLAG_INTEGER:
+            val = int(buf)
+        elif flags & Client._FLAG_LONG:
+            val = long(buf)
+        elif flags & Client._FLAG_PICKLE:
+            try:
+                file = StringIO(buf)
+                unpickler = self.unpickler(file)
+                if self.persistent_load:
+                    unpickler.persistent_load = self.persistent_load
+                val = unpickler.load()
+            except Exception, e:
+                return buf
+        else:
+            self.debuglog("unknown flags on get: %x\n" % flags)
+
+        return val
+
+
     def get_key_prefix(self, slab_id) :
         result = self.get_stats('slabs')
         slab_id = str(slab_id)

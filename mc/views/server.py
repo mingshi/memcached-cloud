@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 import jinja2
 
 from memcacheserver import memcache_servers
@@ -15,6 +15,57 @@ mod = Blueprint("server", __name__)
 def server_index():
     return render_template('mc/server_index.html', servers = memcache_servers)
 
+@mod.route('/server_slab_key-<sid>-<slab_id>')
+def server_slab_keys(sid, slab_id) :
+    try :
+        sid = int(sid)
+    except Exception, e :
+        return 'invalid server id'
+
+    addr = memcache_servers[sid]['addr']
+    client = Client([addr])
+    keys = client.get_key_prefix(slab_id)
+
+    return json.dumps(keys)
+
+@mod.route('/server/data/<sid>', methods=['GET', 'POST'])
+def server_data(sid) :
+    try :
+        sid = int(sid)
+    except Exception, e :
+        return json.dumps({"status":"error", 'msg':'invalid server id'})
+
+    if not request.form.has_key('key') :
+        return json.dumps({"status":"error", 'msg':'no key input'})
+
+    key = request.form['key'].encode('utf8')
+
+    action = ""
+    if request.form.has_key('action') :
+        action = request.form["action"].encode('utf8')
+
+    addr = memcache_servers[sid]['addr']
+    client = Client([addr])
+
+    result = {}
+    if action == 'save' :
+        if not request.form.has_key('data') :
+            result['status'] = 'error'
+            result['msg'] = 'no data input'
+        else:
+            data = request.form['data']
+            client.set(key, data)
+            result['status'] = 'ok'
+    elif action == 'delete' :
+        client.delete(key)
+        result['status'] = 'ok'
+    else :
+        result['status'] = 'ok'
+        result['data'] = client.get(key)
+
+    return json.dumps(result)
+
+
 @mod.route('/server-<sid>')
 def server_detail(sid) :
     try :
@@ -22,9 +73,11 @@ def server_detail(sid) :
     except Exception, e :
         return 'invalid server id'
 
-    addr = memcache_servers[sid]
+    addr = memcache_servers[sid]['addr']
     client = Client([addr])
     slabs = client.get_stats('slabs')[0]
+    _slabs = client.get_slabs()[0][1]
+
     slabs_stats = []
     from pprint import pprint
     for slab_id in slabs :
@@ -35,7 +88,8 @@ def server_detail(sid) :
         slabs_stats.append({
             'slab_id' : int(slab_id), 
             'used_chunks' : slabs[slab_id]['used_chunks'],
-            'free_chunks' : int(slabs[slab_id]['free_chunks']) + int(slabs[slab_id]['free_chunks_end'])
+            'free_chunks' : int(slabs[slab_id]['free_chunks']) + int(slabs[slab_id]['free_chunks_end']),
+            'evicted' :  _slabs[slab_id]['evicted'] if _slabs[slab_id].has_key('evicted') else  0
             })
 
     #print slabs_stats
@@ -51,6 +105,7 @@ def server_detail(sid) :
     from pprint import pprint
 
     return render_template("mc/server_detail.html", 
+            sid = sid,
             addr = addr, 
             slabs_stats = slabs_stats,
             slabs_stats_str = slabs_stats_str,

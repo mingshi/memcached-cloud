@@ -20,7 +20,27 @@
 <div class="well">
 
     <div class="btn btn-large">{{  addr }}</div>
+
     <h3>Basic Stats</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>set</th><th>get</th><th>evictions</th>
+                <th>evictions/get</th>
+                <th>curr conn</th><th>total conn</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ stats['cmd_set']  }}</td>
+                <td>{{ stats['cmd_get']  }}</td>
+                <td>{{ stats['evictions']  }}</td>
+                <td>{{ ((stats['evictions']|int) * 100 / (stats['cmd_get']|int)) | round(2, 'floor')  }} %</td>
+                <td>{{ stats['curr_connections']  }}</td>
+                <td>{{ stats['total_connections']  }}</td>
+            </tr>
+        </tbody>
+    </table>
     <div class="row-fluid">
         <div id="hits_stats" class="span6"></div>
         <div id="usage_stats" class="span6"></div>
@@ -29,11 +49,32 @@
     <h3>Slabs Stats</h3>
     <div id="slabs_stats"></div>
     
-    <h3>Slabs Key</h3>
+    <h3>Slabs Key Prefix</h3>
     <div class="btn-group">
         {% for slab in slabs_stats  %}
-        <button class="btn">{{slab.slab_id}}</button>
+        <button class="btn slab_id">{{slab.slab_id}}</button>
         {% endfor %}
+    </div>
+
+    <table class="table table-bordered table-striped" id="slab_key_prefix"></table>
+
+    <h3>Data Manipulation</h3>
+    <div>
+        <form class="form-horizontal">
+            <div class="alert" style="display:none;" id="search_data_notice">
+                <button class="close" data-dismiss="alert">×</button>
+                <span id="search_data_msg"> </span>
+            </div>
+
+            <div class="control-group">
+                <input type="text" id="key" class="input-medium search-query" placeholder="Type key">
+                <button type="button" class="btn" id="search_key_btn">Search</button>
+            </div>
+
+            <div class="control-group">
+                <textarea id="search_data_result"></textarea>
+            </div>
+        </form>
     </div>
 
 </div>
@@ -91,6 +132,7 @@
         graph.type = "column";
         graph.lineAlpha = 0;
         graph.fillAlphas = 0.8;
+        graph.fontSize = 15;
         chart.addGraph(graph);
 
         var graph = new AmCharts.AmGraph();
@@ -100,6 +142,24 @@
         graph.lineAlpha = 0;
         graph.fillAlphas = 0.8;
         graph.lineColor = '#00ff00';
+        graph.fontSize = 15;
+        chart.addGraph(graph);
+
+        var valAxis2 = new AmCharts.ValueAxis();
+        valAxis2.position = "right";
+        valAxis2.gridAlpha = 0;
+        valAxis2.axisThickness = 1;
+        chart.addValueAxis(valAxis2);
+
+        var graph = new AmCharts.AmGraph();
+        graph.valueAxis = valAxis2;
+        graph.valueField = "evicted";
+        graph.type = "line";
+        graph.balloonText = "slab [[slab_id]]: [[evicted]] evicted";
+        graph.lineThickness = 1;
+        graph.bullet = "round";
+        graph.lineColor = '#ff0000';
+        graph.fontSize = 15;
         chart.addGraph(graph);
 
         chart.write("slabs_stats");
@@ -138,6 +198,68 @@
         // WRITE
         chart.write("usage_stats");
 
+    });
+
+    $(function() {
+        $('.slab_id').click(function() {
+            var slab_id = $(this).text();
+            $.ajax({
+                url:"/server_slab_key-{{sid}}-" + slab_id,
+                dataType:"json"
+            }).done(function(keys) {
+
+                var html = '';
+                if (keys.length <= 0) {
+                html = 'no key';
+                    
+                } else {
+                for (key in keys) {
+                    html += '<tr><td>' + keys[key]  + '</td></tr>';
+                }
+                }
+                $('#slab_key_prefix').html(html);
+            });
+        });
+
+        $('#search_key_btn').click(function() {
+            var key = $('#key').val();
+            $.ajax({
+                url : "/server/data/" + {{ sid }},
+                dataType : "json",
+                type : 'post',
+                data : {'key' : key}
+            }).done(function(result) {
+
+                if (result.status == 'ok') {
+                    $('#search_data_result').val(result.data);
+                } else {
+                    $('#search_data_result').val('');
+                }
+            });
+                
+        });
+
+        $('#save_data_btn').click(function(){
+            var key = $('#key').val();
+            var data = $('#search_data_result').val();
+
+            $.ajax({
+                url : "/server/data/" + {{ sid }},
+                dataType : "json",
+                type : 'post',
+                data : {'key' : key, 'action': 'save', 'data' : data }
+            }).done(function(result) {
+
+                $('#search_data_notice').removeClass('alert-success alert-error');
+                if (result.status == 'ok') {
+                    $('#search_data_notice').addClass('alert-success');
+                    $('#search_data_msg').html('update success');
+                } else {
+                    $('#search_data_notice').addClass('alert-error');
+                    $('#search_data_msg').html('update error');
+                }
+            });
+        })
     });
 </script>
 
