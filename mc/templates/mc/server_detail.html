@@ -36,7 +36,10 @@
                 <td>{{ stats['cmd_set']  }}</td>
                 <td>{{ stats['cmd_get']  }}</td>
                 <td>{{ stats['evictions']  }}</td>
-                <td>{{ ((stats['evictions']|int) * 100 / (stats['cmd_get']|int)) | round(2, 'floor')  }} %</td>
+                <td>{% if stats['cmd_get'] %}
+                    {{ ((stats['evictions']|int) * 100 / (stats['cmd_get']|int)) | round(2, 'floor')  }}
+                    {% else %}/{% endif %}
+                </td>
                 <td>{{ stats['curr_connections']  }}</td>
                 <td>{{ stats['total_connections']  }}</td>
                 <td>{{ stats['threads']  }}</td>
