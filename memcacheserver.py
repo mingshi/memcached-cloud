@@ -17,4 +17,7 @@ memcache_servers[12] = {'group' : 'anjuke-prop', 'addr' : '10.10.3.48:11211' }
 memcache_servers[13] = {'group' : 'group-bbs', 'addr' : '10.10.3.24:11211' }
 memcache_servers[14] = {'group' : 'localhost', 'addr' : 'localhost:11211' }
 memcache_servers[15] = {'group' : 'localhost', 'addr' : '192.168.1.96:11211' }
+memcache_servers[16] = {'group' : 'image-service', 'addr' : '10.0.1.124:11211' }
+memcache_servers[17] = {'group' : 'image-service', 'addr' : '10.0.1.125:11211' }
+memcache_servers[18] = {'group' : 'image-service', 'addr' : '10.0.1.130:11211' }
 
