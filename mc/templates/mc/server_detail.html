@@ -167,6 +167,10 @@
         graph.fontSize = 15;
         chart.addGraph(graph);
 
+        var chartCursor = new AmCharts.ChartCursor();
+        chartCursor.cursorPosition = "mouse";
+        chart.addChartCursor(chartCursor);
+
         chart.write("slabs_stats");
 
         chart = new AmCharts.AmPieChart();

@@ -20,4 +20,5 @@ i=i+1;memcache_servers[i] = {'group':'image-service', 'addr':'10.0.1.124:11211' 
 i=i+1;memcache_servers[i] = {'group':'image-service', 'addr':'10.0.1.125:11211' }
 i=i+1;memcache_servers[i] = {'group':'image-service', 'addr':'10.0.1.130:11211' }
 i=i+1;memcache_servers[i] = {'group':'anjuke-prop', 'addr':'10.10.3.31:11211' }
+i=i+1;memcache_servers[i] = {'group':'anjuke-prop', 'addr':'10.10.3.31:11212' }
 
