@@ -25,24 +25,27 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>set</th><th>get</th><th>evictions</th>
+                <th>version</th><th>set</th><th>get</th><th>evictions</th>
                 <th>evictions/get</th>
                 <th>curr conn</th><th>total conn</th>
                 <th>threads</th>
+                <th>reassign enable</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>{{ stats['cmd_set']  }}</td>
-                <td>{{ stats['cmd_get']  }}</td>
+                <td>{{ stats['version'] }}</td>
+                <td>{{ stats['cmd_set'] }}</td>
+                <td>{{ stats['cmd_get'] }}</td>
                 <td>{{ stats['evictions']  }}</td>
                 <td>{% if stats['cmd_get'] %}
-                    {{ ((stats['evictions']|int) * 100 / (stats['cmd_get']|int)) | round(2, 'floor')  }}
+                    {{ ((stats['evictions']|int) * 100 / (stats['cmd_get']|int)) | round(2, 'floor')  }} %
                     {% else %}/{% endif %}
                 </td>
                 <td>{{ stats['curr_connections']  }}</td>
                 <td>{{ stats['total_connections']  }}</td>
                 <td>{{ stats['threads']  }}</td>
+                <td>{% if stats.slab_reassign_running  %}Yes{% else %}No{% endif %}</td>
             </tr>
         </tbody>
     </table>
