@@ -214,6 +214,8 @@
 
     $(function() {
         $('.slab_id').click(function() {
+            html = "<img width='100px' height='100px' src='" + "{{ url_for('static', filename='loading.gif') }}" + "'>";
+            $('#slab_key_prefix').html(html);
             var slab_id = $(this).text();
             $.ajax({
                 url:"/server_slab_key-{{sid}}-" + slab_id,
@@ -225,9 +227,9 @@
                 html = 'no key';
                     
                 } else {
-                for (key in keys) {
-                    html += '<tr><td>' + keys[key]  + '</td></tr>';
-                }
+                    for (key in keys) {
+                        html += '<tr><td>' + keys[key]  + '</td></tr>';
+                    }
                 }
                 $('#slab_key_prefix').html(html);
             });
