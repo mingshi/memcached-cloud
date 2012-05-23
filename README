@@ -1,5 +1,14 @@
-memcache cloud
+Memcache Cloud
 
-requirements:
+Requirements:
+
 memcache client:  http://pypi.python.org/pypi/python-memcached/1.48
 flask : http://flask.pocoo.org/
+oursql: mysql client for python. In ubuntu, you can install use "sudo apt-get install libmysqlclient-dev python-dev && sudo pip install oursql"
+SQLAlchemy: Database Abstract Layer. In ubuntu, you can install use "sudo pip install SQLAlchemy"
+
+
+
+
+
+
