@@ -1,6 +1,8 @@
-if __name__ == "__main__":
-    from mc import app
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from mc import app
 
+if __name__ == "__main__":
     if app.config['DEBUG'] :
         print app.config
 

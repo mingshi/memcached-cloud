@@ -1,10 +1,18 @@
+# -*- coding: utf-8 -*-
 
 from flask import Flask, send_from_directory, render_template
+from mc.views import index, server
 import os
 app = Flask(__name__)
-app.config.from_object("websiteconfig")
 
-from mc.views import index, server
+# load config according to enviroment
+app.config.from_object("config")
+if os.path.exists(app.config['ROOT_PATH'] + "/env.py"):
+    app.config.from_object("env")
+
+app.config.from_object("config.%sConfig" % (app.config['ENV']) )
+
+print app.config
 
 app.register_blueprint(index.mod)
 app.register_blueprint(server.mod)
