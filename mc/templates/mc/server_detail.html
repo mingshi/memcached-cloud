@@ -56,7 +56,7 @@
 
     <h3>Slabs Stats</h3>
     <div id="slabs_stats"></div>
-    
+
     <h3>Slabs Key Prefix</h3>
     <div class="btn-group">
         {% for slab in slabs_stats  %}
@@ -85,6 +85,21 @@
         </form>
     </div>
 
+    <h3>Key Deletion</h3>
+    <div>
+        <form class="form-horizontal">
+            <div class="alert" style="display:none;" id="delete_data_notice">
+                <button class="close" data-dismiss="alert">×</button>
+                <span id="delete_data_msg"> </span>
+            </div>
+
+            <div class="control-group">
+                <input type="text" id="delete-key" class="input-medium search-query" placeholder="Type key">
+                <button type="button" class="btn" id="delete_key_btn">Delete</button>
+            </div>
+        </form>
+    </div>
+
 </div>
 {% endblock %}
 
@@ -98,7 +113,7 @@
     var stats_data = {{ stats_str|safe }};
     var hits_data = {{ hits_stats_str|safe }};
     var usage_data = [{
-        'type':'used', 
+        'type':'used',
         'color' : '#00ff00',
         'value' : {{ stats['bytes'] }},
         'h_value' : '{{ stats['bytes']|human_readable_size }}'
@@ -225,7 +240,7 @@
                 var html = '';
                 if (keys.length <= 0) {
                 html = 'no key';
-                    
+
                 } else {
                     for (key in keys) {
                         html += '<tr><td>' + keys[key]  + '</td></tr>';
@@ -250,7 +265,28 @@
                     $('#search_data_result').val('');
                 }
             });
-                
+
+        });
+
+        $('#delete_key_btn').click(function() {
+            var key = $('#delete-key').val();
+            $.ajax({
+                url : "/server/data/" + {{ sid }},
+                dataType : "json",
+                type : 'post',
+                data : {'key' : key, 'action': 'delete'}
+            }).done(function(result) {
+
+                if (result.status == 'ok') {
+                    $('#delete_data_notice').show();
+                    $('#delete_data_msg').html('key deleted!');
+                    $('#delete-key').val('');
+                } else {
+                    $('#delete_data_notice').show();
+                    $('#delete_data_msg').html('key cannot be deleted!');
+                }
+            });
+
         });
 
         $('#save_data_btn').click(function(){
