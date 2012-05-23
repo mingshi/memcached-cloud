@@ -4,6 +4,7 @@
 *.pyo
 *.whoosh
 *.db
+*.swp
 env
 dist
 _mailinglist/*
@@ -14,3 +15,13 @@ _mailinglist/*
 .settings
 
 .idea
+
+/.installed.cfg
+/parts
+/develop-eggs
+/bin
+/eggs
+/downloads
+/lib
+/build
+dist
