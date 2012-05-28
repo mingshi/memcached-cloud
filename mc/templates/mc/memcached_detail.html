@@ -12,7 +12,7 @@
     <a href="/">Home</a> <span class="divider">/</span>
   </li>
   <li>
-    <a href="/servers">Servers</a> <span class="divider">/</span>
+    <a href="/memcacheds">Memcacheds</a> <span class="divider">/</span>
   </li>
   <li class="active">{{ addr }}</li>
 </ul>
@@ -233,7 +233,7 @@
             $('#slab_key_prefix').html(html);
             var slab_id = $(this).text();
             $.ajax({
-                url:"/server_slab_key-{{sid}}-" + slab_id,
+                url:"/memcached_slab_key-{{memcached_id}}-" + slab_id,
                 dataType:"json"
             }).done(function(keys) {
 
@@ -253,7 +253,7 @@
         $('#search_key_btn').click(function() {
             var key = $('#key').val();
             $.ajax({
-                url : "/server/data/" + {{ sid }},
+                url : "/memcached/data/" + {{ memcached_id }},
                 dataType : "json",
                 type : 'post',
                 data : {'key' : key}
@@ -271,7 +271,7 @@
         $('#delete_key_btn').click(function() {
             var key = $('#delete-key').val();
             $.ajax({
-                url : "/server/data/" + {{ sid }},
+                url : "/memcached/data/" + {{ memcached_id }},
                 dataType : "json",
                 type : 'post',
                 data : {'key' : key, 'action': 'delete'}
@@ -294,7 +294,7 @@
             var data = $('#search_data_result').val();
 
             $.ajax({
-                url : "/server/data/" + {{ sid }},
+                url : "/memcached/data/" + {{ memcached_id }},
                 dataType : "json",
                 type : 'post',
                 data : {'key' : key, 'action': 'save', 'data' : data }

@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, request
 import jinja2
 import os
-from memcacheserver import memcache_servers
 from cache.cache_server import Client
 from mc.utils.str import human_readable_size
 from mc.db.db import db_session
@@ -48,18 +47,7 @@ def memcacheds_index():
 
 @mod.route('/memcached-add', methods=['GET','POST'])
 def memcached_add() :
-    server = []
-    for sid in memcache_servers :
-        try :
-            instance_addr = memcache_servers[sid]['addr']
-            instance_addr = instance_addr.split(':')
-            instance_ip = instance_addr[0]
-            server.append(instance_ip)
-        except Exception, e : 
-            server.append('null')
-    from collections import Counter
-    ser = Counter(server)  
-    return render_template('mc/memcached_add.html', servers = ser)
+    return render_template('mc/memcached_add.html')
 
 @mod.route('/memcached/do_add', methods=['GET','POST'])
 def memcached_do_add() :
@@ -79,13 +67,16 @@ def memcached_do_add() :
     return json.dumps(result)
 
 
-@mod.route('/memcached-<sid>-stop', methods=['GET', 'POST'])
-def memcached_stop(sid) :
+@mod.route('/memcached-<memcached_id>-stop', methods=['GET', 'POST'])
+def memcached_stop(memcached_id) :
     try :
-        sid = int(sid)
+        memcached_id = int(memcached_id)
     except Exception, e :
-        return 'invalid server id'
-    addr = memcache_servers[sid]['addr'].strip()
+        return 'invalid memcached id'
+
+    _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
+    addr =  _memcached.ip + ':' + str(_memcached.port)
+
     addr = addr.split(':')
     result = {}
     res = os.system("ssh " + addr[0] + " 'ps -ef|grep memcached|grep " + addr[1] + "|grep -v grep|awk " + "'" + "\\" + "'\$2!=" + addr[1] + "{print \$2}" + "\\''|xargs kill'")
@@ -96,14 +87,16 @@ def memcached_stop(sid) :
     return json.dumps(result)
 
 
-@mod.route('/memcached-<sid>')
-def memcached_detail(sid) :
+@mod.route('/memcached-<memcached_id>')
+def memcached_detail(memcached_id) :
     try :
-        sid = int(sid)
+        memcached_id = int(memcached_id)
     except Exception, e :
         return 'invalid memcached id'
 
-    addr = memcache_servers[sid]['addr']
+    _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
+    addr =  _memcached.ip + ':' + str(_memcached.port)
+
     client = Client([addr])
     slabs = client.get_stats('slabs')[0]
     _slabs = client.get_slabs()[0][1]
@@ -135,8 +128,8 @@ def memcached_detail(sid) :
 
     from pprint import pprint
 
-    return render_template("mc/server_detail.html", 
-            sid = sid,
+    return render_template("mc/memcached_detail.html", 
+            memcached_id = memcached_id,
             addr = addr, 
             slabs_stats = slabs_stats,
             slabs_stats_str = slabs_stats_str,
@@ -144,25 +137,26 @@ def memcached_detail(sid) :
             stats_str = stats_str,
             hits_stats_str = hits_stats_str)
 
-@mod.route('/memcached_slab_key-<sid>-<slab_id>')
-def memcached_slab_keys(sid, slab_id) :
+@mod.route('/memcached_slab_key-<memcached_id>-<slab_id>')
+def memcached_slab_keys(memcached_id, slab_id) :
     try :
-        sid = int(sid)
+        memcached_id = int(memcached_id)
     except Exception, e :
-        return 'invalid server id'
+        return 'invalid memcached id'
+    _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
+    addr =  _memcached.ip + ':' + str(_memcached.port)
 
-    addr = memcache_servers[sid]['addr']
     client = Client([addr])
     keys = client.get_key_prefix(slab_id)
 
     return json.dumps(keys)
 
-@mod.route('/memcached/data/<sid>', methods=['GET', 'POST'])
-def memcached_data(sid) :
+@mod.route('/memcached/data/<memcached_id>', methods=['GET', 'POST'])
+def memcached_data(memcached_id) :
     try :
-        sid = int(sid)
+        memcached_id = int(memcached_id)
     except Exception, e :
-        return json.dumps({"status":"error", 'msg':'invalid server id'})
+        return json.dumps({"status":"error", 'msg':'invalid memcached id'})
 
     if not request.form.has_key('key') :
         return json.dumps({"status":"error", 'msg':'no key input'})
@@ -173,7 +167,9 @@ def memcached_data(sid) :
     if request.form.has_key('action') :
         action = request.form["action"].encode('utf8')
 
-    addr = memcache_servers[sid]['addr']
+    _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
+    addr =  _memcached.ip + ':' + str(_memcached.port)
+
     client = Client([addr])
 
     result = {}
