@@ -14,4 +14,3 @@ Model = declarative_base(name="Model")
 
 def init_db():
     Model.metadata.create_all(bind=engine)
-

@@ -4,6 +4,8 @@ import os
 from memcacheserver import memcache_servers
 from cache.cache_server import Client
 from mc.utils.str import human_readable_size
+from mc.db.db import db_session
+from mc.model import *
 
 jinja2.filters.FILTERS['human_readable_size'] = human_readable_size
 
@@ -13,21 +15,23 @@ mod = Blueprint("server", __name__)
 
 @mod.route('/memcacheds')
 def memcacheds_index():
+    memcacheds = db_session.query(Memcacheds).all()
     import socket
-    for sid in memcache_servers :
+    instances = []
+    for _memcached in memcacheds :
         try :
-            addr = memcache_servers[sid]['addr']
-            addr = addr.split(':')
-            ip = addr[0]
-            port = addr[1]
+            ip = _memcached.ip
+            port = _memcached.port
             sk = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
             sk.settimeout(0.01)
             address = (str(ip),int(port))
             status = sk.connect((address))
-            memcache_servers[sid]['status'] = 'ok'
+            print address
         except Exception, e :
-            memcache_servers[sid]['status'] = 'error'
-    return render_template('mc/instances_index.html', servers = memcache_servers)
+            status = 'error'
+
+        instances.append({"id":_memcached.id, "ip":ip, "port":port, 'status':status})
+    return render_template('mc/instances_index.html', instances = instances)
 
 @mod.route('/hosts')
 def hosts_index():

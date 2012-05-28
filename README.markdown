@@ -65,11 +65,19 @@ memcache-cloud using different config for different enviroment such as `producti
 
 ## setup a database for playing around
 
-1. create the mysql database first.
+1. config database in env.py.
 
     ```
-    $ mysql foo < creata.table.sql
+    class DevelopmentConfig(Config):
+        PORT=3000
+        DEBUG=True
+        DB_URI="mysql+oursql://mc:mc@localhost/mc"
     ```
 
-2. use *.sql files under sql folder to make the neccessary database for the project.
+2.run the initdb.py
 
+    ```
+    $ python initdb.py
+    ```
+
+## enjoy it!
