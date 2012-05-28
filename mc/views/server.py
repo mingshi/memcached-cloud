@@ -16,8 +16,14 @@ mod = Blueprint("server", __name__)
 @mod.route('/memcacheds')
 def memcacheds_index():
     memcacheds = db_session.query(Memcacheds).all()
+    groups = db_session.query(Groups).all()
+
     import socket
     instances = []
+    group_names = {}
+    for _group in groups :
+        group_names[_group.id] = _group.name
+
     for _memcached in memcacheds :
         try :
             ip = _memcached.ip
@@ -30,8 +36,14 @@ def memcacheds_index():
         except Exception, e :
             status = 'error'
 
-        instances.append({"id":_memcached.id, "ip":ip, "port":port, 'status':status})
-    return render_template('mc/instances_index.html', instances = instances)
+        instances.append({"id":_memcached.id, 
+            "ip":ip, 
+            "port":port, 
+            'status':status, 
+            'group_id' : _memcached.group_id,
+            'group_name' : group_names[_memcached.group_id] if group_names.has_key(_memcached.group_id) else  '/'
+            })
+    return render_template('mc/instances_index.html', instances = instances, group_names = group_names)
 
 @mod.route('/hosts')
 def hosts_index():

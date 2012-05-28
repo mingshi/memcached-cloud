@@ -20,7 +20,7 @@
         {% for instance in instances %}
         <tr>
             <td>{{ instance.id }}</td>
-            <td></td>
+            <td>{{ instance.group_name }}</td>
             <td><a href="/server-{{ instance.id }}">{{ instance.ip }}:{{ instance.port }}</a></td>
             <td><img src="{{ url_for('static', filename='restart.gif') }}" style="cursor:pointer" onclick="return confirm('Are you sure to restart the memcached process?');" id="instance_restart_{{ instance.id }}" />&nbsp;&nbsp;&nbsp;
                 <img src="{{ url_for('static', filename='stop.gif') }}" style="cursor:pointer"  class="instance_stop" instance_id="{{ instance.id }}" />&nbsp;&nbsp;&nbsp;
