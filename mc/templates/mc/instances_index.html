@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}Servers{% endblock %}
+
+{% block main %}
+<ul class="breadcrumb">
+  <li>
+    <a href="/">Home</a> <span class="divider">/</span>
+  </li>
+  <li class="active">Instances</li>
+  <li style="margin-left:100px;color:#375B91;width:75%;text-align:right;font-weight:bold;cursor:pointer;"><a href="/instance-add"><img src="{{ url_for('static', filename='add.gif') }}" />Add Instance</a></li>
+</ul>
+
+<div class="well">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>#</th><th>Group</th><th>Server</th><th>Operating</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+        {% for sid in servers %}
+        <tr>
+            <td>{{ sid }}</td>
+            <td>{{ servers[sid]['group'] }}</td>
+            <td><a href="/server-{{ sid }}">{{ servers[sid]['addr'] }}</a></td>
+            <td><img src="{{ url_for('static', filename='restart.gif') }}" style="cursor:pointer" onclick="return confirm('Are you sure to restart the memcached process?');" id="instance_restart_{{ sid }}" />&nbsp;&nbsp;&nbsp;
+                <img src="{{ url_for('static', filename='stop.gif') }}" style="cursor:pointer"  class="instance_stop" instance_id="{{ sid }}" />&nbsp;&nbsp;&nbsp;
+                <img src="{{ url_for('static', filename='start.gif') }}" style="cursor:pointer"  class="instance_stop" instance_id="{{ sid }}" />
+            </td>
+            <td id="status_{{ sid }}">{{ servers[sid]['status'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+</div>
+{% endblock %}
+
+{% block footer_script %}
+    <script type="text/javascript">
+        $(function() {
+                $('.instance_stop').click(function() {
+                    if (! confirm('Are you sure to stop the memcached process?')) {
+                        return false;
+                    }
+                    var instance_id = $(this).attr('instance_id');
+                    
+                    $.ajax({
+                        url : "/instance-" + instance_id + "-stop",
+                        type : 'post',
+                        dataType : "json",
+                           
+                    }).done(function(result) {
+                        if (result.status == 'ok'){
+                            $("#status_" + instance_id).html('Stopped!');
+                        }else{
+                            $("#status_" + instance_id).html('Error!');
+                        }    
+                    });
+            });
+        });
+    </script>
+{% endblock %}

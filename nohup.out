@@ -1,0 +1,1508 @@
+ * Running on http://0.0.0.0:3000/
+ * Restarting with reloader
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Running on http://0.0.0.0:3000/
+ * Restarting with reloader
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:11] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:12] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:12] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:12] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:12] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:12] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+ * Detected change in '/var/www/html/memcache-cloud/memcacheserver.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+192.168.201.133 - - [23/May/2012 18:30:40] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:40] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:40] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:40] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:40] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:30:42] "GET /server-22 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 78, in server_detail
+    slabs = client.get_stats('slabs')[0]
+KeyError: 0
+192.168.201.133 - - [23/May/2012 18:30:42] "GET /server-22?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:42] "GET /server-22?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:42] "GET /server-22?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:42] "GET /server-22?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:42] "GET /server-22?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:30:42] "GET /server-22?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:31:03] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:31:03] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:31:03] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:31:03] "GET /static/c/server.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:31:03] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:31:03] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:31:03] "GET /static/amcharts/amcharts.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:31:03] "GET /static/amcharts/raphael.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:31:07] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:34:31] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:34:31] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:34:31] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:34:31] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:34:31] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:35:04] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:35:04] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:35:04] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:35:04] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:35:04] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:35:04] "GET /static/restart.gif HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:36:03] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:24] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:24] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:24] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:24] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:24] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:24] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:26] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:26] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:27] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:28] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:37:47] "GET /server-22 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 78, in server_detail
+    slabs = client.get_stats('slabs')[0]
+KeyError: 0
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 78, in server_detail
+    slabs = client.get_stats('slabs')[0]
+KeyError: 0
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:37:48] "GET /server-22?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:38:04] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:05] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/c/server.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/amcharts/amcharts.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:06] "GET /static/amcharts/raphael.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:38:44] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:10] "GET /servers HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 16, in server_index
+    return render_template('mc/server_index.html', servers = memcache_servers)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/templating.py", line 122, in render_template
+    return _render(ctx.app.jinja_env.get_template(template_name),
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 719, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 693, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 493, in compile
+    self.handle_exception(exc_info, source_hint=source)
+  File "/var/www/html/memcache-cloud/mc/templates/mc/server_index.html", line 20, in template
+    <tr><td>{{ sid }}</td><td>{{ servers[sid]['group'] }}</td><td><a href="/server-{{  sid }}">{{ servers[sid]['addr'] }}</a></td><td><img src="{{ url_for('static', filename='restart.gif') }}" /><img src="{{ ur    l_for('static', filename='stop.gif') }}" /></td></tr>
+TemplateSyntaxError: expected token 'end of print statement', got 'l_for'
+192.168.201.133 - - [23/May/2012 18:41:10] "GET /servers?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:10] "GET /servers?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:10] "GET /servers?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:11] "GET /servers?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:11] "GET /servers?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:11] "GET /servers?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:11] "GET /servers HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 16, in server_index
+    return render_template('mc/server_index.html', servers = memcache_servers)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/templating.py", line 122, in render_template
+    return _render(ctx.app.jinja_env.get_template(template_name),
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 719, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 693, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 493, in compile
+    self.handle_exception(exc_info, source_hint=source)
+  File "/var/www/html/memcache-cloud/mc/templates/mc/server_index.html", line 20, in template
+    <tr><td>{{ sid }}</td><td>{{ servers[sid]['group'] }}</td><td><a href="/server-{{  sid }}">{{ servers[sid]['addr'] }}</a></td><td><img src="{{ url_for('static', filename='restart.gif') }}" /><img src="{{ ur    l_for('static', filename='stop.gif') }}" /></td></tr>
+TemplateSyntaxError: expected token 'end of print statement', got 'l_for'
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 16, in server_index
+    return render_template('mc/server_index.html', servers = memcache_servers)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/templating.py", line 122, in render_template
+    return _render(ctx.app.jinja_env.get_template(template_name),
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 719, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 693, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 493, in compile
+    self.handle_exception(exc_info, source_hint=source)
+  File "/var/www/html/memcache-cloud/mc/templates/mc/server_index.html", line 20, in template
+    <tr><td>{{ sid }}</td><td>{{ servers[sid]['group'] }}</td><td><a href="/server-{{  sid }}">{{ servers[sid]['addr'] }}</a></td><td><img src="{{ url_for('static', filename='restart.gif') }}" /><img src="{{ ur    l_for('static', filename='stop.gif') }}" /></td></tr>
+TemplateSyntaxError: expected token 'end of print statement', got 'l_for'
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 16, in server_index
+    return render_template('mc/server_index.html', servers = memcache_servers)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/templating.py", line 122, in render_template
+    return _render(ctx.app.jinja_env.get_template(template_name),
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 719, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 693, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 493, in compile
+    self.handle_exception(exc_info, source_hint=source)
+  File "/var/www/html/memcache-cloud/mc/templates/mc/server_index.html", line 20, in template
+    <tr><td>{{ sid }}</td><td>{{ servers[sid]['group'] }}</td><td><a href="/server-{{  sid }}">{{ servers[sid]['addr'] }}</a></td><td><img src="{{ url_for('static', filename='restart.gif') }}" /><img src="{{ ur    l_for('static', filename='stop.gif') }}" /></td></tr>
+TemplateSyntaxError: expected token 'end of print statement', got 'l_for'
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 284, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 310, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 641, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 694, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 16, in server_index
+    return render_template('mc/server_index.html', servers = memcache_servers)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/templating.py", line 122, in render_template
+    return _render(ctx.app.jinja_env.get_template(template_name),
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 719, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 693, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 493, in compile
+    self.handle_exception(exc_info, source_hint=source)
+  File "/var/www/html/memcache-cloud/mc/templates/mc/server_index.html", line 20, in template
+    <tr><td>{{ sid }}</td><td>{{ servers[sid]['group'] }}</td><td><a href="/server-{{  sid }}">{{ servers[sid]['addr'] }}</a></td><td><img src="{{ url_for('static', filename='restart.gif') }}" /><img src="{{ ur    l_for('static', filename='stop.gif') }}" /></td></tr>
+TemplateSyntaxError: expected token 'end of print statement', got 'l_for'
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 16, in server_index
+    return render_template('mc/server_index.html', servers = memcache_servers)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/templating.py", line 122, in render_template
+    return _render(ctx.app.jinja_env.get_template(template_name),
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 719, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 693, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 493, in compile
+    self.handle_exception(exc_info, source_hint=source)
+  File "/var/www/html/memcache-cloud/mc/templates/mc/server_index.html", line 20, in template
+    <tr><td>{{ sid }}</td><td>{{ servers[sid]['group'] }}</td><td><a href="/server-{{  sid }}">{{ servers[sid]['addr'] }}</a></td><td><img src="{{ url_for('static', filename='restart.gif') }}" /><img src="{{ ur    l_for('static', filename='stop.gif') }}" /></td></tr>
+TemplateSyntaxError: expected token 'end of print statement', got 'l_for'
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:12] "GET /servers?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:13] "GET /servers HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 16, in server_index
+    return render_template('mc/server_index.html', servers = memcache_servers)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/templating.py", line 122, in render_template
+    return _render(ctx.app.jinja_env.get_template(template_name),
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 719, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 693, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 493, in compile
+    self.handle_exception(exc_info, source_hint=source)
+  File "/var/www/html/memcache-cloud/mc/templates/mc/server_index.html", line 20, in template
+    <tr><td>{{ sid }}</td><td>{{ servers[sid]['group'] }}</td><td><a href="/server-{{  sid }}">{{ servers[sid]['addr'] }}</a></td><td><img src="{{ url_for('static', filename='restart.gif') }}" /><img src="{{ ur    l_for('static', filename='stop.gif') }}" /></td></tr>
+TemplateSyntaxError: expected token 'end of print statement', got 'l_for'
+192.168.201.133 - - [23/May/2012 18:41:13] "GET /servers?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:13] "GET /servers?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:13] "GET /servers?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:13] "GET /servers?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:13] "GET /servers?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:13] "GET /servers?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:27] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:27] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:41:27] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:41:27] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:41:27] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:41:27] "GET /static/stop.gif HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:41:27] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:07] "GET /server-1 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 78, in server_detail
+    slabs = client.get_stats('slabs')[0]
+KeyError: 0
+192.168.201.133 - - [23/May/2012 18:43:07] "GET /server-1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:07] "GET /server-1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:07] "GET /server-1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:07] "GET /server-1?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:07] "GET /server-1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:07] "GET /server-1?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:13] "GET /server-22 HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:43] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:45] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:45] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:45] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:45] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:45] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:45] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:45] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:46] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:43:47] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:47] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:47] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:47] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:47] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:43:47] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:45:00] "GET /servers HTTP/1.1" 200 -
+192.168.201.133 - - [23/May/2012 18:45:00] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:45:00] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:45:00] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:45:00] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:45:00] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.201.133 - - [23/May/2012 18:45:00] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:11] "GET /servers HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:48:11] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:11] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:11] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:11] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:11] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:11] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:59] "GET /servers HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:48:59] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:59] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:59] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:59] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:59] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:48:59] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:52:25] "GET /server-22 HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+----------------------------------------
+Exception happened during processing of request from ('192.168.201.133', 52241)
+----------------------------------------
+ * Restarting with reloader
+192.168.1.73 - - [23/May/2012 18:56:33] "GET /servers HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:56:36] "GET /server-1-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1332, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+192.168.1.73 - - [23/May/2012 18:56:36] "GET /server-1-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:56:36] "GET /server-1-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:56:36] "GET /server-1-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:56:36] "GET /server-1-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:56:36] "GET /server-1-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:56:36] "GET /server-1-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+11111
+ * Restarting with reloader
+192.168.1.73 - - [23/May/2012 18:57:59] "GET /servers HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:57:59] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:57:59] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:57:59] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:57:59] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:57:59] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:57:59] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:58:03] "GET /server-22-restart HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:59:32] "GET /servers HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 16, in server_index
+    return render_template('mc/server_index.html', servers = memcache_servers)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/templating.py", line 123, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/templating.py", line 107, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 894, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/var/www/html/memcache-cloud/mc/templates/mc/server_index.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "/var/www/html/memcache-cloud/mc/templates/layout.html", line 43, in top-level template code
+    {% block main %}{% endblock %}
+  File "/var/www/html/memcache-cloud/mc/templates/mc/server_index.html", line 20, in block "main"
+    <tr><td>{{ sid }}</td><td>{{ servers[sid]['group'] }}</td><td><a href="/server-{{  sid }}">{{ servers[sid]['addr'] }}</a></td><td><a style="cursor:pointer" onclick="return confirm('Are you sure to restart the memcached process?');" href="/server-{{ server[sid]['addr'] }}-restart"><img src="{{ url_for('static', filename='restart.gif') }}" /></a>&nbsp;&nbsp;&nbsp;<a style="cursor:pointer" onclick="return confirm('Are you sure to stop the memcached process?');"><img src="{{ url_for('static', filename='stop.gif') }}" /></a></td></tr>
+  File "/usr/local/lib/python2.7/dist-packages/Jinja2-2.6-py2.7.egg/jinja2/environment.py", line 353, in getitem
+    return obj[argument]
+UndefinedError: 'server' is undefined
+192.168.1.73 - - [23/May/2012 18:59:32] "GET /servers?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:59:32] "GET /servers?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:59:32] "GET /servers?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:59:32] "GET /servers?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:59:32] "GET /servers?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:59:32] "GET /servers?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:59:50] "GET /servers HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:59:50] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:59:50] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:59:50] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:59:50] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:59:50] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:59:50] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 18:59:52] "GET /server-22 HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 18:59:56] "GET /server-192.168.10.20:11211-restart HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+192.168.1.73 - - [23/May/2012 19:06:03] "GET /server-192.168.10.20:11211-restart HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:06:07] "GET /servers HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:06:07] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:06:07] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:06:07] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:06:07] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:06:07] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:06:07] "GET /static/stop.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:06:11] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1262, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1248, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/html/memcache-cloud/mc/views/server.py", line 37, in server_instance_restart
+    addr = strip(memcache_servers[sid]['addr'])
+NameError: global name 'strip' is not defined
+192.168.1.73 - - [23/May/2012 19:06:11] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:06:11] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:06:11] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:06:11] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:06:11] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:06:11] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+192.168.1.73 - - [23/May/2012 19:07:05] "GET /server-22-restart HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:07:06] "GET /server-22-restart HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:12] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:13] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:13] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:13] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:13] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:13] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:14] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:14] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:14] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:14] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:14] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:14] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:15] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:15] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:15] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:15] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:16] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:16] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:16] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:16] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:16] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:17] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:17] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:17] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:17] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:17] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:17] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:18] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:18] "GET /server-22-restart HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:18] "GET /server-22-restart HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:34] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1332, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+192.168.1.73 - - [23/May/2012 19:10:34] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:34] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:34] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1332, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1332, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:35] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1332, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1332, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:36] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:49] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 55, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:10:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:10:50] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:10:50] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:50] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:50] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:10:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:11:06] "GET /server-22 HTTP/1.1" 200 -
+aaaaaa
+192.168.1.73 - - [23/May/2012 19:11:10] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:11:10] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:11:10] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:11:10] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:11:10] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:11:10] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:11:10] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 55, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'list' object is not callable
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'list' object is not callable
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:19] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'list' object is not callable
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'list' object is not callable
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'list' object is not callable
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:20] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+192.168.1.73 - - [23/May/2012 19:15:35] "GET /server-22-restart HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:36] "GET /server-22-restart HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:36] "GET /server-22-restart HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:36] "GET /server-22-restart HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+192.168.1.73 - - [23/May/2012 19:15:52] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 55, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'list' object is not callable
+192.168.1.73 - - [23/May/2012 19:15:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:15:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+yyy
+192.168.1.73 - - [23/May/2012 19:18:49] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 55, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:18:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:49] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+yyy
+192.168.1.73 - - [23/May/2012 19:18:50] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:18:50] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:50] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:50] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:50] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:50] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:50] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+yyy
+192.168.1.73 - - [23/May/2012 19:18:50] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+yyy
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:51] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+yyy
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+yyy
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+yyy
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+yyy
+192.168.1.73 - - [23/May/2012 19:18:52] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 284, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 310, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 641, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 694, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+yyy
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:18:53] "GET /server-22-restart?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+----------------------------------------
+Exception happened during processing of request from ('192.168.1.73', 59211)
+----------------------------------------
+ * Restarting with reloader
+192.168.1.73 - - [23/May/2012 19:52:07] "GET /servers HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:52:08] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:52:08] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:52:08] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:52:08] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:52:08] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:52:08] "GET /static/stop.gif HTTP/1.1" 304 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+192.168.1.73 - - [23/May/2012 19:52:54] "GET /servers HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:52:54] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:52:54] "GET /static/c/mc.css HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:52:54] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:52:54] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:52:54] "GET /static/restart.gif HTTP/1.1" 304 -
+192.168.1.73 - - [23/May/2012 19:52:54] "GET /static/stop.gif HTTP/1.1" 304 -
+ssh: Could not resolve hostname addr[0]: Temporary failure in name resolution
+Usage:
+  kill pid ...              Send SIGTERM to every process listed.
+  kill signal pid ...       Send a signal to every process listed.
+  kill -s signal pid ...    Send a signal to every process listed.
+  kill -l                   List all signal names.
+  kill -L                   List all signal names in a nice table.
+  kill -l signal            Convert between signal numbers and names.
+192.168.1.73 - - [23/May/2012 19:52:59] "GET /server-22-stop HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 55, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [23/May/2012 19:52:59] "GET /server-22-stop?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:52:59] "GET /server-22-stop?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:52:59] "GET /server-22-stop?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:52:59] "GET /server-22-stop?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:52:59] "GET /server-22-stop?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.1.73 - - [23/May/2012 19:52:59] "GET /server-22-stop?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/html/memcache-cloud/mc/views/server.py', reloading
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+<Config {'USE_X_SENDFILE': False, 'ROOT_PATH': '/var/www/html/memcache-cloud', 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_NAME': 'session', 'HOST': '0.0.0.0', 'LOGGER_NAME': 'mc', 'ENV': 'Development', 'DEBUG': True, 'SECRET_KEY': None, 'PORT': 3000, 'MAX_CONTENT_LENGTH': None, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'TESTING': False, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'TRAP_HTTP_EXCEPTIONS': False, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_HTTPONLY': True}>
+ * Restarting with reloader
+ * Running on http://0.0.0.0:3000/
+ * Restarting with reloader
+192.168.1.73 - - [24/May/2012 09:08:22] "GET / HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:22] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:22] "GET /static/c/mc.css HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:22] "GET /static/jquery-1.7.1.min.js HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:22] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:22] "GET /favicon.ico HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:23] "GET /servers HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:24] "GET /static/restart.gif HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:24] "GET /static/stop.gif HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:26] "GET /server-22 HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:26] "GET /static/c/server.css HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:26] "GET /static/amcharts/amcharts.js HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:08:26] "GET /static/amcharts/raphael.js HTTP/1.1" 200 -
+192.168.1.73 - - [24/May/2012 09:10:37] "GET /server-3-stop HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1518, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1506, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1265, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/local/lib/python2.7/dist-packages/Flask-0.8-py2.7.egg/flask/app.py", line 1339, in make_response
+    return self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 711, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/wrappers.py", line 55, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/usr/local/lib/python2.7/dist-packages/Werkzeug-0.8.3-py2.7.egg/werkzeug/test.py", line 818, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'int' object is not callable
+192.168.1.73 - - [24/May/2012 09:10:37] "GET /servers HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 284, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 310, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 641, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 694, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+192.168.1.73 - - [24/May/2012 09:10:37] "GET /servers HTTP/1.1" 200 -
+Usage:
+  kill pid ...              Send SIGTERM to every process listed.
+  kill signal pid ...       Send a signal to every process listed.
+  kill -s signal pid ...    Send a signal to every process listed.
+  kill -l                   List all signal names.
+  kill -L                   List all signal names in a nice table.
+  kill -l signal            Convert between signal numbers and names.
+ssh: connect to host 10.10.3.12 port 22: Connection timed out
+Host key verification failed.
+Usage:
+  kill pid ...              Send SIGTERM to every process listed.
+  kill signal pid ...       Send a signal to every process listed.
+  kill -s signal pid ...    Send a signal to every process listed.
+  kill -l                   List all signal names.
+  kill -L                   List all signal names in a nice table.
+  kill -l signal            Convert between signal numbers and names.

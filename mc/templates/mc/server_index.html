@@ -8,16 +8,20 @@
     <a href="/">Home</a> <span class="divider">/</span>
   </li>
   <li class="active">Servers</li>
+  <li style="margin-left:100px;color:#375B91;width:75%;text-align:right;font-weight:bold;cursor:pointer;"><a href="/host-add"><img src="{{ url_for('static', filename='add.gif') }}" />Auto Install</a></li>
 </ul>
 
 <div class="well">
     <table class="table table-bordered table-striped">
         <thead>
-            <tr><th>#</th><th>Group</th><th>Server</th></tr>
+            <tr><th>Server</th><th>Instance Count</th></tr>
         </thead>
         <tbody>
         {% for sid in servers %}
-        <tr><td>{{ sid }}</td><td>{{ servers[sid]['group'] }}</td><td><a href="/server-{{  sid }}">{{ servers[sid]['addr'] }}</a></td></tr>
+        <tr>
+            <td>{{ sid }}</td>
+            <td>{{ servers[sid] }}</td>
+        </tr>
         {% endfor %}
     </tbody>
     </table>

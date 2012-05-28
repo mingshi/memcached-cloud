@@ -22,4 +22,6 @@ i=i+1;memcache_servers[i] = {'group':'image-service', 'addr':'10.0.1.130:11211' 
 i=i+1;memcache_servers[i] = {'group':'anjuke-prop', 'addr':'10.10.3.31:11211' }
 i=i+1;memcache_servers[i] = {'group':'anjuke-prop', 'addr':'10.10.3.31:11212' }
 i=i+1;memcache_servers[i] = {'group':'anjuke-prop', 'addr':'10.10.3.54:11211' }
+i=i+1;memcache_servers[i] = {'group':'localhost', 'addr':'192.168.10.23:11211' }
+i=i+1;memcache_servers[i] = {'group':'localhost', 'addr':'192.168.1.73:11211' }
 
