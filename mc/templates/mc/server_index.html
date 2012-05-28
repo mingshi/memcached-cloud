@@ -1,20 +1,19 @@
 {% extends "layout.html" %}
 
-{% block title %}Servers{% endblock %}
+{% block title %}Hosts{% endblock %}
 
 {% block main %}
 <ul class="breadcrumb">
   <li>
     <a href="/">Home</a> <span class="divider">/</span>
   </li>
-  <li class="active">Servers</li>
-  <li style="margin-left:100px;color:#375B91;width:75%;text-align:right;font-weight:bold;cursor:pointer;"><a href="/host-add"><img src="{{ url_for('static', filename='add.gif') }}" />Auto Install</a></li>
+  <li class="active">Hosts</li>
 </ul>
 
 <div class="well">
     <table class="table table-bordered table-striped">
         <thead>
-            <tr><th>Server</th><th>Instance Count</th></tr>
+            <tr><th>Host</th><th>Memcached Count</th></tr>
         </thead>
         <tbody>
         {% for sid in servers %}

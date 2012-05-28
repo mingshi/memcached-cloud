@@ -11,8 +11,8 @@ import json
 
 mod = Blueprint("server", __name__)
 
-@mod.route('/instances')
-def instances_index():
+@mod.route('/memcacheds')
+def memcacheds_index():
     import socket
     for sid in memcache_servers :
         try :
@@ -30,7 +30,7 @@ def instances_index():
     return render_template('mc/instances_index.html', servers = memcache_servers)
 
 @mod.route('/hosts')
-def servers_index():
+def hosts_index():
     server = []
     for sid in memcache_servers :
         try :
@@ -44,12 +44,8 @@ def servers_index():
     ser = Counter(server)
     return  render_template('mc/server_index.html', servers = ser)
 
-@mod.route('/host-add', methods=['GET','POST'])
-def host_add() :
-    return render_template('mc/host_add.html')
-
-@mod.route('/instance-add', methods=['GET','POST'])
-def instance_add() :
+@mod.route('/memcached-add', methods=['GET','POST'])
+def memcached_add() :
     server = []
     for sid in memcache_servers :
         try :
@@ -63,31 +59,20 @@ def instance_add() :
     ser = Counter(server)  
     return render_template('mc/instance_add.html', servers = ser)
 
-@mod.route('/instance/do_add', methods=['GET','POST'])
-def instance_do_add() :
-    result = {}
-    if not request.form.has_key('host') :
-        result['status'] = 'no host has selected'
-    elif not request.form.has_key('param') :
-        result['status'] = 'no param has input'
-    else :
-        host = request.form['host'].strip().encode('utf8')
-        param = request.form['param'].strip().encode('utf8')
-        data = os.popen("bash instance_add.sh " + host + " '" + param + "'").read()
-        result['status'] = data
-    return json.dumps(result)
-
-@mod.route('/host/do_install', methods=['POST','GET'])
-def host_install() :
+@mod.route('/memcached/do_add', methods=['GET','POST'])
+def memcached_do_add() :
     result = {}
     if not request.form.has_key('ip') :
         result['status'] = 'no ip address'
     elif not request.form.has_key('version') :
-        result['status'] = 'no version has selected'
+        result['status'] = 'no version selected'
+    elif not request.form.has_key('param') :
+        result['status'] = 'no param inputed'
     else :
-        ip = request.form['ip'].strip().encode('utf8')
-        version = str(request.form['version'])
-        data = os.popen("bash host_install.sh " + ip + " " + version).read() 
+        host = request.form['ip'].strip().encode('utf8')
+        version = request.form['version']
+        param = request.form['param'].strip().encode('utf8')
+        data = os.popen("bash instance_add.sh " + host + " " + version + " '" + param + "'").read()
         result['status'] = data
     return json.dumps(result)
 

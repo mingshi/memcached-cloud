@@ -1,32 +1,37 @@
 {% extends "layout.html" %}
 
-{% block title %}Instance Add{% endblock %}
+{% block title %}Memcached Add{% endblock %}
 
 {% block main %}
 <ul class="breadcrumb">
   <li>
     <a href="/">Home</a> <span class="divider">/</span>
   </li>
-  <li class="active">Instance Add</li>
+  <li class="active">Memcached Add</li>
 </ul>
 
 <div class="well">
     <form class="form-horizontal">
         <fieldset>
-            <legend>Instance Add</legend>
+            <legend>Memcached Add</legend>
                 <div id="instance_add_notice" style="display:none;" class="alert">
                     <button data-dismiss="alert" class="close">x</button>
                     <span id="instance_add_msg"> </span>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="host">Select Host</label>
+                    <label class="control-label" for="version">Select Version</label>
                     <div class="controls">
-                        <select name="host" id="host">
-                            {% for sid in servers %}
-                                <option value="{{ sid }}">{{ sid }}</option>
-                            {% endfor %}
+                        <select name="version" id="version">
+                            <option value="1">1.4.0</option>
+                            <option value="2">1.4.4</option>
+                            <option value="3">1.4.13</option>
                         </select>
-                        <p class="help-block">select the host you want the instance running on</p>
+                        <p class="help-block">select memcache version</p>
+                    </div>
+                    <label class="control-label" for="param">Start Parameters</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="ip" name="ip">
+                        <p class="help-block">input ip address</p>
                     </div>
                     <label class="control-label" for="param">Start Parameters</label>
                     <div class="controls">
@@ -46,7 +51,10 @@
     <script type="text/javascript">
         $(function(){
             $('#ok').click(function(){
-                if($("#param").val()==""){
+                if($("#ip").val()=="" || checkIP($("input[name=ip]").val())==null){
+                    $("#ip").animate({ backgroundColor: "#FFB5B5" }, 500)
+                        .animate({ backgroundColor: "#FFFFFF" }, 1000);
+                }else if($("#param").val()==""){
                     $("#param").animate({ backgroundColor: "#FFB5B5" }, 500)
                         .animate({ backgroundColor: "#FFFFFF" }, 1000);
                 }else{
@@ -55,19 +63,25 @@
                     }
                     $('#instance_add_notice').show();
                     $('#instance_add_msg').html('<img src=' + "{{ url_for('static', filename='loading.gif') }}" + ' /> Being processed,Please wait...');
-                    var host = $("#host").val();
-                    var param = $("#param").val();
+                    var version = $("#version").val();
+                    var ip = $("#ip").val();
+                    var param = $("#param").val(); 
                     $('#param').val('');
+                    $('#ip').val('');
                     $.ajax({
-                        url : "/instance/do_add",
+                        url : "/memcached/do_add",
                         dataType : "json",
                         type : 'post',
-                        data : {'host' : host, 'param' : param}
+                        data : {'ip' : ip, 'version' : version, 'param' : param}
                     }).done(function(result){
                         $('#instance_add_msg').html(result.status); 
                     });
                 } 
             });
         });
+        function checkIP(value){
+            var exp=/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+            return value.match(exp);
+        }
     </script>
 {% endblock %}
