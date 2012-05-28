@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 from mc.db.db import Model
+from sqlalchemy import Column, Integer, String
 
 class Groups(Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(50), unique=True)
+    __tablename__ = 'groups'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(50), unique=True)
 
-    memcacheds = db.relationship('Memcacheds', backref='groups', lazy='dynamic')
+    #memcacheds = relationship('Memcacheds', backref='groups', lazy='dynamic')
 
     def __init__(self, name):
         self.name = name

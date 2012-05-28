@@ -15,5 +15,5 @@ class ProductionConfig(Config):
 class DevelopmentConfig(Config):
     PORT=3000
     DEBUG=True
-    DB_URI="mysql://mc:mc@192.168.1.59/mc"
+    DB_URI="mysql+oursql://mc:mc@192.168.1.59/mc"
 

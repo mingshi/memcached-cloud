@@ -7,7 +7,6 @@ mod = Blueprint("index", __name__)
 
 @mod.route('/')
 def index():
-    from memcacheserver import memcache_servers
     memcache_servers = Memcacheds.query.all()
     return render_template("mc/index.html", server_count = len(memcache_servers))
 

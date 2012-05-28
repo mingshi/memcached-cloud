@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, send_from_directory, render_template
-from mc.views import index, server
 import os
 app = Flask(__name__)
 
@@ -12,6 +11,7 @@ if os.path.exists(app.config['ROOT_PATH'] + "/env.py"):
 
 app.config.from_object("config.%sConfig" % (app.config['ENV']) )
 
+from mc.views import index, server
 from mc.db.db import db_session
 
 app.register_blueprint(index.mod)

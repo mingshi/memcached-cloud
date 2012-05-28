@@ -3,13 +3,15 @@ from sqlalchemy import Column, Integer, String
 from mc.db.db import Model
 
 class Memcacheds(Model):
+    __tablename__ = 'memcacheds'
+
     """
     memcacheds model
     """
     id = Column(Integer, primary_key=True, autoincrement=True)
     ip = Column(String(15))
     port = Column(Integer)
-    group_id = Column(Integer, ForeignKey('groups.id'))
+    group_id = Column(Integer)
     parameters = Column(String(255))
     status = Column(Integer)
 
