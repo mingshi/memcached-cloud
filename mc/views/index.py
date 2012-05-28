@@ -2,11 +2,11 @@
 
 from flask import Blueprint, render_template
 from mc.model import *
+from mc.db.db import db_session
 
 mod = Blueprint("index", __name__)
 
 @mod.route('/')
 def index():
-    memcache_servers = Memcacheds.query.all()
-    return render_template("mc/index.html", server_count = len(memcache_servers))
+    return render_template("mc/index.html", server_count = db_session.query(Memcacheds).count())
 
