@@ -17,16 +17,16 @@
             <tr><th>#</th><th>Group</th><th>Instance</th><th>Operating</th><th>Status</th></tr>
         </thead>
         <tbody>
-        {% for instance in instances %}
+        {% for memcached in memcacheds %}
         <tr>
-            <td>{{ instance.id }}</td>
-            <td>{{ instance.group_name }}</td>
-            <td><a href="/server-{{ instance.id }}">{{ instance.ip }}:{{ instance.port }}</a></td>
-            <td><img src="{{ url_for('static', filename='restart.gif') }}" style="cursor:pointer" onclick="return confirm('Are you sure to restart the memcached process?');" id="instance_restart_{{ instance.id }}" />&nbsp;&nbsp;&nbsp;
-                <img src="{{ url_for('static', filename='stop.gif') }}" style="cursor:pointer"  class="instance_stop" instance_id="{{ instance.id }}" />&nbsp;&nbsp;&nbsp;
-                <img src="{{ url_for('static', filename='start.gif') }}" style="cursor:pointer"  class="instance_stop" instance_id="{{ instance.id }}" />
+            <td>{{ memcached.id }}</td>
+            <td>{{ memcached.group_name }}</td>
+            <td><a href="/memcached-{{ memcached.id }}">{{ memcached.ip }}:{{ memcached.port }}</a></td>
+            <td><img src="{{ url_for('static', filename='restart.gif') }}" style="cursor:pointer" onclick="return confirm('Are you sure to restart the memcached process?');" id="memcached_restart_{{ memcached.id }}" />&nbsp;&nbsp;&nbsp;
+                <img src="{{ url_for('static', filename='stop.gif') }}" style="cursor:pointer"  class="memcached_stop" memcached_id="{{ memcached.id }}" />&nbsp;&nbsp;&nbsp;
+                <img src="{{ url_for('static', filename='start.gif') }}" style="cursor:pointer"  class="memcached_stop" memcached_id="{{ memcached.id }}" />
             </td>
-            <td id="status_{{ instance.id }}">{{ instance.status }}</td>
+            <td id="status_{{ memcached.id }}">{{ memcached.status }}</td>
         </tr>
         {% endfor %}
     </tbody>
@@ -38,22 +38,22 @@
 {% block footer_script %}
     <script type="text/javascript">
         $(function() {
-                $('.instance_stop').click(function() {
+                $('.memcached_stop').click(function() {
                     if (! confirm('Are you sure to stop the memcached process?')) {
                         return false;
                     }
-                    var instance_id = $(this).attr('instance_id');
+                    var memcached_id = $(this).attr('memcached_id');
                     
                     $.ajax({
-                        url : "/instance-" + instance_id + "-stop",
+                        url : "/memcached-" + memcached_id + "-stop",
                         type : 'post',
                         dataType : "json",
                            
                     }).done(function(result) {
                         if (result.status == 'ok'){
-                            $("#status_" + instance_id).html('Stopped!');
+                            $("#status_" + memcached_id).html('Stopped!');
                         }else{
-                            $("#status_" + instance_id).html('Error!');
+                            $("#status_" + memcached_id).html('Error!');
                         }    
                     });
             });
