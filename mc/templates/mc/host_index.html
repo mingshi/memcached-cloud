@@ -16,10 +16,10 @@
             <tr><th>Host</th><th>Memcached Count</th></tr>
         </thead>
         <tbody>
-        {% for sid in servers %}
+        {% for host in hosts %}
         <tr>
-            <td>{{ sid }}</td>
-            <td>{{ servers[sid] }}</td>
+            <td>{{ host.ip }}</td>
+            <td>{{ host.memcached_count }}</td>
         </tr>
         {% endfor %}
     </tbody>
