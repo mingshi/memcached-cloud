@@ -12,7 +12,7 @@ if os.path.exists(app.config['ROOT_PATH'] + "/env.py"):
 
 app.config.from_object("config.%sConfig" % (app.config['ENV']) )
 
-print app.config
+from mc.db.db import db_session
 
 app.register_blueprint(index.mod)
 app.register_blueprint(server.mod)
@@ -29,3 +29,4 @@ def app_path():
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static' ), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
