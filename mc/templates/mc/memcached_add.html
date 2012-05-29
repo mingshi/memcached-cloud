@@ -86,9 +86,6 @@
                 }else if($("#memory").val()=="" || isNaN($("#memory").val()) || $("#memory").val()<=0){
                     $("#memory").animate({ backgroundColor: "#FFB5B5" }, 500)
                         .animate({ backgroundColor: "#FFFFFF" }, 1000);
-                }else if($("#param").val()==""){
-                    $("#param").animate({ backgroundColor: "#FFB5B5" }, 500)
-                        .animate({ backgroundColor: "#FFFFFF" }, 1000);
                 }else{
                     if (! confirm('Are you sure to install memcached on this host?')) {
                         return false;

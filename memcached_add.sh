@@ -1,7 +1,7 @@
 #!/bin/bash
 orig_dir=$(pwd)
 #检查ip是否存在##
-if [ "${6}" -eq 1 ]
+if [ "${5}" -eq 1 ]
 then
     if [ -z "${1}" ]
     then
@@ -27,13 +27,6 @@ then
     if [ -z "${4}" ]
     then
         echo "no memory inputed"
-        exit
-    fi
-    
-    ##检查启动参数##
-    if [ -z "${5}" ]
-    then
-        echo "no start params inputed"
         exit
     fi
     
@@ -92,7 +85,12 @@ then
         exit
     fi
     
-    ssh evans@${1} "/home/evans/${cdir}/bin/memcached -p ${3} -m ${4} ${5}"
+    if [ ! -z "${6}" ]
+    then 
+        ssh evans@${1} "/home/evans/${cdir}/bin/memcached -p ${3} -m ${4} ${6} -d"
+    else
+        ssh evans@${1} "/home/evans/${cdir}/bin/memcached -p ${3} -m ${4} -d"
+    fi
     
     
     ##检查运行是否正常##
@@ -102,7 +100,7 @@ then
         echo "add failed"
         exit
     else
-        echo "add success!"
+        echo "add success"
         exit
     fi
 else

@@ -66,8 +66,6 @@ def memcached_do_add() :
         result['status'] = 'no memory inputed'
     elif not request.form.has_key('group') :
         result['status'] = 'no group selected'
-    elif not request.form.has_key('param') :
-        result['status'] = 'no param inputed'
     else :
         ip = request.form['ip'].strip().encode('utf8')
         version = request.form['version']
@@ -78,11 +76,15 @@ def memcached_do_add() :
         isstart = str(request.form['isstart'])
         _memcached = db_session.query(Memcacheds).filter_by(ip = ip,port = port).first()
         if not _memcached :
-            data = os.popen("bash memcached_add.sh " + ip + " " + version + " " + port + " " + memory + " '" + param + "' " + isstart).read()
+            if not param :
+                data = os.popen("bash memcached_add.sh " + ip + " " + version + " " + port + " " + memory + " " + isstart).read()
+            else :
+                data = os.popen("bash memcached_add.sh " + ip + " " + version + " " + port + " " + memory + " " + isstart + " '" + param + "'").read()
             result['status'] = data
-            memcache = Memcacheds(ip=ip, port=port, memory=memory, status=1, group_id=group, version=version, parameters=param)
-            db_session.add(memcache)
-            db_session.commit()
+            if (isstart == "1" and data == "add success\n") or isstart == "0" :
+                memcache = Memcacheds(ip=ip, port=port, memory=memory, status=1, group_id=group, version=version, parameters=param)
+                db_session.add(memcache)
+                db_session.commit()
         else :
             result['status'] = 'the memcached is already added'
     return json.dumps(result)
