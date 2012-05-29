@@ -24,9 +24,9 @@
             <td>{{ memcached.id }}</td>
             <td>{{ memcached.group_name }}</td>
             <td><a href="/memcached-{{ memcached.id }}">{{ memcached.ip }}:{{ memcached.port }}</a></td>
-            <td><img src="{{ url_for('static', filename='restart.gif') }}" style="cursor:pointer" onclick="return confirm('Are you sure to restart the memcached process?');" id="memcached_restart_{{ memcached.id }}" />&nbsp;&nbsp;&nbsp;
+            <td><img src="{{ url_for('static', filename='restart.gif') }}" style="cursor:pointer" class="memcached_restart" memcached_id="{{ memcached.id }}" />&nbsp;&nbsp;&nbsp;
                 <img src="{{ url_for('static', filename='stop.gif') }}" style="cursor:pointer"  class="memcached_stop" memcached_id="{{ memcached.id }}" />&nbsp;&nbsp;&nbsp;
-                <img src="{{ url_for('static', filename='start.gif') }}" style="cursor:pointer"  class="memcached_stop" memcached_id="{{ memcached.id }}" />
+                <img src="{{ url_for('static', filename='start.gif') }}" style="cursor:pointer"  class="memcached_start" memcached_id="{{ memcached.id }}" />
             </td>
             <td id="status_{{ memcached.id }}">{{ memcached.status }}</td>
         </tr>
@@ -58,7 +58,34 @@
                             $("#status_" + memcached_id).html('Error!');
                         }    
                     });
-            });
+                });
+                $('.memcached_start').click(function(){
+                    if (! confirm('Are you sure to start the memcached process?')) {
+                        return false;
+                    }
+                    var memcached_id = $(this).attr('memcached_id');
+                    $.ajax({
+                        url : "/memcached-" + memcached_id + "-start",
+                        type : 'post',
+                        dataType : "json",
+                    }).done(function(result) {
+                            $("#status_" + memcached_id).html(result.status);
+                    });
+                });
+                $('.memcached_restart').click(function(){
+                    if (! confirm('Are you sure to start the memcached process?')) {
+                        return false;
+                    }
+                    var memcached_id = $(this).attr('memcached_id');
+                    $.ajax({
+                        url : "/memcached-" + memcached_id + "-restart",
+                        type : 'post',
+                        dataType : "json",
+                    }).done(function(result){
+                        $("#status_" + memcached_id).html(result.status);
+                    });
+                });
+
         });
     </script>
 {% endblock %}

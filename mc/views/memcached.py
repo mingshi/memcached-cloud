@@ -104,11 +104,46 @@ def memcached_stop(memcached_id) :
     result = {}
     res = os.system("ssh " + addr[0] + " 'ps -ef|grep memcached|grep " + addr[1] + "|grep -v grep|awk " + "'" + "\\" + "'\$2!=" + addr[1] + "{print \$2}" + "\\''|xargs kill'")
     if res == 0 :
+        _memcached.status = 0
+        db_session.commit()
         result['status'] = 'ok'
     else :
         result['status'] = 'error'
     return json.dumps(result)
 
+@mod.route('/memcached-<memcached_id>-start', methods=['GET', 'POST'])
+def memcached_start(memcached_id) :
+    result = {}
+    try :
+        memcached_id = int(memcached_id)
+    except Exception, e :
+        return 'invalid memcached id'
+    _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
+    if not _memcached :
+        result['status'] = "the memcached not exist"
+    else :
+        data = os.popen("bash memcached_start.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " " + str(_memcached.parameters)).read()
+        result['status'] = data
+        _memcached.status = 1
+        db_session.commit()
+    return json.dumps(result)
+
+@mod.route('/memcached-<memcached_id>-restart', methods=['GET', 'POST'])
+def memcached_restart(memcached_id) :
+    result = {}
+    try :
+        memcached_id = int(memcached_id)
+    except Exception, e :
+        return 'invalid memcached id'
+    _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
+    if not _memcached :
+        result['status'] = "the memcached not exist"
+    else :
+        data = os.popen("bash memcached_restart.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " " + str(_memcached.parameters)).read()
+        result['status'] = data
+        _memcached.status = 1
+        db_session.commit()
+    return json.dumps(result)
 
 @mod.route('/memcached-<memcached_id>')
 def memcached_detail(memcached_id) :

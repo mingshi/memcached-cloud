@@ -1,8 +1,9 @@
 #!/bin/bash
 orig_dir=$(pwd)
-#检查ip是否存在##
+#检查是否需要随安装启动##
 if [ "${5}" -eq 1 ]
 then
+    #检查ip是否存在##
     if [ -z "${1}" ]
     then
         echo "no ip inputed"
