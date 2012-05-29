@@ -122,7 +122,7 @@ def memcached_detail(memcached_id) :
 
         _slabs_stats['used_size'] = human_readable_size(chunk_size * _slabs_stats['used_chunks'])
         _slabs_stats['free_size'] = human_readable_size(chunk_size * _slabs_stats['free_chunks'])
-        _slabs_stats['evicted_rate'] = round(_slabs_stats['evicted'] / _slabs_stats['get_hits'], 2) if (_slabs_stats['get_hits'] != '/') else '/'
+        _slabs_stats['evicted_rate'] = round(_slabs_stats['evicted'] / _slabs_stats['get_hits'], 2) if (_slabs_stats['get_hits'] != '/' and _slabs_stats['get_hits'] != 0) else '/'
 
 
         slabs_stats.append(_slabs_stats)
