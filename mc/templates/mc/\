@@ -24,13 +24,11 @@
             <td>{{ memcached.id }}</td>
             <td>{{ memcached.group_name }}</td>
             <td><a href="/memcached-{{ memcached.id }}">{{ memcached.ip }}:{{ memcached.port }}</a></td>
-            <td>
-                    <a href="#" memcached_id="{{ memcached.id }}" class="memcached_restart"><i class="icon-refresh" ></i></a> 
-                    <a href="#" memcached_id="{{ memcached.id }}" class="memcached_stop"><i class="icon-stop" ></i></a>
-                    <a href="#" memcached_id="{{ memcached.id }}" class="memcached_start"><i class="icon-play" ></i></a>
-                    <a href="#" memcached_id="{{ memcached.id }}" class="memcached_delete"><i class="icon-remove" ></i></a>
+            <td><a memcached_id="{{ memcached.id }}" class="btn btn-primary memcached_restart"><i class="icon-refresh icon-white" ></i></a>&nbsp;&nbsp;&nbsp;
+                <img src="{{ url_for('static', filename='stop.gif') }}" style="cursor:pointer"  class="memcached_stop" memcached_id="{{ memcached.id }}" />&nbsp;&nbsp;&nbsp;
+                <img src="{{ url_for('static', filename='start.gif') }}" style="cursor:pointer"  class="memcached_start" memcached_id="{{ memcached.id }}" />
             </td>
-            <td id="status_{{ memcached.id }}" style="width:100px;">{{ memcached.status }}</td>
+            <td id="status_{{ memcached.id }}">{{ memcached.status }}</td>
         </tr>
         {% endfor %}
     </tbody>
@@ -71,7 +69,7 @@
                     });
                 });
                 $('.memcached_restart').click(function(){
-                    if (! confirm('Are you sure to restart the memcached process?')) {
+                    if (! confirm('Are you sure to start the memcached process?')) {
                         return false;
                     }
                     var memcached_id = $(this).attr('memcached_id');
@@ -81,20 +79,6 @@
                         dataType : "json",
                     }).done(function(result){
                         $("#status_" + memcached_id).html(result.status);
-                    });
-                });
-                $('.memcached_delete').click(function() {
-                    if (! confirm('Are you sure to delete the memcached process?')) {
-                        return false;
-                    }
-                    var memcached_id = $(this).attr('memcached_id');
-                    $.ajax({
-                        url : "/memcached-" + memcached_id + "-delete",
-                        type : 'post',
-                        dataType : "json",
-                    }).done(function(result){
-                        $("#status_" + memcached_id).html(result.status);
-                        self.location.reload()
                     });
                 });
 

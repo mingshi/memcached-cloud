@@ -109,6 +109,18 @@ def memcached_stop(memcached_id) :
         db_session.commit()
     return json.dumps(result)
 
+@mod.route('/memcached-<memcached_id>-delete', methods=['GET', 'POST'])
+def memcached_delete(memcached_id) :
+    result = {}
+    try :
+        memcached_id = int(memcached_id)
+    except Exception, e :
+        return 'invalid memcached id'
+    _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
+    db_session.delete(_memcached)
+    result['status'] = 'delete success'
+    return json.dumps(result)
+
 @mod.route('/memcached-<memcached_id>-start', methods=['GET', 'POST'])
 def memcached_start(memcached_id) :
     result = {}
