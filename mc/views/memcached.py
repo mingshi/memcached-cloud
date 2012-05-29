@@ -107,6 +107,8 @@ def memcached_stop(memcached_id) :
         result['status'] = data
         _memcached.status = 0
         db_session.commit()
+    else :
+        result['status'] = 'error ' + str(res)
     return json.dumps(result)
 
 @mod.route('/memcached-<memcached_id>-delete', methods=['GET', 'POST'])
@@ -166,7 +168,10 @@ def memcached_detail(memcached_id) :
     addr =  _memcached.ip + ':' + str(_memcached.port)
 
     client = Client([addr])
-    slabs = client.get_stats('slabs')[0]
+    temp = client.get_stats('slabs')
+    if temp == None  or len(temp) == 0:
+        return 'can not connect to ' + addr
+    slabs = temp[0]
     _slabs = client.get_slabs()[0][1]
 
     slabs_stats = []
