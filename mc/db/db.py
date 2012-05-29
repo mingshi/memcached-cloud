@@ -8,7 +8,7 @@ from mc import app
 engine = create_engine(app.config['DB_URI'], convert_unicode=True,
         **app.config['DB_CONNECT_OPTIONS'])
 
-db_session = scoped_session(sessionmaker(autoflush=False, bind=engine))
+db_session = scoped_session(sessionmaker(autoflush=True, bind=engine))
 
 Model = declarative_base(name="Model")
 
