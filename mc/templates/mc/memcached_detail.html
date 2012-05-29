@@ -114,7 +114,7 @@
     var hits_data = {{ hits_stats_str|safe }};
     var usage_data = [{
         'type':'used',
-        'color' : '#00ff00',
+        'color' : '#669900',
         'value' : {{ stats['bytes'] }},
         'h_value' : '{{ stats['bytes']|human_readable_size }}'
     },
@@ -151,7 +151,7 @@
         // GRAPH
         var graph = new AmCharts.AmGraph();
         graph.valueField = "used_chunks";
-        graph.balloonText = "slab [[slab_id]]: size:[[size]] [[used_chunks]] used chunks";
+        graph.balloonText = "slab [[slab_id]] \n chunk size:[[size]] \n used chunks: [[used_chunks]] \n total size: [[used_size]]";
         graph.type = "column";
         graph.lineAlpha = 0;
         graph.fillAlphas = 0.8;
@@ -160,11 +160,11 @@
 
         var graph = new AmCharts.AmGraph();
         graph.valueField = "free_chunks";
-        graph.balloonText = "slab [[slab_id]]: size:[[size]] [[free_chunks]] free chunks";
+        graph.balloonText = "slab [[slab_id]] \n chunk size:[[size]] \n free chunks: [[free_chunks]] \n total size: [[free_size]]";
         graph.type = "column";
         graph.lineAlpha = 0;
         graph.fillAlphas = 0.8;
-        graph.lineColor = '#00ff00';
+        graph.lineColor = '#669900';
         graph.fontSize = 15;
         chart.addGraph(graph);
 
@@ -178,7 +178,7 @@
         graph.valueAxis = valAxis2;
         graph.valueField = "evicted";
         graph.type = "line";
-        graph.balloonText = "slab [[slab_id]]: [[evicted]] evicted";
+        graph.balloonText = "slab [[slab_id]] \n evicted: [[evicted]] \n get_hits: [[get_hits]]  \n evicted rate: [[evicted_rate]]" ;
         graph.lineThickness = 1;
         graph.bullet = "round";
         graph.lineColor = '#ff0000';

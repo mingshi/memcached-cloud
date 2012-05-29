@@ -108,13 +108,24 @@ def memcached_detail(memcached_id) :
             int(slab_id)
         except Exception, e :
             continue
-        slabs_stats.append({
+
+        chunk_size = int(slabs[slab_id]['chunk_size'])
+
+        _slabs_stats = {
             'slab_id' : int(slab_id), 
-            'used_chunks' : slabs[slab_id]['used_chunks'],
+            'used_chunks' : int(slabs[slab_id]['used_chunks']),
             'free_chunks' : int(slabs[slab_id]['free_chunks']) + int(slabs[slab_id]['free_chunks_end']),
-            'evicted' :  _slabs[slab_id]['evicted'] if _slabs.has_key(slab_id) and  _slabs[slab_id].has_key('evicted') else  0,
-            'size' : human_readable_size(slabs[slab_id]['chunk_size'])
-            })
+            'evicted' :  int(_slabs[slab_id]['evicted']) if _slabs.has_key(slab_id) and  _slabs[slab_id].has_key('evicted') else  0,
+            'get_hits' : int(slabs[slab_id]['get_hits']) if slabs[slab_id].has_key('get_hits') else '/',
+            'size' : human_readable_size(chunk_size)
+            }
+
+        _slabs_stats['used_size'] = human_readable_size(chunk_size * _slabs_stats['used_chunks'])
+        _slabs_stats['free_size'] = human_readable_size(chunk_size * _slabs_stats['free_chunks'])
+        _slabs_stats['evicted_rate'] = round(_slabs_stats['evicted'] / _slabs_stats['get_hits'], 2) if (_slabs_stats['get_hits'] != '/') else '/'
+
+
+        slabs_stats.append(_slabs_stats)
 
     #print slabs_stats
     slabs_stats.sort(key = lambda x: x['slab_id'])
@@ -123,7 +134,7 @@ def memcached_detail(memcached_id) :
     stats = client.get_stats()[0][1]
     stats_str = json.dumps(stats)
 
-    hits_stats = [{'type':'hits', 'color':'#00ff00', 'value' : stats['get_hits']}, { 'type':'misses', 'color':'#ff0000', 'value' : stats['get_misses']}]
+    hits_stats = [{'type':'hits', 'color':'#669900', 'value' : stats['get_hits']}, { 'type':'misses', 'color':'#ff0000', 'value' : stats['get_misses']}]
     hits_stats_str = json.dumps(hits_stats)
 
     from pprint import pprint
