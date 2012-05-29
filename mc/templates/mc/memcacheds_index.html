@@ -25,10 +25,10 @@
             <td>{{ memcached.group_name }}</td>
             <td><a href="/memcached-{{ memcached.id }}">{{ memcached.ip }}:{{ memcached.port }}</a></td>
             <td>
-                    <a href="#" memcached_id="{{ memcached.id }}" class="memcached_restart"><i class="icon-refresh" ></i></a> 
-                    <a href="#" memcached_id="{{ memcached.id }}" class="memcached_stop"><i class="icon-stop" ></i></a>
-                    <a href="#" memcached_id="{{ memcached.id }}" class="memcached_start"><i class="icon-play" ></i></a>
-                    <a href="#" memcached_id="{{ memcached.id }}" class="memcached_delete"><i class="icon-remove" ></i></a>
+                <a href="#" title="restart {{ memcached.ip }}:{{ memcached.port }}" memcached_id="{{ memcached.id }}" class="memcached_restart"><i class="icon-refresh" ></i></a> 
+                <a href="#" title="stop {{ memcached.ip }}:{{ memcached.port }}" memcached_id="{{ memcached.id }}" class="memcached_stop"><i class="icon-stop" ></i></a>
+                <a href="#" title="start {{ memcached.ip }}:{{ memcached.port }}" memcached_id="{{ memcached.id }}" class="memcached_start"><i class="icon-play" ></i></a>
+                <a href="#" title="delete {{ memcached.ip }}:{{ memcached.port }}" memcached_id="{{ memcached.id }}" class="memcached_delete"><i class="icon-remove" ></i></a>
             </td>
             <td id="status_{{ memcached.id }}" style="width:100px;">{{ memcached.status }}</td>
         </tr>
@@ -54,7 +54,8 @@
                         dataType : "json",
                            
                     }).done(function(result) {
-                            $("#status_" + memcached_id).html(result.status);
+                        $("#status_" + memcached_id).html(result.status);
+                        self.location.reload();
                     });
                 });
                 $('.memcached_start').click(function(){
@@ -67,7 +68,8 @@
                         type : 'post',
                         dataType : "json",
                     }).done(function(result) {
-                            $("#status_" + memcached_id).html(result.status);
+                        $("#status_" + memcached_id).html(result.status);
+                        self.location.reload();
                     });
                 });
                 $('.memcached_restart').click(function(){
@@ -81,6 +83,7 @@
                         dataType : "json",
                     }).done(function(result){
                         $("#status_" + memcached_id).html(result.status);
+                        self.location.reload();
                     });
                 });
                 $('.memcached_delete').click(function() {
@@ -94,7 +97,7 @@
                         dataType : "json",
                     }).done(function(result){
                         $("#status_" + memcached_id).html(result.status);
-                        self.location.reload()
+                        self.location.reload();
                     });
                 });
 
