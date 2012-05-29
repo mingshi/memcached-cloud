@@ -31,7 +31,7 @@ def memcacheds_index():
             sk.settimeout(0.01)
             address = (str(ip),int(port))
             status = sk.connect((address))
-            print address
+            status = 'ok'
         except Exception, e :
             status = 'error'
 
@@ -47,7 +47,11 @@ def memcacheds_index():
 
 @mod.route('/memcached-add', methods=['GET','POST'])
 def memcached_add() :
-    return render_template('mc/memcached_add.html')
+    groups = db_session.query(Groups).all()
+    group_names = {}
+    for _group in groups :
+        group_names[_group.id] = _group.name
+    return render_template('mc/memcached_add.html', group_names = group_names)
 
 @mod.route('/memcached/do_add', methods=['GET','POST'])
 def memcached_do_add() :
@@ -56,14 +60,31 @@ def memcached_do_add() :
         result['status'] = 'no ip address'
     elif not request.form.has_key('version') :
         result['status'] = 'no version selected'
+    elif not request.form.has_key('port') :
+        result['status'] = 'no port inputed'
+    elif not request.form.has_key('memory') :
+        result['status'] = 'no memory inputed'
+    elif not request.form.has_key('group') :
+        result['status'] = 'no group selected'
     elif not request.form.has_key('param') :
         result['status'] = 'no param inputed'
     else :
-        host = request.form['ip'].strip().encode('utf8')
+        ip = request.form['ip'].strip().encode('utf8')
         version = request.form['version']
+        port = str(request.form['port'].strip())
+        memory = str(request.form['memory'].strip())
+        group = str(request.form['group'])
         param = request.form['param'].strip().encode('utf8')
-        data = os.popen("bash instance_add.sh " + host + " " + version + " '" + param + "'").read()
-        result['status'] = data
+        isstart = str(request.form['isstart'])
+        _memcached = db_session.query(Memcacheds).filter_by(ip = ip,port = port).first()
+        if not _memcached :
+            data = os.popen("bash memcached_add.sh " + ip + " " + version + " " + port + " " + memory + " '" + param + "' " + isstart).read()
+            result['status'] = data
+            memcache = Memcacheds(ip=ip, port=port, memory=memory, status=1, group_id=group, version=version, parameters=param)
+            db_session.add(memcache)
+            db_session.commit()
+        else :
+            result['status'] = 'the memcached is already added'
     return json.dumps(result)
 
 

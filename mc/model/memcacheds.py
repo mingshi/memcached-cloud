@@ -15,8 +15,9 @@ class Memcacheds(Model):
     parameters = Column(String(255))
     version = Column(String(255))
     status = Column(Integer)
+    memory = Column(Integer)
 
-    def __init__(self, ip, port, group_id, status, parameters = '', version=''):
+    def __init__(self, ip, port, group_id, status, memory, parameters = '', version=''):
         """
         constructor of Memcacheds class
 
@@ -31,6 +32,7 @@ class Memcacheds(Model):
         self.status = status
         self.parameters = parameters
         self.version = version
+        self.memory = memory
 
     def __repr__(self):
         return '<Memcached %r' % (self.ip + ":" + str(self.port))
