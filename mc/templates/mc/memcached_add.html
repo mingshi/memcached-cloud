@@ -1,19 +1,19 @@
 {% extends "layout.html" %}
 
-{% block title %}Memcached Add{% endblock %}
+{% block title %}Add Memcached{% endblock %}
 
 {% block main %}
 <ul class="breadcrumb">
   <li>
     <a href="/">Home</a> <span class="divider">/</span>
   </li>
-  <li class="active">Memcached Add</li>
+  <li class="active">Add Memcached</li>
 </ul>
 
 <div class="well">
     <form class="form-horizontal">
         <fieldset>
-            <legend>Memcached Add</legend>
+            <legend>Add Memcached</legend>
                 <div id="instance_add_notice" style="display:none;" class="alert">
                     <button data-dismiss="alert" class="close">x</button>
                     <span id="instance_add_msg"> </span>
@@ -61,7 +61,7 @@
                 <div class="controls">
                     <button type="button" id="ok" class="btn btn-primary">Add</button>
                     <input type="checkbox" value="1" name="isstart" id="isstart" style="margin-left:40px;" checked />
-                    <font style="color: #555555;">start the memcached after install?</font>
+                    <label style="color: #666;display:inline;" for="isstart">start the memcached after install?</label>
                 </div>
         </fieldset>
     </form>
