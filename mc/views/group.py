@@ -8,7 +8,9 @@ mod = Blueprint("group", __name__)
 @mod.route('/groups')
 def groups_index():
     from sqlalchemy import func
-    groups = db_session.query(Groups).all()
+    groups = db_session.query(Groups, func.count(Memcacheds.ip).label('memcached_count')) \
+        .outerjoin(Memcacheds, Memcacheds.group_id == Groups.id) \
+        .group_by(Groups.id).all()
     
     return  render_template('mc/groups_index.html', groups = groups)
 

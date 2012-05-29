@@ -12,7 +12,7 @@
 
 <div class="well">
     <p>
-    <a class="btn btn-primary" href="/group-add"><i class="icon-plus icon-white"></i>Add Group</a>
+    <a class="btn btn-large btn-primary" href="/group-add"><i class="icon-plus icon-white"></i> Add Group</a>
     </p>
     <table class="table table-bordered table-striped">
         <thead>
@@ -21,7 +21,7 @@
         <tbody>
         {% for group in groups %}
         <tr>
-            <td>{{ group.name }}</td>
+            <td>{{ group.Groups.name }}</td>
             <td>{{ group.memcached_count }}</td>
         </tr>
         {% endfor %}
