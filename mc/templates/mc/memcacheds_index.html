@@ -52,11 +52,7 @@
                         dataType : "json",
                            
                     }).done(function(result) {
-                        if (result.status == 'ok'){
-                            $("#status_" + memcached_id).html('Stopped!');
-                        }else{
-                            $("#status_" + memcached_id).html('Error!');
-                        }    
+                            $("#status_" + memcached_id).html(result.status);
                     });
                 });
                 $('.memcached_start').click(function(){
