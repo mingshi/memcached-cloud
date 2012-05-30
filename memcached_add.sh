@@ -74,13 +74,15 @@ then
     then
         scp -q ${file} evans@${1}:/tmp/
         ##检查libevent是否安装##
-        libe=`ssh evans@${1} "ls -la /usr/lib|grep 'libevent'|grep 'core'|head -1"|awk '{print $1}'`
+        libe=`ssh evans@${1} "ls -la /usr/lib64|grep 'libevent'|grep 'core'|head -1"|awk '{print $1}'`
         if [ -z "${libe}" ]
         then
             echo "remote host has no libevent"
             exit
+        else
+
         fi
-        ssh evans@${1} "cd /tmp/;tar xzf ${cdir}.tar.gz;cd ${cdir};./configure --prefix=/home/www/memcached/${cdir} > /tmp/${cdir}_config_log;make >/tmp/${cdir}_make_log;make install > /tmp/${cdir}_make_install_log"
+        ssh evans@${1} "cd /tmp/;tar xzf ${cdir}.tar.gz;cd ${cdir};./configure --prefix=/home/www/memcached/${cdir} --enable-64bit > /tmp/${cdir}_config_log;make >/tmp/${cdir}_make_log;make install > /tmp/${cdir}_make_install_log"
     fi
     
     
