@@ -60,9 +60,16 @@ then
         echo "can't connect to the ip address"
         exit
     fi
-    
+   
+    ##检查有无memcached目录##
+    is_memcached=`ssh evans@${1} "find /home/www -name memcached -type d"`
+    if [ -z "${is_memcached}" ]
+    then
+        ssh evans@${1} "mkdir -p /home/www/memcached"
+    fi
+
     ##检查该服务器是否已经安装相应版本##
-    is_install=`ssh evans@${1} "find /home/evans -name '${cdir}' -type d"`
+    is_install=`ssh evans@${1} "find /home/www/memcached -name '${cdir}' -type d"`
     if [ -z "${is_install}" ]
     then
         scp -q ${file} evans@${1}:/tmp/
@@ -73,7 +80,7 @@ then
             echo "remote host has no libevent"
             exit
         fi
-        ssh evans@${1} "cd /tmp/;tar xzf ${cdir}.tar.gz;cd ${cdir};./configure --prefix=/home/evans/${cdir} > /home/evans/config_log;make >/home/evans/${cdir}/make_log;make install > /home/evans/${cdir}/make_install_log"
+        ssh evans@${1} "cd /tmp/;tar xzf ${cdir}.tar.gz;cd ${cdir};./configure --prefix=/home/www/memcached/${cdir} > /tmp/${cdir}_config_log;make >/tmp/${cdir}_make_log;make install > /tmp/${cdir}_make_install_log"
     fi
     
     
@@ -88,9 +95,9 @@ then
     
     if [ ! -z "${6}" ]
     then 
-        ssh evans@${1} "/home/evans/${cdir}/bin/memcached -p ${3} -m ${4} ${6} -d"
+        ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${3} -m ${4} ${6} -d"
     else
-        ssh evans@${1} "/home/evans/${cdir}/bin/memcached -p ${3} -m ${4} -d"
+        ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${3} -m ${4} -d"
     fi
     
     

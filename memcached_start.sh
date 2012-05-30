@@ -42,7 +42,7 @@ then
     cdir="memcached-1.4.13"
 fi
 
-is_install=`ssh evans@${1} "find /home/evans -name '${cdir}' -type d"`
+is_install=`ssh evans@${1} "find /home/www/memcached -name '${cdir}' -type d"`
 if [ -z "${is_install}" ]
 then
     echo "this version didn't install"
@@ -60,9 +60,9 @@ fi
 ##检查参数并启动##
 if [ ! -z "${5}" ]
 then
-    ssh evans@${1} "/home/evans/${cdir}/bin/memcached -p ${2} -m ${3} ${5} -d"
+    ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${2} -m ${3} ${5} -d"
 else
-    ssh evans@${1} "/home/evans/${cdir}/bin/memcached -p ${2} -m ${3} -d"
+    ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${2} -m ${3} -d"
 fi
 
 ##检查是否启动成功##
