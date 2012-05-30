@@ -107,8 +107,6 @@ def memcached_stop(memcached_id) :
         result['status'] = data
         _memcached.status = 0
         db_session.commit()
-    else :
-        result['status'] = 'error ' + str(res)
     return json.dumps(result)
 
 @mod.route('/memcached-<memcached_id>-delete', methods=['GET', 'POST'])
