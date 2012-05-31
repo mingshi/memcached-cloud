@@ -79,8 +79,6 @@ then
         then
             echo "remote host has no libevent"
             exit
-        else
-
         fi
         ssh evans@${1} "cd /tmp/;tar xzf ${cdir}.tar.gz;cd ${cdir};./configure --prefix=/home/www/memcached/${cdir} --enable-64bit > /tmp/${cdir}_config_log;make >/tmp/${cdir}_make_log;make install > /tmp/${cdir}_make_install_log"
     fi
