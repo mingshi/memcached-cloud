@@ -69,7 +69,7 @@ then
     fi
 
     ##检查该服务器是否已经安装相应版本##
-    is_install=`ssh evans@${1} "find /home/www/memcached -name '${cdir}' -type d"`
+    is_install=`ssh evans@${1} "find /home/www/memcached -maxdepth 1 -name '${cdir}' -type d"`
     if [ -z "${is_install}" ]
     then
         scp -q ${file} evans@${1}:/tmp/
