@@ -74,7 +74,7 @@ then
     then
         scp -q ${file} evans@${1}:/tmp/
         ##检查libevent是否安装##
-        libe=`ssh evans@${1} "ls -la /usr/lib64|grep 'libevent'|grep 'core'|head -1"|awk '{print $1}'`
+        libe=`ssh evans@${1} "ls -la /usr/lib64|grep 'libevent'|head -1|awk '{print $1}'`
         if [ -z "${libe}" ]
         then
             echo "remote host has no libevent"
