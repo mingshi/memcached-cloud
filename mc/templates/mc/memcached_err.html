@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}ERROR{% endblock %}
+
+{% block main %}
+<ul class="breadcrumb">
+  <li>
+    <a href="/">Home</a> <span class="divider">/</span>
+  </li>
+  <li class="active">ERROR</li>
+</ul>
+
+<div class="well">
+        <fieldset>
+            <legend>ERROR</legend>
+                <div class="alert alert-error">
+                    Can't connect to {{ addr }} , Please check the network ! 
+                </div>
+        </fieldset>
+</div>
+{% endblock %}
