@@ -168,7 +168,7 @@ def memcached_detail(memcached_id) :
     client = Client([addr])
     temp = client.get_stats('slabs')
     if temp == None  or len(temp) == 0:
-        return 'can not connect to ' + addr
+        return render_template("mc/memcached_err.html", addr = addr)
     slabs = temp[0]
     _slabs = client.get_slabs()[0][1]
 
