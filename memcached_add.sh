@@ -62,7 +62,7 @@ then
     fi
    
     ##检查有无memcached目录##
-    is_memcached=`ssh evans@${1} "find /home/www -name memcached -type d"`
+    is_memcached=`ssh evans@${1} "find /home/www -maxdepth 1 -name memcached -type d"`
     if [ -z "${is_memcached}" ]
     then
         ssh evans@${1} "mkdir -p /home/www/memcached"
@@ -74,7 +74,7 @@ then
     then
         scp -q ${file} evans@${1}:/tmp/
         ##检查libevent是否安装##
-        libe=`ssh evans@${1} "ls -la /usr/lib64|grep 'libevent'|head -1|awk '{print $1}'`
+        libe=`ssh evans@${1} "ls -la /usr/lib64|grep 'libevent'|head -1|awk '{print \\$1}'"`
         if [ -z "${libe}" ]
         then
             echo "remote host has no libevent"
@@ -95,9 +95,9 @@ then
     
     if [ ! -z "${6}" ]
     then 
-        ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${3} -m ${4} ${6} -d"
+        ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${3} -m ${4} ${6} -d 1>/dev/null 2>/dev/null &"
     else
-        ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${3} -m ${4} -d"
+        ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${3} -m ${4} -d 1>/dev/null 2>/dev/null &"
     fi
     
     
