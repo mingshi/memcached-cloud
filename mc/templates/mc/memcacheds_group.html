@@ -22,7 +22,7 @@
         {% for memcached in memcacheds %} {% set memcached_addr = memcached.ip + ':' + memcached.port|string %}
         <tr>
             <td>{{ memcached.id }}</td>
-            <td><a href="/memcacheds-{{ memcached.group_id }}">{{ memcached.group_name }}</a></td>
+            <td>{{ memcached.group_name }}</td>
             <td><a href="/memcached-{{ memcached.id }}">{{ memcached_addr }}</a></td>
             <td>
                 <a href="#" title="restart {{ memcached_addr }}" memcached_id="{{ memcached.id }}" class="memcached_restart"><i class="icon-refresh" ></i></a>

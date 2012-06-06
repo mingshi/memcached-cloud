@@ -35,7 +35,7 @@
                     </div>
                     <label class="control-label" for="port">Port</label>
                     <div class="controls">
-                        <input type="text" class="input-xlarge" id="port" name="port">
+                        <input type="text" class="input-xlarge" id="port" name="port"><i style="color:#666666;" id="resultSpan"></i>
                         <p class="help-block">input memcache run on port</p><br />
                     </div>
                     <label class="control-label" for="memory">Memory</label>
@@ -116,10 +116,31 @@
                     });
                 } 
             });
+
+            $("#port").blur(function(){
+                var ip = $("#ip").val();
+                var port = $("#port").val();
+                if(ip != "" && port != ""){
+                    $.ajax({
+                        url : "/memcached/check",
+                        dataType : "json",
+                        type : 'post',
+                        data : {'ip' : ip, 'port' : port}
+                    }).done(function(result){
+                        if(result.status == '0'){
+                            $('#resultSpan').removeClass('icon-ok').addClass('icon-remove');
+                        }else{
+                            $('#resultSpan').removeClass('icon-remove').addClass('icon-ok');
+                        }
+                    });
+                }    
+            });
         });
         function checkIP(value){
             var exp=/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
             return value.match(exp);
         }
+        
+        
     </script>
 {% endblock %}

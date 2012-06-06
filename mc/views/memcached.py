@@ -44,6 +44,37 @@ def memcacheds_index():
             })
     return render_template('mc/memcacheds_index.html', memcacheds = _memcacheds, group_names = group_names)
 
+@mod.route('/memcacheds-<group_id>')
+def memcacheds_group(group_id):
+    memcacheds = db_session.query(Memcacheds).filter_by(group_id = group_id).all()
+    groups = db_session.query(Groups).filter_by(id = group_id).all()
+
+    import socket
+    _memcacheds = []
+    group_names = {}
+    for _group in groups :
+        group_names[_group.id] = _group.name
+
+    for _memcached in memcacheds :
+        try :
+            ip = _memcached.ip
+            port = _memcached.port
+            sk = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+            sk.settimeout(0.01)
+            address = (str(ip),int(port))
+            status = sk.connect((address))
+            status = 'ok'
+        except Exception, e : 
+            status = 'error'
+
+        _memcacheds.append({"id":_memcached.id, 
+            "ip":ip, 
+            "port":port, 
+            'status':status, 
+            'group_id' : _memcached.group_id,
+            'group_name' : group_names[_memcached.group_id] if group_names.has_key(_memcached.group_id) else  '/' 
+            })  
+    return render_template('mc/memcacheds_group.html', memcacheds = _memcacheds, group_names = group_names)
 
 @mod.route('/memcached-add', methods=['GET','POST'])
 def memcached_add() :
@@ -52,6 +83,23 @@ def memcached_add() :
     for _group in groups :
         group_names[_group.id] = _group.name
     return render_template('mc/memcached_add.html', group_names = group_names)
+
+@mod.route('/memcached/check', methods=['GET','POST'])
+def memcached_check() :
+    result = {}
+    if not request.form.has_key('ip') :
+        result['status'] = '0'
+    elif not request.form.has_key('port') :
+        result['status'] = '0'
+    else :
+        ip = request.form['ip'].strip().encode('utf8')
+        port = str(request.form['port'].strip())
+        _memcached = db_session.query(Memcacheds).filter_by(ip = ip,port = port).first()
+        if not _memcached :
+            result['status'] = '1'
+        else :
+            result['status'] = '0'
+    return json.dumps(result)
 
 @mod.route('/memcached/do_add', methods=['GET','POST'])
 def memcached_do_add() :
