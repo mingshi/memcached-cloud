@@ -265,7 +265,8 @@ def memcached_detail(memcached_id) :
 
     return render_template("mc/memcached_detail.html", 
             memcached_id = memcached_id,
-            addr = addr, 
+            addr = addr,
+            memcached = _memcached,
             slabs_stats = slabs_stats,
             slabs_stats_str = slabs_stats_str,
             stats = stats,
