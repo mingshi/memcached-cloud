@@ -136,7 +136,26 @@ def memcached_do_add() :
         else :
             result['status'] = 'the memcached is already added'
     return json.dumps(result)
-
+@mod.route('/memcached/do_edit', methods=['GET', 'POST'])
+def memcached_do_eidt() :
+    result = {}
+    memcached_id = int(request.form['memcached_id'])
+    ip = request.form['ip'].strip().encode('utf8')
+    version = int(request.form['version'])
+    port = int(request.form['port'].strip())
+    memory = int(request.form['memory'].strip())
+    group = int(request.form['group'])
+    param = request.form['param'].strip().encode('utf8')
+    _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
+    _memcached.ip = ip
+    _memcached.version = version
+    _memcached.port = port
+    _memcached.memory = memory
+    _memcached.group = group
+    _memcached.parameters = param
+    db_session.commit()
+    result['status'] = 'Edit success!'
+    return json.dumps(result)
 
 @mod.route('/memcached-<memcached_id>-stop', methods=['GET', 'POST'])
 def memcached_stop(memcached_id) :
@@ -202,6 +221,19 @@ def memcached_restart(memcached_id) :
         _memcached.status = 1
         db_session.commit()
     return json.dumps(result)
+
+@mod.route('/memcached-edit-<memcached_id>', methods=['GET', 'POST'])
+def memcached_edit(memcached_id) :
+    try :
+        memcached_id = int(memcached_id)
+    except Exception, e :
+        return 'invalid memcached id'
+    _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
+    groups = db_session.query(Groups).all()
+    group_names = {}
+    for _group in groups :
+        group_names[_group.id] = _group.name
+    return render_template('mc/memcached_edit.html', memcached = _memcached,group_names = group_names)
 
 @mod.route('/memcached-<memcached_id>')
 def memcached_detail(memcached_id) :

@@ -29,6 +29,7 @@
                 <a href="#" title="stop {{ memcached_addr }}" memcached_id="{{ memcached.id }}" class="memcached_stop"><i class="icon-stop" ></i></a>
                 <a href="#" title="start {{ memcached_addr }}" memcached_id="{{ memcached.id }}" class="memcached_start"><i class="icon-play" ></i></a>
                 <a href="#" title="delete {{ memcached_addr }}" memcached_id="{{ memcached.id }}" class="memcached_delete"><i class="icon-remove" ></i></a>
+                &nbsp;&nbsp;&nbsp;<a href="/memcached-edit-{{ memcached.id }}" title="edit {{ memcached_addr }}" target="_blank"><i class="icon-pencil"></i></a>
             </td>
             <td id="status_{{ memcached.id }}" style="width:100px;">{{ memcached.status }}</td>
         </tr>

@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block title %}Edit Memcached{% endblock %}
+
+{% block main %}
+<ul class="breadcrumb">
+  <li>
+    <a href="/">Home</a> <span class="divider">/</span>
+  </li>
+  <li class="active">Edit Memcached</li>
+</ul>
+
+<div class="well">
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>Edit Memcached&nbsp;&nbsp;&nbsp;#{{ memcached.id }}</legend>
+                <div id="instance_add_notice" style="display:none;" class="alert">
+                    <input type="hidden" value="{{ memcached.id }}" id="memcached_id" />
+                    <button data-dismiss="alert" class="close">x</button>
+                    <span id="instance_add_msg"> </span>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="version">Select Version</label>
+                    <div class="controls">
+                        <select name="version" id="version">
+                            <option value="1" {% if memcached.version=='1' %}selected{% endif %}>1.4.0</option>
+                            <option value="2" {% if memcached.version=='2' %}selected{% endif %}>1.4.4</option>
+                            <option value="3" {% if memcached.version=='3' %}selected{% endif %}>1.4.13</option>
+                        </select>
+                        <p class="help-block">select memcache version</p><br />
+                    </div>
+                    <label class="control-label" for="param">IP Address</label>
+                    <div class="controls">
+                        <input type="text" value="{{ memcached.ip }}" class="input-xlarge" id="ip" name="ip">
+                        <p class="help-block">input ip address</p><br />
+                    </div>
+                    <label class="control-label" for="port">Port</label>
+                    <div class="controls">
+                        <input type="text" value="{{ memcached.port }}" class="input-xlarge" id="port" name="port"><i style="color:#666666;" id="resultSpan"></i>
+                        <p class="help-block">input memcache run on port</p><br />
+                    </div>
+                    <label class="control-label" for="memory">Memory</label>
+                    <div class="controls">
+                        <input type="text" value="{{ memcached.memory }}" class="input-xlarge" id="memory" name="memory">
+                        <label style="color: #666;display:inline;" for="isstart">MB</label>
+                        <p class="help-block">input memory the memcache need</p><br />
+                    </div>
+                    <label class="control-label" for="group">Group</label>
+                    <div class="controls">
+                        <select name="group" id="group">
+                            {% for id in group_names %}
+                            <option value="{{ id }}" {% if memcached.group_id==id %}selected{% endif %}>{{ group_names[id] }}</option>
+                            {% endfor %} 
+                        </select>
+                        <p class="help-block">select group the memcached in</p><br />
+                    </div>
+                    <label class="control-label" for="param">Start Parameters</label>
+                    <div class="controls">
+                        <textarea id="param" name="param">{{ memcached.parameters }}</textarea>
+                        <p class="help-block">input your memcache start parameters,like: -p 11211 -m 16384</p><br />
+                    </div>
+                </div>
+                <div class="controls">
+                    <button type="button" id="ok" class="btn btn-primary">Edit</button>
+                </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
+{% block footer_script %}
+    <script src="{{ url_for('static', filename='jquery.colorAnimations.js') }}"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#ok').click(function(){
+                if($("#ip").val()=="" || checkIP($("input[name=ip]").val())==null){
+                    $("#ip").animate({ backgroundColor: "#FFB5B5" }, 500)
+                        .animate({ backgroundColor: "#FFFFFF" }, 1000);
+                }else if($("#port").val()=="" || isNaN($("#port").val()) || $("#port").val()<=0){
+                    $("#port").animate({ backgroundColor: "#FFB5B5" }, 500)
+                        .animate({ backgroundColor: "#FFFFFF" }, 1000);
+                }else if($("#memory").val()=="" || isNaN($("#memory").val()) || $("#memory").val()<=0){
+                    $("#memory").animate({ backgroundColor: "#FFB5B5" }, 500)
+                        .animate({ backgroundColor: "#FFFFFF" }, 1000);
+                }else{
+                    if (! confirm('Are you sure to install memcached on this host?')) {
+                        return false;
+                    }
+                    $('#instance_add_notice').show();
+                    $('#instance_add_msg').html('<img src=' + "{{ url_for('static', filename='loading.gif') }}" + ' /> Being processed,Please wait...');
+                    var memcached_id = $("#memcached_id").val();
+                    var version = $("#version").val();
+                    var ip = $("#ip").val();
+                    var port = $("#port").val();
+                    var memory = $("#memory").val();
+                    var group = $("#group").val();
+                    var param = $("#param").val(); 
+                    
+                    $.ajax({
+                        url : "/memcached/do_edit",
+                        dataType : "json",
+                        type : 'post',
+                        data : {'memcached_id' : memcached_id, 'ip' : ip, 'version' : version, 'port' : port, 'memory' : memory, 'group' : group, 'param' : param}
+                    }).done(function(result){
+                        $('#instance_add_msg').html(result.status); 
+                    });
+                } 
+            });
+        });
+        function checkIP(value){
+            var exp=/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+            return value.match(exp);
+        }
+        
+        
+    </script>
+{% endblock %}
