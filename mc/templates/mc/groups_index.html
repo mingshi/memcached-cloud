@@ -24,7 +24,7 @@
             <td><a href="/memcacheds-{{ group.Groups.id }}">{{ group.Groups.name }}</a></td>
             <td>{{ group.memcached_count }}</td>
             <td>
-            <span class="label label-important">Useage</span><span style="display:inline-block;width:150px;">&nbsp;&nbsp;{{ stats_useage[group.Groups.id]['useage'] }}G({{ stats_useage[group.Groups.id]['use_per'] }}%)</span><span class="label label-success">Free</span>&nbsp;&nbsp;{{ stats_useage[group.Groups.id]['free'] }}G({{ stats_useage[group.Groups.id]['free_per'] }}%)</td>
+            <span class="label label-important">Useage</span><span style="display:inline-block;width:150px;">&nbsp;&nbsp;{{ stats_useage[group.Groups.id]['useage'] }}G&nbsp;({{ stats_useage[group.Groups.id]['use_per'] }}%)</span><span class="label label-success">Free</span>&nbsp;&nbsp;{{ stats_useage[group.Groups.id]['free'] }}G&nbsp;({{ stats_useage[group.Groups.id]['free_per'] }}%)</td>
             <td>{{ stats_hit[group.Groups.id]['hit'] }}</td>
         </tr>
         {% endfor %}
