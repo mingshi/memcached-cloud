@@ -13,9 +13,13 @@ def groups_index():
         .outerjoin(Memcacheds, Memcacheds.group_id == Groups.id) \
         .group_by(Groups.id).all()
     stats_hit = {}
+    stats_useage = {}
     for group in groups :
         group_get = 0
         group_hit = 0
+        group_useage = 0
+        group_free = 0
+        group_total = 0 
         memcacheds = db_session.query(Memcacheds).filter_by(group_id = group.Groups.id).all()
         for memcached in memcacheds :
             try :
@@ -24,15 +28,28 @@ def groups_index():
                 stats = client.get_stats()[0][1]
                 stats['cmd_get'] = int(stats['cmd_get'])
                 stats['get_hits'] = int(stats['get_hits'])
+                stats['bytes'] = float(stats['bytes'])
+                stats['limit_maxbytes'] = float(stats['limit_maxbytes'])
+                stats['free'] = float(stats['limit_maxbytes'] - stats['bytes'])
             except Exception, e :
                 continue
             group_get += int(stats['cmd_get'])
             group_hit += float(stats['get_hits'])
+            group_useage += round((stats['bytes'] / 1024 / 1024 / 1024),2)
+            group_free += round((stats['free'] / 1024 / 1024 / 1024),2)
+            group_total += round((stats['limit_maxbytes'] / 1024 / 1024 / 1024),2)
+        if (group_total != 0) :
+            group_use_per = round((group_useage / group_total * 100),2)
+            group_free_per = round((group_free / group_total * 100),2)
+        else :
+            group_use_per = "/"
+            group_free_per = "/"
+        stats_useage[group.Groups.id] = {"useage": group_useage, "free": group_free, "use_per": group_use_per, "free_per": group_free_per}
         if (group_get != 0) :
             stats_hit[group.Groups.id] = {"hit": round(((group_hit / group_get) * 100),2)}
         else :
             stats_hit[group.Groups.id] = {"hit": "/"}
-    return  render_template('mc/groups_index.html', groups = groups, stats_hit = stats_hit)
+    return  render_template('mc/groups_index.html', groups = groups, stats_hit = stats_hit, stats_useage = stats_useage)
 
 @mod.route('/group-add')
 def group_add():

@@ -16,14 +16,15 @@
     </p>
     <table class="table table-bordered table-striped">
         <thead>
-            <tr><th>Group</th><th>Memcached Count</th><th>Total Memory(M)</th><th>Avg Hit Rate(%)</th></tr>
+            <tr><th>Group</th><th>Memcached Count</th><th>Memory Status</th><th>Avg Hit Rate(%)</th></tr>
         </thead>
         <tbody>
         {% for group in groups %}
         <tr>
             <td><a href="/memcacheds-{{ group.Groups.id }}">{{ group.Groups.name }}</a></td>
             <td>{{ group.memcached_count }}</td>
-            <td>{% if group.group_total_memory %}{{ group.group_total_memory }}{% else %}0{% endif %}</td>
+            <td>
+            <span class="label label-important">Useage</span><span style="display:inline-block;width:150px;">&nbsp;&nbsp;{{ stats_useage[group.Groups.id]['useage'] }}G({{ stats_useage[group.Groups.id]['use_per'] }}%)</span><span class="label label-success">Free</span>&nbsp;&nbsp;{{ stats_useage[group.Groups.id]['free'] }}G({{ stats_useage[group.Groups.id]['free_per'] }}%)</td>
             <td>{{ stats_hit[group.Groups.id]['hit'] }}</td>
         </tr>
         {% endfor %}
