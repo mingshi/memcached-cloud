@@ -88,7 +88,7 @@
                     });
                 });
                 $('.memcached_delete').click(function() {
-                    if (! confirm('Are you sure to delete the memcached process?')) {
+                    if (! confirm('Are you sure to ' + $(this).attr('title') + '?')) {
                         return false;
                     }
                     var memcached_id = $(this).attr('memcached_id');
