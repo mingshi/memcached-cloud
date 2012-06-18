@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}Help - quick start{% endblock %}
+
+{% block main %}
+<div class="well" style="padding:50px 10px;">
+    <p>Memcache Cloud </p>
+
+    <p>
+    <ol>
+        <li>增加memcached至Memcache Cloud</li>
+        <p>如果你的memcache已经启动，默认情况下，增加memcached不会启动memcached服务</p>
+        <li>查看该memcached的运行情况</li>
+        <p>
+        增加好memcached后，即可从列表页中根据该memcached的ip和host进入详细页。
+        详细页里面主要有命中率等整体信息
+        下面是slab的相关信息，主要是显示memcache中各个slab的占的数量、大小以及命中，踢出数量等。
+        </p>
+    </ol>
+    </p>
+
+    <p>
+    <ul>
+        <li> 使用Memcache Cloud解决缓存问题</li>
+        memcached的分配是预分配机制。不同大小的缓存记录在不同的slabs中。
+        memcached存在的问题大部分都是因为cache分配不均，重要的数据被不重要的数据踢出，因此，分析slab信息是找出cache问题的关键。
+
+        基本的步骤就是：
+
+        查看缓存踢出异常的点。
+        查看该slab下的key，如果该slab下面有重要的数据，那么就需要根据情况调整memcached了。
+        下面就通过一个实例来说明。
+
+
+
+
+
+
+    </ul>
+    </p>
+
+</div>
+{% endblock %}
