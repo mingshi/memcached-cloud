@@ -44,7 +44,7 @@
         <dd>上面的Basic Stats是基本信息，这里就不多做解释了。</dd>
         <dd>Slabs Stats是memcached的内存里面slab的情况，横坐标为slab id，左纵坐标为每个slab里面的item数量，右纵坐标为该slab里面的踢出次数。
     鼠标放在图上，会显示当前slab更加详细的信息，如slab的大小，item已经占了多少chunk，还有多少chunk可以放item等等。</dd>
-        <dd>Slabs Key Prefix是会列出各个slab里面存放item的key的共同前缀，如slab 1里面有thread_10 和thread_23的两个key，那么点击1时会显示 thread
+        <dd>Slabs Key Prefix会列出slab里面存放item的key的共同前缀，如slab 1里面有thread_10 和thread_23的两个key，那么点击1时会显示 thread
         下面的Data Query和Key Deletion就是根据key查询数据和删除key对应的缓存。
         </dd>
     </dl>
