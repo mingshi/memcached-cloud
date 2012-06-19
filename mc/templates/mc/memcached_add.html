@@ -57,7 +57,10 @@
                     <label class="control-label" for="param">Start Parameters</label>
                     <div class="controls">
                         <textarea id="param" name="param"></textarea>
-                        <p class="help-block">input your memcache start parameters,like: -p 11211 -m 16384</p><br />
+                        <p class="help-block">
+                        input additional memcached start parameters(-p, -m are no needed). 
+                        <br />for instance: <code> -o hashpower=24 slab_reassign </code>
+                        </p>
                     </div>
                 </div>
                 <div class="controls">
