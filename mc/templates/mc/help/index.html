@@ -1,47 +1,64 @@
 {% extends "layout.html" %}
 
+{% block head_css %}
+<style >
+    dd, dt{
+        /* font-size:14px!important; */
+    }
+    img {
+        margin: 20px auto;
+    }
+    .section {
+        margin:30px 0 18px 0;
+        padding-bottom:16px;
+        border-bottom:1px solid #e3e3e3;
+    }
+</style>
+{% endblock %}
+
 {% block title %}Help - quick start{% endblock %}
 
 {% block main %}
-<div class="well" style="padding:50px 10px;">
+<div>
 
-    <h3>FAQ</h3>
+    <h3 class="section">FAQ</h3>
 
     <dl>
-        <dt>Memcache Cloud能做什么？<dt>
+        <dt>Memcache Cloud能做什么？</dt>
+        <dd>方便管理memcached服务</dd>
+        <dd>提供详细的memcached内存分配信息，帮助您提升memcached命中率 </dd>
+    </dl>
+    <dl>
 
-        <dd><p>方便管理memcached服务</p></dd>
-        <dd><p>    提供详细的memcached内存分配信息，帮组您提升memcached命中率 </p></dd>
+        <dt>我目前已经启动了一个memcached，如何使用Memcache Cloud？</dt>
+        <dd>通过Memcacheds &gt; Add memcached 增加即可，需要注意的是不用勾选 start the memcached after install</dd>
+    </dl>
 
+    <dl>
+        <dt>添加了一个memcached，可以马上就看到memcached相关情况吗？</dt>
+        <dd>当然！通过memcached列表，找到您的memcached，点击进入详细界面即可看到。</dd>
+    </dl>
 
-        <dt>我目前已经启动了一个memcached，如何使用memcached？</dt>
-
-        <dd><p>通过Add memcached 增加即可，需要注意的是不用勾选 start the memcached after install</p></dd>
-
-        <dt>我添加了一个memcached，可以马上就看到内存相关情况吗？</dt>
-
-        <dd><p> 当然！通过memcached列表，找到您的memcached，点击进入详细界面即可看到。</p></dd>
-
+    <dl>
         <dt>memcached详细页面看不懂啊！</dt>
-
-        <dd><p>上面的Basic Stats是基本信息，这里就不多做解释了。</p></dd>
-        <dd><p>Slabs Stats是memcached的内存里面slab的情况，横坐标为slab id，左纵坐标为每个slab里面的item数量，右纵坐标为该slab里面的踢出次数。
-    鼠标放在图上，会显示当前slab更加详细的信息，如slab的大小，item已经占了多少chunk，还有多少chunk可以放item等等。</p></dd>
-
-        <dd><p>Slabs Key Prefix是会列出各个slab里面存放item的key的共同前缀，如slab 1里面有thread_10 和thread_23的两个key，那么点击1时会显示 thread
+        <dd>上面的Basic Stats是基本信息，这里就不多做解释了。</dd>
+        <dd>Slabs Stats是memcached的内存里面slab的情况，横坐标为slab id，左纵坐标为每个slab里面的item数量，右纵坐标为该slab里面的踢出次数。
+    鼠标放在图上，会显示当前slab更加详细的信息，如slab的大小，item已经占了多少chunk，还有多少chunk可以放item等等。</dd>
+        <dd>Slabs Key Prefix是会列出各个slab里面存放item的key的共同前缀，如slab 1里面有thread_10 和thread_23的两个key，那么点击1时会显示 thread
         下面的Data Query和Key Deletion就是根据key查询数据和删除key对应的缓存。
-        </p></dd>
+        </dd>
+    </dl>
 
-
+    <dl>
         <dt>为什么需要group呢？</dt>
-
-        <dd><p>方便管理，一个group就是一组具有相同memcached用途的集合。另外在groups页面还有每个group的相关统计。</p></dd>
+        <dd>方便管理，一个group就是一组具有相同memcached用途的集合。</dd>
+        <dd>另外在groups页面还有每个group的相关统计。</dd>
     </dl>
 
 
+    <h3 class="section"> 使用Memcache Cloud解决缓存问题</h3>
 
-    <h3> 使用Memcache Cloud解决缓存问题</h3>
-    <p>memcached的分配是预分配机制。不同大小的缓存记录在不同的slabs中。</p>
+    <p >memcached的分配是预分配机制。不同大小的缓存记录在不同的slabs中。</p>
     <p>memcached存在的问题大部分都是因为cache分配不均，重要的数据被不重要的数据踢出，因此，分析slab信息是找出cache问题的关键。</p>
 
     基本的步骤就是：
@@ -53,20 +70,25 @@
 
     下面就通过一个实例来说明。
 
+    <p>
     image-service之前的memcached命中率一直很低，但一直不知道问题所在。加入Memcache Cloud以后发现一个明显的踢出尖峰。
+    </p>
 
     <img src="{{ url_for('static', filename='help/image-service-1.png') }}" />
 
+    <p>
     通过下面的Slabs Key Prefix可以看到踢出的那个slab里面有mogilefs所用到的key，而另外一个占用很多空间的slab里面存的数据却是我们不再使用的comment。
+    <p>
 
-    故问题就是：虽然整个memcached的空间很大，但是实际给mogilefs用的空间却非常少！发现此问题后，更换一台新的memcached。后面的效果如下：
+    <p>
+    故问题就是：<strong>虽然整个memcached的空间很大，但是实际给mogilefs用的空间却非常少！发现此问题后，更换一台新的memcached。</strong>
+    </p>
+    <p>后面的效果如下：</p>
 
     <img src="{{ url_for('static', filename='help/image-service-2.png') }}" />
 
-    再过了一段时间后，命中率就达到90%以上了。
+    <p>再过了一段时间后，命中率就达到90%以上了。</p>
     <img src="{{ url_for('static', filename='help/image-service-3.png') }}" />
-
-
 
 </div>
 {% endblock %}
