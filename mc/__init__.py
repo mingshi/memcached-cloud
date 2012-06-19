@@ -11,13 +11,14 @@ if os.path.exists(app.config['ROOT_PATH'] + "/env.py"):
 
 app.config.from_object("config.%sConfig" % (app.config['ENV']) )
 
-from mc.views import index, host, memcached, group
+from mc.views import index, host, memcached, group, help
 from mc.db.db import db_session
 
 app.register_blueprint(index.mod)
 app.register_blueprint(host.mod)
 app.register_blueprint(memcached.mod)
 app.register_blueprint(group.mod)
+app.register_blueprint(help.mod)
 
 @app.route("/version")
 def hello():
