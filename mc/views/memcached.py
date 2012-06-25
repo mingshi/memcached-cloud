@@ -14,7 +14,7 @@ mod = Blueprint("memcached", __name__)
 
 @mod.route('/memcacheds')
 def memcacheds_index():
-    memcacheds = db_session.query(Memcacheds).all()
+    memcacheds = db_session.query(Memcacheds).order_by(Memcacheds.group_id).order_by(Memcacheds.id).all()
     groups = db_session.query(Groups).all()
 
     import socket
@@ -136,8 +136,10 @@ def memcached_do_add() :
         else :
             result['status'] = 'the memcached is already added'
     return json.dumps(result)
+
+
 @mod.route('/memcached/do_edit', methods=['GET', 'POST'])
-def memcached_do_eidt() :
+def memcached_do_edit() :
     result = {}
     memcached_id = int(request.form['memcached_id'])
     ip = request.form['ip'].strip().encode('utf8')
@@ -151,7 +153,7 @@ def memcached_do_eidt() :
     _memcached.version = version
     _memcached.port = port
     _memcached.memory = memory
-    _memcached.group = group
+    _memcached.group_id = group
     _memcached.parameters = param
     db_session.commit()
     result['status'] = 'Edit success!'
@@ -185,6 +187,7 @@ def memcached_delete(memcached_id) :
         return 'invalid memcached id'
     _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
     db_session.delete(_memcached)
+    db_session.commit()
     result['status'] = 'delete success'
     return json.dumps(result)
 

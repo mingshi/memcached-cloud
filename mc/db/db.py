@@ -3,9 +3,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.pool import NullPool
 from mc import app
 
-engine = create_engine(app.config['DB_URI'], pool_size=100, pool_recycle=7200, convert_unicode=True,
+engine = create_engine(app.config['DB_URI'], poolclass=NullPool, convert_unicode=True,
         **app.config['DB_CONNECT_OPTIONS'])
 
 db_session = scoped_session(sessionmaker(autoflush=True, bind=engine))

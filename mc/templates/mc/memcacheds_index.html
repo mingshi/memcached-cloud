@@ -16,7 +16,7 @@
     </p>
     <table class="table table-bordered table-striped">
         <thead>
-            <tr><th>#</th><th>Group</th><th>Instance</th><th>Operation</th><th>Status</th></tr>
+            <tr><th>#</th><th>Group</th><th>Memcached</th><th>Operation</th><th>Status</th></tr>
         </thead>
         <tbody>
         {% for memcached in memcacheds %} {% set memcached_addr = memcached.ip + ':' + memcached.port|string %}
