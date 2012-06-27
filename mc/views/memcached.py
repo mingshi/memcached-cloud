@@ -171,8 +171,7 @@ def memcached_stop(memcached_id) :
     if not _memcached :
         result['status'] = "the memcached not exist"
     else :
-        data = os.popen("bash memcached_stop.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version
-) + " " + str(_memcached.parameters)).read()
+        data = os.popen("bash memcached_stop.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
         result['status'] = data
         _memcached.status = 0
         #db_session.commit()
@@ -202,7 +201,7 @@ def memcached_start(memcached_id) :
     if not _memcached :
         result['status'] = "the memcached not exist"
     else :
-        data = os.popen("bash memcached_start.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " " + str(_memcached.parameters)).read()
+        data = os.popen("bash memcached_start.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
         result['status'] = data
         _memcached.status = 1
         #db_session.commit()
@@ -219,7 +218,7 @@ def memcached_restart(memcached_id) :
     if not _memcached :
         result['status'] = "the memcached not exist"
     else :
-        data = os.popen("bash memcached_restart.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " " + str(_memcached.parameters)).read()
+        data = os.popen("bash memcached_restart.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
         result['status'] = data
         _memcached.status = 1
         #db_session.commit()
