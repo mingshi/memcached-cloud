@@ -3,7 +3,7 @@
 {% block title %}Server {{ addr  }}{% endblock %}
 
 {% block head_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='c/server.css') }}" media="all" />
+<link rel="stylesheet" href="{{ url_for('static', filename='c/memcached.css') }}" media="all" />
 {% endblock %}
 
 {% block main %}
@@ -65,6 +65,7 @@
         {% endfor %}
     </div>
 
+    <div id="prefix_loading"><img src="{{ url_for('static', filename='loading.gif') }}" /></div>
     <table class="table table-bordered table-striped" id="slab_key_prefix"></table>
 
     <h3>Data Query</h3>
@@ -230,24 +231,24 @@
 
     $(function() {
         $('.slab_id').click(function() {
-            html = "<img width='32px' height='32px' src='" + "{{ url_for('static', filename='loading.gif') }}" + "'>";
-            $('#slab_key_prefix').html(html);
+            $('#prefix_loading').show();
             var slab_id = $(this).text();
             $.ajax({
                 url:"/memcached_slab_key-{{memcached_id}}-" + slab_id,
                 dataType:"json"
             }).done(function(keys) {
-
                 var html = '';
                 if (keys.length <= 0) {
-                html = 'no key';
-
+                    html = '<tr><td>no key</td></tr>';
                 } else {
+                    html += '<thead><tr><th width="80%">key prefix</th><th>count</th></tr></thead><tbody>';
                     for (key in keys) {
                         html += '<tr><td>' + key + '</td><td>' + keys[key]  + '</td></tr>';
                     }
+                    html += "</tbody>";
                 }
                 $('#slab_key_prefix').html(html);
+                $('#prefix_loading').hide();
             });
         });
 

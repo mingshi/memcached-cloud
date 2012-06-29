@@ -86,8 +86,6 @@ class Client(memcache.Client):
         #common_keys = []
         common_keys = {}
         tmp_prefix = None
-        last_k = None
-
 
         #pprint(items[0][1])
         for k in items[0][1] :
@@ -106,15 +104,10 @@ class Client(memcache.Client):
                 else :
                     common_keys[tmp_prefix] = 1
 
-                last_k = k
                 continue
 
-            
-            if last_k == None :
-                last_k = k
-                continue
 
-            if tmp_prefix != None and k.find(tmp_prefix) != -1:
+            if tmp_prefix != None and k.find(tmp_prefix) == 0:
                 if common_keys.has_key(tmp_prefix) :
                     common_keys[tmp_prefix] += 1
                 else :
@@ -123,7 +116,7 @@ class Client(memcache.Client):
 
             find_prefix = False
             for prefix in common_keys.keys() :
-                if k.find(prefix) != -1:
+                if k.find(prefix) == 0:
                     common_keys[prefix] += 1
                     find_prefix = True
                     break
@@ -131,34 +124,33 @@ class Client(memcache.Client):
             if find_prefix :
                 continue
 
+            common_keys[k] = 1
+
             #find the common prefix of last key and key
-            len0 = len(last_k)
-            _len = len0/2
-            pos = k.find(last_k[:_len])
-            if pos == -1:
-                while pos == -1 and _len > 1:
-                    _len -= 1
-                    pos = k.find(last_k[:_len])
-            else :
-                while pos != -1 and _len <= len0 :
-                    _len += 1
-                    pos = k.find(last_k[:_len])
+            #len0 = len(last_k)
+            #_len = len0/2
+            #pos = k.find(last_k[:_len])
+            #if pos == -1:
+            #    while pos == -1 and _len > 1:
+            #        _len -= 1
+            #        pos = k.find(last_k[:_len])
+            #else :
+            #    while pos != -1 and _len <= len0 :
+            #        _len += 1
+            #        pos = k.find(last_k[:_len])
 
-            # finded
-            if _len != 0:
-                tmp_prefix = last_k[:_len]
-                if common_keys.has_key(tmp_prefix) :
-                    common_keys[tmp_prefix] += 1
-                else :
-                    common_keys[tmp_prefix] = 1
-            else :
-                common_keys[last_k] = 1
-                common_keys[k] = 1
-
-            last_k = k
+            ## finded
+            #if _len != 0:
+            #    tmp_prefix = last_k[:_len]
+            #    if common_keys.has_key(tmp_prefix) :
+            #        common_keys[tmp_prefix] += 1
+            #    else :
+            #        common_keys[tmp_prefix] = 1
+            #else :
+            #    common_keys[last_k] = 1
+            #    common_keys[k] = 1
 
         return common_keys
-
 
 
 

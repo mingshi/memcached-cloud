@@ -5,3 +5,12 @@
 #slabs_stats {width:100%; height:300px;}
 
 .well h3 {margin:10px; }
+#slab_key_prefix {
+    margin:20px auto auto auto;
+}
+#prefix_loading {
+    text-align:center;
+    display:none;
+    line-height:80px;
+}
+
