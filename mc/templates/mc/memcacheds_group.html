@@ -1,6 +1,10 @@
 {% extends "layout.html" %}
 
-{% block title %}Memcacheds{% endblock %}
+{% block title %}Memcacheds in group {{ group_id }} {% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='c/memcached.css') }}" media="all" />
+{% endblock %}
 
 {% block main %}
 <ul class="breadcrumb">
@@ -34,8 +38,27 @@
             <td id="status_{{ memcached.id }}" style="width:100px;">{{ memcached.status }}</td>
         </tr>
         {% endfor %}
-    </tbody>
+        </tbody>
     </table>
+
+    <h3>Search In Group</h3>
+    <div>
+        <form class="form-horizontal">
+            <div class="alert" style="display:none;" id="search_data_notice">
+                <button class="close" data-dismiss="alert">×</button>
+                <span id="search_data_msg"> </span>
+            </div>
+
+            <div class="control-group">
+                <input type="text" id="key" class="input-medium search-query" placeholder="Type key">
+                <button type="button" class="btn" id="search_key_btn">Search</button>
+            </div>
+
+            <div class="control-group" id="search_data_result" style="margin:10px 10px 0 10px;">
+            </div>
+            <div id="search_loading"><img src="{{ url_for('static', filename='loading.gif') }}" /></div>
+        </form>
+    </div>
 
 </div>
 {% endblock %}
@@ -101,6 +124,34 @@
                         self.location.reload();
                     });
                 });
+
+                $('#search_key_btn').click(function() {
+                    $('#search_loading').show();
+                    $('#search_data_result').html('');
+                    var key = $('#key').val();
+                    $.ajax({
+                        url : "/memcached/group-data/" + {{ group_id }},
+                        dataType : "json",
+                        type : 'post',
+                        data : {'key' : key}
+                    }).done(function(result) {
+                        if (result.status == 'ok') {
+                            $('#search_data_result').val(result.data);
+                            var html='<h4>Search Result</h4><dl>';
+                            for (key in result.data) {
+                                html += '<dt>' + key  + '</dt>';
+                                html += '<dd>' + result.data[key]+ '</dd>';
+                            }
+                            html += '</dl>';
+                            $('#search_data_result').html(html);
+                        } else {
+                            $('#search_data_result').html(result.msg);
+                        }
+                        $('#search_loading').hide();
+                    });
+
+                });
+
 
         });
     </script>

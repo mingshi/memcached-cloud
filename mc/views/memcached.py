@@ -74,7 +74,7 @@ def memcacheds_group(group_id):
             'group_id' : _memcached.group_id,
             'group_name' : group_names[_memcached.group_id] if group_names.has_key(_memcached.group_id) else  '/' 
             })  
-    return render_template('mc/memcacheds_group.html', memcacheds = _memcacheds, group_names = group_names)
+    return render_template('mc/memcacheds_group.html', memcacheds = _memcacheds, group_names = group_names, group_id = group_id)
 
 @mod.route('/memcached-add', methods=['GET','POST'])
 def memcached_add() :
@@ -357,5 +357,39 @@ def memcached_data(memcached_id) :
     else :
         result['status'] = 'ok'
         result['data'] = client.get(key)
+
+    return json.dumps(result)
+
+
+@mod.route('/memcached/group-data/<group_id>', methods=['GET', 'POST'])
+def memcached_data(group_id) :
+    try :
+        group_id = int(group_id)
+    except Exception, e :
+        return json.dumps({"status":"error", 'msg':'invalid group id'})
+
+    if not request.form.has_key('key') :
+        return json.dumps({"status":"error", 'msg':'no key input'})
+
+    key = request.form['key'].encode('utf8')
+
+    action = ""
+    if request.form.has_key('action') :
+        action = request.form["action"].encode('utf8')
+
+    memcacheds = db_session.query(Memcacheds).filter_by(group_id = group_id).order_by(Memcacheds.id).all()
+
+    result = {}
+    if action == 'delete' :
+        client.delete(key)
+        result['status'] = 'ok'
+    else :
+        result['status'] = 'ok'
+        result['data'] = {}
+
+        for _memcached in memcacheds :
+            addr =  _memcached.ip + ':' + str(_memcached.port)
+            client = Client([addr])
+            result['data'][addr] = client.get(key)
 
     return json.dumps(result)

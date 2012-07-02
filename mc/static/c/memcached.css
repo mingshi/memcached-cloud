@@ -8,7 +8,7 @@
 #slab_key_prefix {
     margin:20px auto auto auto;
 }
-#prefix_loading {
+#prefix_loading, #search_loading {
     text-align:center;
     display:none;
     line-height:80px;
