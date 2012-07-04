@@ -30,6 +30,7 @@ class Client(memcache.Client):
 
     def reset_stats(self) :
         for s in self.servers :
+            if not s.connect() : continue
             s.send_cmd('stats reset')
             s.expect('RESET')
 

@@ -23,6 +23,8 @@
     <div style="display:inline;">-p {{ memcached.port }} -m {{ memcached.memory }} {{ memcached.parameters }} -d</div>
 
     <h3>Basic Stats</h3>
+    <a class="btn" href="/memcached/reset-stats/{{ memcached_id }}">Reset Stat</a>
+
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -58,7 +60,7 @@
     <h3>Slabs Stats</h3>
     <div id="slabs_stats"></div>
 
-    <h3>Slabs Key Prefix</h3>
+    <h3>Slabs Detail</h3>
     <div class="btn-group">
         {% for slab in slabs_stats  %}
         <button class="btn slab_id">{{slab.slab_id}}</button>
@@ -67,6 +69,9 @@
 
     <div id="prefix_loading"><img src="{{ url_for('static', filename='loading.gif') }}" /></div>
     <table class="table table-bordered table-striped" id="slab_key_prefix"></table>
+    <div>
+        <table class="table table-bordered table-striped" id="slab_info"></table>
+    </div>
 
     <h3>Data Query</h3>
     <div>
@@ -114,6 +119,9 @@
     var slabs_data = {{ slabs_stats_str|safe }};
     var stats_data = {{ stats_str|safe }};
     var hits_data = {{ hits_stats_str|safe }};
+    _slabs = {{ _slabs|tojson|safe }};
+    slabs = {{ slabs|tojson|safe }};
+    slab_description = {{ slab_description|tojson|safe }};
     var usage_data = [{
         'type':'used',
         'color' : '#669900',
@@ -231,13 +239,33 @@
 
     $(function() {
         $('.slab_id').click(function() {
+            slab_id = $(this).text();
             $('#prefix_loading').show();
-            var slab_id = $(this).text();
+            $('#slab_info').html('');
+            
+            var html = '<caption>Slab #' + slab_id + ' info</caption><tbody>';
+            var val, description;
+            for (var key in _slabs[slab_id]) {
+                val = _slabs[slab_id][key];
+                description = slab_description[key];
+                description = description == undefined ? '' : description;
+                html += '<tr><td>' + key + '</td><td>' + val + '</td><td>' + description + '</td></tr>' ;
+            }
+            for (var key in slabs[slab_id]) {
+                val = slabs[slab_id][key];
+                description = slab_description[key];
+                description = description == undefined ? '' : description;
+                html += '<tr><td>' + key + '</td><td>' + val + '</td><td>' + description + '</td></tr>' ;
+            }
+            html += '</tbody>';
+
+            $('#slab_info').html(html);
+
             $.ajax({
                 url:"/memcached_slab_key-{{memcached_id}}-" + slab_id,
                 dataType:"json"
             }).done(function(keys) {
-                var html = '';
+                var html = '<caption>Slab #' + slab_id + ' keys</caption>';
                 if (keys.length <= 0) {
                     html = '<tr><td>no key</td></tr>';
                 } else {

@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template, request
+# -*- coding: utf-8 -*-
+
+from flask import Blueprint, render_template, request, redirect, url_for
 import jinja2
 import os
 from cache.cache_server import Client
@@ -285,6 +287,24 @@ def memcached_detail(memcached_id) :
 
         slabs_stats.append(_slabs_stats)
 
+
+    slab_description = {}
+    slab_description['evicted_time'] = '踢出次数'
+    slab_description['age'] = '当前时间 - min(item最后一次被访问的时间)'
+    slab_description['number']= '拥有的item数量'
+    slab_description['evicted'] = '踢出次数'
+    slab_description['used_chunks'] = '使用过的chunk数量'
+    slab_description['free_chunks'] = '还从未分配过的的chunks数量'
+    slab_description['chunk_size'] = '每个chunk占的内存大小'
+    slab_description['total_pages'] = '该slab下面的page数量'
+    slab_description['get_hits'] = 'get命中次数'
+    slab_description['cmd_set'] = 'set次数'
+    slab_description['chunks_per_page'] = '每个page里面有的chunks'
+    slab_description['delete_hits'] = '删除命中次数'
+    slab_description['free_chunks_end'] = '释放出来的可用的chunks数量'
+    slab_description['total_chunks'] = '该slab下所有的chunks数量'
+    slab_description['mem_requested'] = '分配的内存'
+
     #print slabs_stats
     slabs_stats.sort(key = lambda x: x['slab_id'])
     slabs_stats_str = json.dumps(slabs_stats)
@@ -305,7 +325,11 @@ def memcached_detail(memcached_id) :
             slabs_stats_str = slabs_stats_str,
             stats = stats,
             stats_str = stats_str,
-            hits_stats_str = hits_stats_str)
+            hits_stats_str = hits_stats_str,
+            _slabs = _slabs,
+            slabs = slabs,
+            slab_description = slab_description
+            )
 
 @mod.route('/memcached_slab_key-<memcached_id>-<slab_id>')
 def memcached_slab_keys(memcached_id, slab_id) :
@@ -362,7 +386,7 @@ def memcached_data(memcached_id) :
 
 
 @mod.route('/memcached/group-data/<group_id>', methods=['GET', 'POST'])
-def memcached_data(group_id) :
+def memcached_group_data(group_id) :
     try :
         group_id = int(group_id)
     except Exception, e :
@@ -393,3 +417,15 @@ def memcached_data(group_id) :
             result['data'][addr] = client.get(key)
 
     return json.dumps(result)
+
+
+@mod.route('/memcached/reset-stats/<memcached_id>', methods=['GET', 'POST'])
+def memcached_reset_stats(memcached_id) :
+    _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
+    addr =  _memcached.ip + ':' + str(_memcached.port)
+    print addr
+
+    client = Client([addr])
+    client.reset_stats()
+
+    return redirect(url_for(".memcached_detail", memcached_id = memcached_id))
