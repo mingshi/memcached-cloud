@@ -23,7 +23,7 @@
     <div style="display:inline;">-p {{ memcached.port }} -m {{ memcached.memory }} {{ memcached.parameters }} -d</div>
 
     <h3>Basic Stats</h3>
-    <a class="btn" href="/memcached/reset-stats/{{ memcached_id }}">Reset Stat</a>
+    <a class="btn" onclick="return confirm('Are you sure reset stats?');" href="/memcached/reset-stats/{{ memcached_id }}">Reset Stat</a>
 
     <table class="table table-bordered table-striped">
         <thead>
