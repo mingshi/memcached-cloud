@@ -20,10 +20,11 @@
 <div class="well">
 
     <div class="btn btn-large">{{  addr }}</div>
-    <div style="display:inline;">-p {{ memcached.port }} -m {{ memcached.memory }} {{ memcached.parameters }} -d</div>
+    <code>memcached -p {{ memcached.port }} -m {{ memcached.memory }} {{ memcached.parameters }} -d</code>
 
-    <h3>Basic Stats</h3>
-    <a class="btn" onclick="return confirm('Are you sure reset stats?');" href="/memcached/reset-stats/{{ memcached_id }}">Reset Stat</a>
+    <h3>Basic Stats
+    <a class="btn btn-warning" style="float:right;" onclick="return confirm('Are you sure reset stats?');" href="/memcached/reset-stats/{{ memcached_id }}">Reset Stat</a>
+    </h3>
 
     <table class="table table-bordered table-striped">
         <thead>
