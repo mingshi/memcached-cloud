@@ -289,10 +289,12 @@ def memcached_detail(memcached_id) :
 
 
     slab_description = {}
-    slab_description['evicted_time'] = '踢出次数'
-    slab_description['age'] = '当前时间 - min(item最后一次被访问的时间)'
+    slab_description['evicted_time'] = '当前时间 - min(item最后一次被访问的时间)，单位为秒'
+    slab_description['evicted_unfetched'] = '被踢出的，但从未使用过的item数量'
+    slab_description['age'] = 'min(item最后一次被访问的时间)<br />单位为从memcached启动到现在的秒数<br />1.4.13后和evicted_time一致'
     slab_description['number']= '拥有的item数量'
     slab_description['evicted'] = '踢出次数'
+    slab_description['evicted_nonzero'] = '非零过期时间item被踢出次数'
     slab_description['used_chunks'] = '使用过的chunk数量'
     slab_description['free_chunks'] = '还从未分配过的的chunks数量'
     slab_description['chunk_size'] = '每个chunk占的内存大小'
