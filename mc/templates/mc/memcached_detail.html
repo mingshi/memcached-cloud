@@ -23,6 +23,7 @@
     <code>memcached -p {{ memcached.port }} -m {{ memcached.memory }} {{ memcached.parameters }} -d</code>
 
     <h3>Basic Stats
+    <a class="btn btn-mini" id="view_all_stats" href="#"><i class="icon-zoom-in"></i></a>
     <a class="btn btn-warning" style="float:right;" onclick="return confirm('Are you sure reset stats?');" href="/memcached/reset-stats/{{ memcached_id }}">Reset Stat</a>
     </h3>
 
@@ -53,6 +54,18 @@
             </tr>
         </tbody>
     </table>
+    <div>
+        <div>
+            <table class="table table-bordered table-striped" id="all_stats_table" style="display:none;">
+                <tbody>
+                    {% for _stats_key in stats %}
+                    <tr><td>{{ _stats_key }}</td><td>{{ stats[_stats_key] }}</td><td>{{ stats_description[_stats_key]  }}</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <div class="row-fluid">
         <div id="hits_stats" class="span6"></div>
         <div id="usage_stats" class="span6"></div>
@@ -342,6 +355,21 @@
                 }
             });
         })
+
+        expanded = false;
+        $('#view_all_stats').click(function() {
+
+            $('#view_all_stats > i').removeClass();
+            if (expanded) {
+                $('#view_all_stats > i').addClass('icon-zoom-in');
+                $('#all_stats_table').hide();
+            } else {
+                $('#view_all_stats > i').addClass('icon-zoom-out');
+                $('#all_stats_table').show();
+            }
+
+            expanded = !expanded;
+        });
     });
 </script>
 
