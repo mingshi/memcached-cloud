@@ -1,5 +1,5 @@
 #!/bin/bash
-orig_dir=$(pwd)
+orig_dir=$(cd "$(dirname "$0")"; pwd)
 #检查是否需要随安装启动##
 if [ "${5}" -eq 1 ]
 then
@@ -62,31 +62,31 @@ then
     fi
    
     ##检查有无memcached目录##
-    is_memcached=`ssh evans@${1} "find /home/www -maxdepth 1 -name memcached -type d"`
+    is_memcached=`ssh -o StrictHostKeyChecking=no evans@${1} "find /home/www -maxdepth 1 -name memcached -type d"`
     if [ -z "${is_memcached}" ]
     then
-        ssh evans@${1} "mkdir -p /home/www/memcached"
+        ssh -o StrictHostKeyChecking=no evans@${1} "mkdir -p /home/www/memcached"
     fi
 
     ##检查该服务器是否已经安装相应版本##
-    is_install=`ssh evans@${1} "find /home/www/memcached -maxdepth 1 -name '${cdir}' -type d"`
+    is_install=`ssh -o StrictHostKeyChecking=no evans@${1} "find /home/www/memcached -maxdepth 1 -name '${cdir}' -type d"`
     if [ -z "${is_install}" ]
     then
         scp -q ${file} evans@${1}:/tmp/
         ##检查libevent是否安装##
-        libe=`ssh evans@${1} "ls -la /usr/lib64|grep 'libevent'|head -1|awk '{print \\$1}'"`
+        libe=`ssh -o StrictHostKeyChecking=no evans@${1} "ls -la /usr/lib64|grep 'libevent'|head -1|awk '{print \\$1}'"`
         if [ -z "${libe}" ]
         then
             echo "remote host has no libevent"
             exit
         fi
-        ssh evans@${1} "cd /tmp/;tar xzf ${cdir}.tar.gz;cd ${cdir};./configure --prefix=/home/www/memcached/${cdir} --enable-64bit > /tmp/${cdir}_config_log;make >/tmp/${cdir}_make_log;make install > /tmp/${cdir}_make_install_log"
+        ssh -o StrictHostKeyChecking=no evans@${1} "cd /tmp/;tar xzf ${cdir}.tar.gz;cd ${cdir};./configure --prefix=/home/www/memcached/${cdir} --enable-64bit > /tmp/${cdir}_config_log;make >/tmp/${cdir}_make_log;make install > /tmp/${cdir}_make_install_log"
     fi
     
     
     ##检查是否端口已经存在##
     thisport=${3}
-    port=`ssh evans@${1} "ps -ef|grep memcached|awk '\\$2 != ${thisport}'|grep ${thisport}|grep -v grep |head -1|awk '{print \\$1}'"`
+    port=`ssh -o StrictHostKeyChecking=no evans@${1} "ps -ef|grep memcached|awk '\\$2 != ${thisport}'|grep ${thisport}|grep -v grep |head -1|awk '{print \\$1}'"`
     if [ ! -z "${port}" ]
     then
         echo "port has in used"
@@ -95,14 +95,14 @@ then
     
     if [ ! -z "${6}" ]
     then 
-        ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${3} -m ${4} ${6} -d 1>/dev/null 2>/dev/null &"
+        ssh -o StrictHostKeyChecking=no evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${3} -m ${4} ${6} -d 1>/dev/null 2>/dev/null &"
     else
-        ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${3} -m ${4} -d 1>/dev/null 2>/dev/null &"
+        ssh -o StrictHostKeyChecking=no evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${3} -m ${4} -d 1>/dev/null 2>/dev/null &"
     fi
     
     
     ##检查运行是否正常##
-    check=`ssh evans@${1} "ps -ef|grep memcached|awk '\\$2 != ${thisport}'|grep ${thisport}|grep -v grep|head -1|awk '{print \\$1}'"`
+    check=`ssh -o StrictHostKeyChecking=no evans@${1} "ps -ef|grep memcached|awk '\\$2 != ${thisport}'|grep ${thisport}|grep -v grep|head -1|awk '{print \\$1}'"`
     if [ -z "${check}" ]
     then
         echo "add failed"

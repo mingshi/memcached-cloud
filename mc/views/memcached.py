@@ -127,9 +127,9 @@ def memcached_do_add() :
         _memcached = db_session.query(Memcacheds).filter_by(ip = ip,port = port).first()
         if not _memcached :
             if not param :
-                data = os.popen("bash /var/www/memcache_cloud/memcached_add.sh " + ip + " " + version + " " + port + " " + memory + " " + isstart).read()
+                data = os.popen("bash -l /var/www/memcache_cloud/memcached_add.sh " + ip + " " + version + " " + port + " " + memory + " " + isstart).read()
             else :
-                data = os.popen("bash /var/www/memcache_cloud/memcached_add.sh " + ip + " " + version + " " + port + " " + memory + " " + isstart + " '" + param + "'").read()
+                data = os.popen("bash -l /var/www/memcache_cloud/memcached_add.sh " + ip + " " + version + " " + port + " " + memory + " " + isstart + " '" + param + "'").read()
             result['status'] = data
             if (isstart == "1" and data == "add success\n") or isstart == "0" :
                 memcache = Memcacheds(ip=ip, port=port, memory=memory, status=1, group_id=group, version=version, parameters=param)
@@ -173,7 +173,7 @@ def memcached_stop(memcached_id) :
     if not _memcached :
         result['status'] = "the memcached not exist"
     else :
-        data = os.popen("bash /var/www/memcache_cloud/memcached_stop.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
+        data = os.popen("bash -l /var/www/memcache_cloud/memcached_stop.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
         result['status'] = data
         _memcached.status = 0
         #db_session.commit()
@@ -203,7 +203,7 @@ def memcached_start(memcached_id) :
     if not _memcached :
         result['status'] = "the memcached not exist"
     else :
-        data = os.popen("bash /var/www/memcache_cloud/memcached_start.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
+        data = os.popen("bash -l /var/www/memcache_cloud/memcached_start.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
         result['status'] = data
         _memcached.status = 1
         #db_session.commit()
@@ -220,7 +220,7 @@ def memcached_restart(memcached_id) :
     if not _memcached :
         result['status'] = "the memcached not exist"
     else :
-        data = os.popen("bash /var/www/memcache_cloud/memcached_restart.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
+        data = os.popen("bash -l /var/www/memcache_cloud/memcached_restart.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
         result['status'] = data
         _memcached.status = 1
         #db_session.commit()

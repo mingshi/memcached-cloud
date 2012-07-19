@@ -1,5 +1,5 @@
 #!/bin/bash
-orig_dir=$(pwd)
+orig_dir=$(cd "$(dirname "$0")"; pwd)
 ##检查ip是否存在##
 if [ -z "${1}" ]
 then
@@ -42,7 +42,7 @@ then
     cdir="memcached-1.4.13"
 fi
 
-is_install=`ssh evans@${1} "find /home/www/memcached -name '${cdir}' -type d"`
+is_install=`ssh -o StrictHostKeyChecking=no evans@${1} "find /home/www/memcached -name '${cdir}' -type d"`
 if [ -z "${is_install}" ]
 then
     echo "this version didn't install"
@@ -50,7 +50,7 @@ then
 fi
 
 ##检查是否已经在运行##
-check_first=`ssh evans@${1} "ps -ef|grep memcached|awk '\\$2 != ${2}'|grep ${2}|grep -v grep|head -1|awk '{print \\$1}'"`
+check_first=`ssh -o StrictHostKeyChecking=no evans@${1} "ps -ef|grep memcached|awk '\\$2 != ${2}'|grep ${2}|grep -v grep|head -1|awk '{print \\$1}'"`
 if [ ! -z "${check_first}" ]
 then
     echo "is already running"
@@ -60,13 +60,13 @@ fi
 ##检查参数并启动##
 if [ ! -z "${5}" ]
 then
-    ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${2} -m ${3} ${5} -d"
+    ssh -o StrictHostKeyChecking=no evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${2} -m ${3} ${5} -d"
 else
-    ssh evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${2} -m ${3} -d"
+    ssh -o StrictHostKeyChecking=no evans@${1} "/home/www/memcached/${cdir}/bin/memcached -p ${2} -m ${3} -d"
 fi
 
 ##检查是否启动成功##
-check=`ssh evans@${1} "ps -ef|grep memcached|awk '\\$2 != ${2}'|grep ${2}|grep -v grep|head -1|awk '{print \\$1}'"`
+check=`ssh -o StrictHostKeyChecking=no evans@${1} "ps -ef|grep memcached|awk '\\$2 != ${2}'|grep ${2}|grep -v grep|head -1|awk '{print \\$1}'"`
 if [ -z "${check}" ]
 then
     echo "start failed"
