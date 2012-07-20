@@ -56,7 +56,7 @@
                            
                     }).done(function(result) {
                         $("#status_" + memcached_id).html(result.status);
-                        self.location.reload();
+                        //self.location.reload();
                     });
                 });
                 $('.memcached_start').click(function(){
@@ -64,13 +64,14 @@
                         return false;
                     }
                     var memcached_id = $(this).attr('memcached_id');
+                    $('#status_' + memcached_id).html('please wait...');
                     $.ajax({
                         url : "/memcached-" + memcached_id + "-start",
                         type : 'post',
                         dataType : "json",
                     }).done(function(result) {
                         $("#status_" + memcached_id).html(result.status);
-                        self.location.reload();
+                        //self.location.reload();
                     });
                 });
                 $('.memcached_restart').click(function(){
@@ -84,7 +85,7 @@
                         dataType : "json",
                     }).done(function(result){
                         $("#status_" + memcached_id).html(result.status);
-                        self.location.reload();
+                        //self.location.reload();
                     });
                 });
                 $('.memcached_delete').click(function() {

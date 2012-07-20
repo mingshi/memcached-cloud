@@ -252,7 +252,9 @@ def memcached_detail(memcached_id) :
     client = Client([addr])
     temp = client.get_stats('slabs')
     if temp == None  or len(temp) == 0:
-        return render_template("mc/memcached_err.html", addr = addr)
+        return render_template("mc/memcached_err.html", 
+                addr = addr,
+                memcached = _memcached)
     slabs = temp[0]
     _slabs = client.get_slabs()[0][1]
 

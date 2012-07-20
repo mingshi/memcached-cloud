@@ -11,11 +11,11 @@
 </ul>
 
 <div class="well">
-        <fieldset>
-            <legend>ERROR</legend>
-                <div class="alert alert-error">
-                    Can't connect to {{ addr }} , Please check the network ! 
-                </div>
-        </fieldset>
+    <div class="btn btn-large">{{  addr }}</div>
+    <code>memcached -p {{ memcached.port }} -m {{ memcached.memory }} {{ memcached.parameters }} -d</code>
+    <p>
+    <div class="alert alert-error">
+        Can't connect to {{ addr }} , Please check the network ! 
+    </div>
 </div>
 {% endblock %}

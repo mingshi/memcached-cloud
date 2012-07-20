@@ -73,14 +73,21 @@ then
     if [ -z "${is_install}" ]
     then
         scp -q ${file} evans@${1}:/tmp/
-        ##检查libevent是否安装##
-        libe=`ssh -o StrictHostKeyChecking=no evans@${1} "ls -la /usr/lib64|grep 'libevent'|head -1|awk '{print \\$1}'"`
+        scp -q ${orig_dir}/tarbal/libevent-2.0.19-stable.tar.gz evans@${1}:/tmp/
+        ssh -o StrictHostKeyChecking=no evans@${1} "cd /tmp/;tar xzf libevent-2.0.19-stable.tar.gz;cd libevent-2.0.19-stable;./configure --prefix=/home/www/libevent > /tmp/libconfig.log;make > /tmp/libmake.log;make install > /tmp/libinstall.log"
+        libe=`ssh -o StrictHostKeyChecking=no evans@${1} "find /home/www/libevent -name lib -type d"`
         if [ -z "${libe}" ]
         then
             echo "remote host has no libevent"
             exit
         fi
-        ssh -o StrictHostKeyChecking=no evans@${1} "cd /tmp/;tar xzf ${cdir}.tar.gz;cd ${cdir};./configure --prefix=/home/www/memcached/${cdir} --enable-64bit > /tmp/${cdir}_config_log;make >/tmp/${cdir}_make_log;make install > /tmp/${cdir}_make_install_log"
+        ssh -o StrictHostKeyChecking=no evans@${1} "cd /tmp/;tar xzf ${cdir}.tar.gz;cd ${cdir};./configure --prefix=/home/www/memcached/${cdir} --enable-64bit --with-libevent=/home/www/libevent > /tmp/${cdir}_config_log;make >/tmp/${cdir}_make_log;make install > /tmp/${cdir}_make_install_log"
+        is_install_still=`ssh -o StrictHostKeyChecking=no evans@${1} "find /home/www/memcached -name '${cdir}' -type d"`
+        if [ -z "${is_install_still}" ]
+        then
+            echo "the version isn't installed success!"
+            exit
+        fi
     fi
     
     
