@@ -20,14 +20,32 @@
         <tr>
             <td>{{ host.ip }}</td>
             <td>{{ host.memcached_count }}</td>
-            <td>
-                <span class="label label-info">Total</span><span style="display:inline-block;width:70px;">&nbsp;&nbsp;{{ host_total_mem[host.ip] }}</span>
-                <span class="label label-success">Free</span><span style="display:inline-block;width:70px;">&nbsp;&nbsp;{{ host_free_mem[host.ip] }}</span>
-                <span class="label label-important">Cache</span><span style="display:inline-block;width:70px;">&nbsp;&nbsp;{{ host_cache_mem[host.ip] }}</td></span>
+            <td style="width:500px;" class="info">
+                <img style="width:22px;height:16px" src="{{ url_for('static', filename='loading.gif') }}" />
+            </td>
         </tr>
         {% endfor %}
     </tbody>
     </table>
 
 </div>
+{% endblock %}
+
+{% block footer_script %}
+<script type="text/javascript">
+    $(function(){
+            $(".info").each(function(){
+                var ip=$(this).parent().children(':first-child').html();
+                var me = $(this);
+                $.ajax({
+                    url : "/host/info",
+                    dataType : "json",
+                    type : 'post',
+                    data : {'ip' : ip}
+                }).done(function(result){
+                    me.html('<span class="label label-info">Total</span><span style="display:inline-block;width:70px;">&nbsp;&nbsp;' + result.total + '</span><span class="label label-success">Free</span><span style="display:inline-block;width:70px;">&nbsp;&nbsp;' + result.free + '</span><span class="label label-important">Cache</span><span style="display:inline-block;width:70px;">&nbsp;&nbsp;' + result.cache + '</span>');    
+                });    
+            });
+    });
+</script>
 {% endblock %}
