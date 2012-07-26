@@ -30,7 +30,7 @@ def memcacheds_index():
             ip = _memcached.ip
             port = _memcached.port
             sk = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-            sk.settimeout(0.01)
+            sk.settimeout(0.1)
             address = (str(ip),int(port))
             status = sk.connect((address))
             status = 'ok'
