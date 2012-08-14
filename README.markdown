@@ -22,7 +22,6 @@ after that, reload your shell env and install the required python version.
 $ source /etc/profile
 $ pythonbrew install 2.7.3
 ```
-
 # How to start?
 
 ## setuptools or pip ?
@@ -40,6 +39,14 @@ run following command to install the project dependencies.
 ```
 $ python setup.py install
 ```
+
+or download flowing packages manually:
+
+* memcache client:  http://pypi.python.org/pypi/python-memcached/1.48
+* flask : http://flask.pocoo.org/
+* oursql: mysql client for python. In ubuntu, you can install use "sudo apt-get install libmysqlclient-dev python-dev && sudo pip install oursql"
+* SQLAlchemy: Database Abstract Layer. In ubuntu, you can install use "sudo pip install SQLAlchemy"
+
 
 ## show me the config
 
