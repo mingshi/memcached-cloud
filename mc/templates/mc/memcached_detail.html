@@ -132,7 +132,7 @@
     AmCharts.ready(function () {
         var chart_hits = new AmCharts.AmSerialChart();
         chart_hits.dataProvider = lineHitsData;
-        chart_hits.pathToImages = "/lib/samples/javascript/images/";
+        chart_hits.pathToImages = "static/";
         chart_hits.panEventsEnabled = true;
         chart_hits.categoryField = "date";
 
@@ -157,7 +157,7 @@
         graph_hits.type = "line";
         graph_hits.valueField = "value";
         graph_hits.lineColor = "#D8E63C";
-        graph_hits.customBullet = "/lib/samples/javascript/images/star.gif";
+        graph_hits.customBullet = "static/star.gif";
         graph_hits.bulletSize = 14;
         graph_hits.customBulletField = "customBullet";
         chart_hits.addGraph(graph_hits);
