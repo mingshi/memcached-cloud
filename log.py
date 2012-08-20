@@ -10,7 +10,7 @@ import time
 
 memcacheds = db_session.query(Memcacheds).order_by(Memcacheds.group_id).order_by(Memcacheds.id).all()
 
-logs_dir = os.getcwd() + "/logs/"
+logs_dir = "/var/www/memcache_cloud/logs/"
 
 for memcached in memcacheds :
     ip = memcached.ip
