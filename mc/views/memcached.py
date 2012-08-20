@@ -7,6 +7,7 @@ from cache.cache_server import Client
 from mc.utils.str import human_readable_size
 from mc.db.db import db_session
 from mc.model import *
+import time
 
 jinja2.filters.FILTERS['human_readable_size'] = human_readable_size
 
@@ -344,6 +345,17 @@ def memcached_detail(memcached_id) :
     hits_stats = [{'type':'hits', 'color':'#669900', 'value' : stats['get_hits']}, { 'type':'misses', 'color':'#ff0000', 'value' : stats['get_misses']}]
     hits_stats_str = json.dumps(hits_stats)
 
+    today = time.strftime('%Y-%m-%d',time.localtime(time.time()))
+    timestr = int(time.mktime(time.strptime(today + ' 00:00:00', '%Y-%m-%d %H:%M:%S')))
+    hits_history = db_session.query(Logs).filter(Logs.m_id == memcached_id,Logs.log_type == 1,Logs.time >= timestr).all()
+   
+    hits_data = ''
+    for _hits_history in hits_history :
+        hits_data += "{date:" + str(time.strftime('%H.%M',time.localtime(_hits_history.time))) + ",value:" + str(_hits_history.num) + "},"
+
+    hits_data = hits_data.strip(',')
+    hits_data = "[" + hits_data + "]"
+
     from pprint import pprint
 
     return render_template("mc/memcached_detail.html", 
@@ -353,6 +365,7 @@ def memcached_detail(memcached_id) :
             slabs_stats = slabs_stats,
             slabs_stats_str = slabs_stats_str,
             stats = stats,
+            hits_data = hits_data,
             stats_description = stats_description,
             stats_str = stats_str,
             hits_stats_str = hits_stats_str,

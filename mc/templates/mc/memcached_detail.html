@@ -127,6 +127,48 @@
 {% block footer_script %}
 <script type="text/javascript" src="{{ url_for('static', filename='amcharts/amcharts.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='amcharts/raphael.js') }}"></script>
+<script type="text/javascript">
+    var lineHitsData = {{ hits_data }}
+    AmCharts.ready(function () {
+        var chart_hits = new AmCharts.AmSerialChart();
+        chart_hits.dataProvider = lineHitsData;
+        chart_hits.pathToImages = "/lib/samples/javascript/images/";
+        chart_hits.panEventsEnabled = true;
+        chart_hits.categoryField = "date";
+
+        chart_hits.autoMargins = false;
+        chart_hits.marginRight = 0;
+        chart_hits.marginLeft = 0;
+        chart_hits.marginBottom = 30;
+        chart_hits.marginTop = 30;
+
+        var categoryAxis_hits = chart_hits.categoryAxis;
+        categoryAxis_hits.parseDates = false;
+        categoryAxis_hits.gridAlpha = 0;
+        categoryAxis_hits.tickLength = 0;
+        categoryAxis_hits.axisAlpha = 0;
+
+        var valueAxis_hits = new AmCharts.ValueAxis();
+        valueAxis_hits.gridAlpha = 0.1;
+        valueAxis_hits.axisAlpha = 0;
+        chart_hits.addValueAxis(valueAxis_hits);
+
+        var graph_hits = new AmCharts.AmGraph();
+        graph_hits.type = "line";
+        graph_hits.valueField = "value";
+        graph_hits.lineColor = "#D8E63C";
+        graph_hits.customBullet = "/lib/samples/javascript/images/star.gif";
+        graph_hits.bulletSize = 14;
+        graph_hits.customBulletField = "customBullet";
+        chart_hits.addGraph(graph_hits);
+
+        var chartCursor_hits = new AmCharts.ChartCursor();
+        chart_hits.addChartCursor(chartCursor_hits);
+
+        chart_hits.write("hits_stats");
+    });
+</script>
+
 
 <script type="text/javascript">
     var chart;
@@ -229,7 +271,7 @@
         //chart.startRadius = '200%'
         chart.labelText = "[[title]]\n [[percents]]% ";
         // WRITE
-        chart.write("hits_stats");
+        //chart.write("hits_stats");
 
         chart = new AmCharts.AmPieChart();
         chart.dataProvider = usage_data;
