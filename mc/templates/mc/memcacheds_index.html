@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
-
 {% block title %}Memcacheds{% endblock %}
+
+</style>
 
 {% block main %}
 <ul class="breadcrumb">
@@ -11,12 +12,22 @@
 </ul>
 
 <div class="well">
+    <style type="text/css">
+        .sort_asc{
+            background: url("static/asc.png") no-repeat scroll 100% 50% #F7F7F0;
+            background-position:80%50%;
+        }
+        .sort_desc{
+            background: url("static/desc.png") no-repeat scroll 100% 50% #F7F7F0;
+            background-position:80%50%;
+        }
+    </style>
     <p>
     <a class="btn btn-large btn-primary" href="/memcached-add"><i class="icon-plus icon-white"></i> Add Memcached</a>
     </p>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" id="memcached_list">
         <thead>
-            <tr><th>#</th><th>Group</th><th>Memcached</th><th>Operation</th><th>Status</th></tr>
+            <tr><th onclick="sortTable('memcached_list', 0, 0, 'int')" id="list_sort" name="list_sort">#</th><th>Group</th><th>Memcached</th><th>Operation</th><th>Status</th></tr>
         </thead>
         <tbody>
         {% for memcached in memcacheds %} {% set memcached_addr = memcached.ip + ':' + memcached.port|string %}
@@ -41,6 +52,7 @@
 {% endblock %}
 
 {% block footer_script %}
+    <script type="text/javascript" language="javascript" src="static/sort.js"></script>
     <script type="text/javascript">
         $(function() {
                 $('.memcached_stop').click(function() {
