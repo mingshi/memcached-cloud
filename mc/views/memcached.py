@@ -367,7 +367,7 @@ def memcached_detail(memcached_id) :
    
     hits_data = ''
     for _hits_history in hits_history :
-        hits_data += "{date:" + str(time.strftime('%H.%M',time.localtime(_hits_history.time))) + ",value:" + str(_hits_history.num) + "},"
+        hits_data += "{date:'" + str(time.strftime('%H.%M',time.localtime(_hits_history.time))) + "',value:" + str(_hits_history.num) + "},"
 
     hits_data = hits_data.strip(',')
     hits_data = "[" + hits_data + "]"
