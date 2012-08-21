@@ -240,6 +240,22 @@ def memcached_edit(memcached_id) :
         group_names[_group.id] = _group.name
     return render_template('mc/memcached_edit.html', memcached = _memcached,group_names = group_names)
 
+@mod.route('/memcached/get_hit_data', methods=['GET', 'POST'])
+def get_hit_data() :
+    result = []
+    hits_data = {}
+    m_id = int(request.form['m_id'])
+    the_date = str(request.form['the_date'])
+    get_date = int(time.mktime(time.strptime(the_date + ' 00:00:00', '%Y-%m-%d %H:%M:%S')))
+    next_date = get_date + 24 * 3600
+    hits_history = db_session.query(Logs).filter(Logs.m_id == m_id,Logs.log_type == 1,Logs.time >= get_date,Logs.time < next_date).all()
+    for hits_history in hits_history :
+        hits_data['dater'] = str(time.strftime('%H.%M',time.localtime(hits_history.time)))
+        hits_data['value'] = str(hits_history.num)
+        #hits_data += "{date:'" + str(time.strftime('%H.%M',time.localtime(_hits_history.time))) + "',value:" + str(_hits_history.num) + "},"
+        result.append(hits_data.copy())
+    return json.dumps(result)
+
 @mod.route('/memcached-<memcached_id>')
 def memcached_detail(memcached_id) :
     try :

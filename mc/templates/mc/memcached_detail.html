@@ -67,6 +67,8 @@
     </div>
 
     <div class="row-fluid" style="width:100%;">
+        <input type="text" class="input-medium search-query" id="search_date" placeholder="yyyy-mm-dd">
+        <button type="submit" class="btn" id="get_hit_graph">Search</button>
         <div id="hits_stats" style="width:100%;" class="span6"></div>
     </div>
 
@@ -127,7 +129,7 @@
 <script type="text/javascript" src="{{ url_for('static', filename='amcharts/amcharts.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='amcharts/raphael.js') }}"></script>
 <script type="text/javascript">
-    var lineHitsData = {{ hits_data }}
+    var lineHitsData = {{ hits_data|safe }}
     AmCharts.ready(function () {
         var chart_hits = new AmCharts.AmSerialChart();
         chart_hits.dataProvider = lineHitsData;
@@ -165,6 +167,38 @@
         chart_hits.addChartCursor(chartCursor_hits);
 
         chart_hits.write("hits_stats");
+
+       $(function(){
+            $('#get_hit_graph').click(function(){
+                if($('#search_date').val() != ""){
+                    var the_date = $('#search_date').val();
+                    var patter = /^(\d{1,4})(-)(\d{1,2})\2(\d{1,2})/;
+                    if(!patter.test(the_date)){
+                        return false;
+                    }else{
+                        var m_id = {{ memcached_id }};
+                        $.ajax({
+                            url : "/memcached/get_hit_data",
+                            dataType : "json",
+                            type : 'post',
+                            data : {'m_id' : m_id, 'the_date' : the_date}
+                        }).done(function(result){
+                            data = []
+                            for (i in result){
+                                data.push({"date": result[i].dater, "value": result[i].value});
+                            }   
+                            chart_hits.dataProvider = data;
+                            chart_hits.validateData();
+                        });    
+                    }
+                }else{
+                    return false;
+                }    
+            });
+                
+        }); 
+
+
     });
 </script>
 
