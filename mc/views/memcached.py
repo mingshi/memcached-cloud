@@ -356,6 +356,8 @@ def memcached_detail(memcached_id) :
     slabs_stats_str = json.dumps(slabs_stats)
 
     stats = client.get_stats()[0][1]
+    stats['usage_percent'] = "%.2f" % (float(stats['bytes']) / float(stats['limit_maxbytes']) * 100)
+    stats['free_percent'] = "%.2f" % ((float(stats['limit_maxbytes']) - float(stats['bytes'])) / float(stats['limit_maxbytes']) * 100)
     stats_str = json.dumps(stats)
 
     hits_stats = [{'type':'hits', 'color':'#669900', 'value' : stats['get_hits']}, { 'type':'misses', 'color':'#ff0000', 'value' : stats['get_misses']}]

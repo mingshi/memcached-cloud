@@ -35,6 +35,8 @@
                 <th>curr conn</th><th>total conn</th>
                 <th>threads</th>
                 <th>reassign enable</th>
+                <th>usage</th>
+                <th>free</th>
             </tr>
         </thead>
         <tbody>
@@ -51,6 +53,8 @@
                 <td>{{ stats['total_connections']  }}</td>
                 <td>{{ stats['threads']  }}</td>
                 <td>{% if stats.slab_reassign_running  %}Yes{% else %}No{% endif %}</td>
+                <td>{{ stats['usage_percent'] }}%</td>
+                <td>{{ stats['free_percent'] }}%</td>
             </tr>
         </tbody>
     </table>
@@ -106,7 +110,6 @@
             </div>
         </form>
     </div>
-
     <h3>Key Deletion</h3>
     <div>
         <form class="form-horizontal">
@@ -322,7 +325,7 @@
         chart.balloonText = "[[title]] [[percents]]%  [[description]]";
         chart.labelText = "[[title]] [[percents]]%  [[description]]";
         // WRITE
-        chart.write("usage_stats");
+        //chart.write("usage_stats");
 
     });
 
