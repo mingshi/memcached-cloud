@@ -79,7 +79,8 @@ function generateCompareTRs(iCol, childNumber, sDataType) {
 * sDataType 列的数据类型 
 */  
 function sortTable(sTableID, iCol, childNumber, sDataType) {
-    if(typeof($('#list_sort').attr('class'))=="undefined"){
+    if($('#list_sort').attr('class')=="nosort"){
+        $('#list_sort').removeClass();
         $('#list_sort').addClass('sort_asc');
     }else if($('#list_sort').attr('class')=="sort_asc"){
         $('#list_sort').removeClass();

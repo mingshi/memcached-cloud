@@ -21,13 +21,17 @@
             background: url("static/desc.png") no-repeat scroll 100% 50% #F7F7F0;
             background-position:80%50%;
         }
+        .nosort{
+            background: url("static/nosort.png") no-repeat scroll 100% 50% #F7F7F0;
+            background-position:80%50%;
+        }
     </style>
     <p>
     <a class="btn btn-large btn-primary" href="/memcached-add"><i class="icon-plus icon-white"></i> Add Memcached</a>
     </p>
     <table class="table table-bordered table-striped" id="memcached_list">
         <thead>
-            <tr><th onclick="sortTable('memcached_list', 0, 0, 'int')" id="list_sort" name="list_sort">#</th><th>Group</th><th>Memcached</th><th>Operation</th><th>Status</th></tr>
+            <tr><th onclick="sortTable('memcached_list', 0, 0, 'int')" class="nosort" id="list_sort" name="list_sort">#</th><th>Group</th><th>Memcached</th><th>Operation</th><th>Status</th></tr>
         </thead>
         <tbody>
         {% for memcached in memcacheds %} {% set memcached_addr = memcached.ip + ':' + memcached.port|string %}
