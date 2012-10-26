@@ -47,7 +47,7 @@ for memcached in memcacheds :
                 hit_rank = float(hit_rank) * 100
                 hit_rank = "%.0f" % hit_rank
             nowtime = int(time.time())
-            log = Logs(num=hit_rank,log_type=1,time=nowtime,m_id=mid)
+            log = Logs(num=hit_rank,get=process_get,hit=process_hit,log_type=1,time=nowtime,m_id=mid)
             db_session.add(log)
             db_session.flush()
             this_data = str(current_get) + ' ' + str(current_hit)
@@ -64,7 +64,7 @@ for memcached in memcacheds :
                 hit_rank = float(hit_rank) * 100
                 hit_rank = "%.0f" % hit_rank
             nowtime = int(time.time())
-            log = Logs(num=hit_rank,log_type=1,time=nowtime,m_id=mid)
+            log = Logs(num=hit_rank,get=process_get,hit=process_hit,log_type=1,time=nowtime,m_id=mid)
             db_session.add(log)
             db_session.flush()
             this_data = str(current_get) + ' ' + str(current_hit)
