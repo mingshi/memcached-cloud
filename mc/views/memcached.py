@@ -251,7 +251,8 @@ def get_hit_data() :
     hits_history = db_session.query(Logs).filter(Logs.m_id == m_id,Logs.log_type == 1,Logs.time >= get_date,Logs.time < next_date).all()
     for hits_history in hits_history :
         hits_data['dater'] = str(time.strftime('%H.%M',time.localtime(hits_history.time)))
-        hits_data['value'] = str(hits_history.num)
+        hits_data['hit_range'] = str(hits_history.num)
+        hits_data['get_num'] = str(hits_history.get)
         #hits_data += "{date:'" + str(time.strftime('%H.%M',time.localtime(_hits_history.time))) + "',value:" + str(_hits_history.num) + "},"
         result.append(hits_data.copy())
     return json.dumps(result)
@@ -369,7 +370,7 @@ def memcached_detail(memcached_id) :
    
     hits_data = ''
     for _hits_history in hits_history :
-        hits_data += "{date:'" + str(time.strftime('%H.%M',time.localtime(_hits_history.time))) + "',value:" + str(_hits_history.num) + "},"
+        hits_data += "{date:'" + str(time.strftime('%H.%M',time.localtime(_hits_history.time))) + "',get_num:" + str(_hits_history.get) + ",hit_range:" + str(_hits_history.num) + "},"
 
     hits_data = hits_data.strip(',')
     hits_data = "[" + hits_data + "]"

@@ -133,42 +133,92 @@
 <script type="text/javascript" src="{{ url_for('static', filename='amcharts/raphael.js') }}"></script>
 <script type="text/javascript">
     var lineHitsData = {{ hits_data|safe }}
-    AmCharts.ready(function () {
-        var chart_hits = new AmCharts.AmSerialChart();
-        chart_hits.dataProvider = lineHitsData;
-        chart_hits.pathToImages = "static/";
-        chart_hits.panEventsEnabled = true;
-        chart_hits.categoryField = "date";
+        var chart_hits;
+        AmCharts.ready(function () {
+            // SERIAL CHART
+            chart_hits = new AmCharts.AmSerialChart();
+            chart_hits.panEventsEnabled = true;
+            chart_hits.dataProvider = lineHitsData;
+            chart_hits.categoryField = "date";
+            chart_hits.marginTop = 0;
 
-        chart_hits.autoMargins = false;
-        chart_hits.marginRight = 0;
-        chart_hits.marginLeft = 0;
-        chart_hits.marginBottom = 30;
-        chart_hits.marginTop = 30;
+            // AXES
+            // category axis
+            var categoryAxis_hits = chart_hits.categoryAxis;
+            categoryAxis_hits.parseDates = false; // as our data is date-based, we set parseDates to true
+            categoryAxis_hits.gridAlpha = 0;
+            categoryAxis_hits.tickLength = 0;
+            categoryAxis_hits.axisAlpha = 0;
 
-        var categoryAxis_hits = chart_hits.categoryAxis;
-        categoryAxis_hits.parseDates = false;
-        categoryAxis_hits.gridAlpha = 0;
-        categoryAxis_hits.tickLength = 0;
-        categoryAxis_hits.axisAlpha = 0;
+            // as we have data of different units, we create two different value axes
+            // Duration value axis            
+            var durationAxis = new AmCharts.ValueAxis();
+            durationAxis.title = "hit_range";
+            durationAxis.gridAlpha = 0.05;
+            durationAxis.axisAlpha = 0;
+            durationAxis.inside = true;
+            // the following line makes this value axis to convert values to duration
+            // it tells the axis what duration unit it should use. mm - minute, hh - hour...                
+            //durationAxis.duration = "mm";
+            //durationAxis.durationUnits = {
+            //    DD: "d. ",
+            //    hh: "h ",
+            //    mm: "min",
+            //    ss: ""
+            //};
+            chart_hits.addValueAxis(durationAxis);
 
-        var valueAxis_hits = new AmCharts.ValueAxis();
-        valueAxis_hits.gridAlpha = 0.1;
-        valueAxis_hits.axisAlpha = 0;
-        chart_hits.addValueAxis(valueAxis_hits);
+            // Distance value axis 
+            var distanceAxis = new AmCharts.ValueAxis();
+            distanceAxis.title = "get_num";
+            distanceAxis.gridAlpha = 0;
+            distanceAxis.position = "right";
+            distanceAxis.inside = true;
+            distanceAxis.unit = "";
+            distanceAxis.axisAlpha = 0;
+            chart_hits.addValueAxis(distanceAxis);
 
-        var graph_hits = new AmCharts.AmGraph();
-        graph_hits.type = "line";
-        graph_hits.valueField = "value";
-        graph_hits.lineColor = "#DD1144";
-        graph_hits.customBullet = "static/star.gif";
-        graph_hits.bulletSize = 14;
-        graph_hits.customBulletField = "customBullet";
-        chart_hits.addGraph(graph_hits);
+            // GRAPHS
+            // duration graph
+            var durationGraph = new AmCharts.AmGraph();
+            durationGraph.title = "hit_range";
+            durationGraph.valueField = "hit_range";
+            durationGraph.type = "line";
+            durationGraph.valueAxis = durationAxis; // indicate which axis should be used
+            durationGraph.lineColor = "#DD1144";
+            durationGraph.balloonText = "[[value]]";
+            durationGraph.lineThickness = 1;
+            durationGraph.legendValueText = "[[value]]";
+            durationGraph.bullet = "square";
+            chart_hits.addGraph(durationGraph);
 
-        var chartCursor_hits = new AmCharts.ChartCursor();
-        chart_hits.addChartCursor(chartCursor_hits);
+            // distance graph
+            var distanceGraph = new AmCharts.AmGraph();
+            distanceGraph.valueField = "get_num";
+            distanceGraph.title = "get_num";
+            distanceGraph.type = "column";
+            distanceGraph.fillAlphas = 0.1;
+            distanceGraph.valueAxis = distanceAxis; // indicate which axis should be used
+            distanceGraph.balloonText = "[[value]]";
+            distanceGraph.legendValueText = "[[value]]";
+            distanceGraph.lineColor = "#669900";
+            distanceGraph.lineAlpha = 0;
+            chart_hits.addGraph(distanceGraph);
 
+            // CURSOR                
+            var chartCursor = new AmCharts.ChartCursor();
+            chartCursor.zoomable = false;
+            chartCursor.categoryBalloonDateFormat = "DD";
+            chartCursor.cursorAlpha = 0;
+            chart_hits.addChartCursor(chartCursor);
+
+            // LEGEND
+            var legend = new AmCharts.AmLegend();
+            legend.bulletType = "round";
+            legend.equalWidths = false;
+            legend.valueWidth = 120;
+            legend.color = "#000000";
+            chart_hits.addLegend(legend);
         chart_hits.write("hits_stats");
 
        $(function(){
@@ -188,7 +238,7 @@
                         }).done(function(result){
                             data = []
                             for (i in result){
-                                data.push({"date": result[i].dater, "value": result[i].value});
+                                data.push({"date": result[i].dater, "hit_range": result[i].hit_range, "get_num": result[i].get_num});
                             }   
                             chart_hits.dataProvider = data;
                             chart_hits.validateData();
