@@ -33,3 +33,6 @@ def app_path():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static' ), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
+@app.teardown_request
+def close_session(exception):
+    db_session.remove()

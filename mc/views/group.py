@@ -72,7 +72,7 @@ def group_do_add() :
         else :
             group = Groups(name)
             db_session.add(group)
-            #db_session.commit()
+            db_session.commit()
             result['status'] = 'ok'
             result['message'] = 'add successed. group id is ' + str(group.id)
 

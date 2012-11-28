@@ -135,7 +135,7 @@ def memcached_do_add() :
             if (isstart == "1" and data == "add success\n") or isstart == "0" :
                 memcache = Memcacheds(ip=ip, port=port, memory=memory, status=1, group_id=group, version=version, parameters=param)
                 db_session.add(memcache)
-                #db_session.commit()
+                db_session.commit()
         else :
             result['status'] = 'the memcached is already added'
     return json.dumps(result)
@@ -158,7 +158,7 @@ def memcached_do_edit() :
     _memcached.memory = memory
     _memcached.group_id = group
     _memcached.parameters = param
-    #db_session.commit()
+    db_session.commit()
     result['status'] = 'Edit success!'
     return json.dumps(result)
 
@@ -177,7 +177,7 @@ def memcached_stop(memcached_id) :
         data = os.popen("bash -l /var/www/memcache_cloud/memcached_stop.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
         result['status'] = data
         _memcached.status = 0
-        #db_session.commit()
+        db_session.commit()
     return json.dumps(result)
 
 @mod.route('/memcached-<memcached_id>-delete', methods=['GET', 'POST'])
@@ -189,7 +189,7 @@ def memcached_delete(memcached_id) :
         return 'invalid memcached id'
     _memcached = db_session.query(Memcacheds).filter_by(id = memcached_id).first()
     db_session.delete(_memcached)
-    #db_session.commit()
+    db_session.commit()
     result['status'] = 'delete success'
     return json.dumps(result)
 
@@ -207,7 +207,7 @@ def memcached_start(memcached_id) :
         data = os.popen("bash -l /var/www/memcache_cloud/memcached_start.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
         result['status'] = data
         _memcached.status = 1
-        #db_session.commit()
+        db_session.commit()
     return json.dumps(result)
 
 @mod.route('/memcached-<memcached_id>-restart', methods=['GET', 'POST'])
@@ -224,7 +224,7 @@ def memcached_restart(memcached_id) :
         data = os.popen("bash -l /var/www/memcache_cloud/memcached_restart.sh " + _memcached.ip + " " + str(_memcached.port) + " " + str(_memcached.memory) + " " + str(_memcached.version) + " '" + str(_memcached.parameters) + "'").read()
         result['status'] = data
         _memcached.status = 1
-        #db_session.commit()
+        db_session.commit()
     return json.dumps(result)
 
 @mod.route('/memcached-edit-<memcached_id>', methods=['GET', 'POST'])
