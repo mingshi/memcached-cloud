@@ -44,6 +44,10 @@ then
     then
         file="${orig_dir}/tarbal/memcached-1.4.13.tar.gz"
         cdir="memcached-1.4.13"
+    elif [ ${2} -eq "4" ]
+    then
+        file="${orig_dir}/tarbal/memcached-1.4.15.tar.gz"
+        cdir="memcached-1.4.15"
     fi
     
     ##检查tarbal文件是否存在##
