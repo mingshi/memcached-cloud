@@ -145,8 +145,8 @@ function addTableSortJs(tableIds) {
     }
 }
 
-$(document).ready(function() {
-	var tableIds = eval(table_id);
-	addTableSortJs(tableIds);
-
-});
+//$(document).ready(function() {
+//	var tableIds = eval(table_id);
+//	addTableSortJs(tableIds);
+//
+//});
